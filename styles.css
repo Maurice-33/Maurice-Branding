@@ -103,12 +103,6 @@ h3 {
   transition: all 0.3s ease-in-out;
 }
 
-.btn-primary {
-  background: var(--primary-color);
-  color: var(--text-light);
-  border: 2px solid var(--primary-color);
-}
-
 .btn-primary:hover {
   background: var(--tertiary-color);
   border-color: var(--tertiary-color);
@@ -329,4 +323,34 @@ html {
     width: 95%;
     padding: 25px;
   }
+}
+
+/* Styles pour la boîte de message personnalisée */
+.message-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.message-content {
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-subtle);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.message-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
 }

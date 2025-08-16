@@ -129,7 +129,7 @@ footer {
 
 .btn-secondary {
   background: transparent;
-  color: var(--white);
+  color: #ffffff;
   padding: 12px 25px;
   border: 2px solid var(--terracotta-dark);
   border-radius: 6px;

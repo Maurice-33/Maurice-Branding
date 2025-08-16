@@ -11,10 +11,8 @@
   --text-light: #F8F4F0;
   --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
 
-  /* Nouveaux dégradés de couleurs pour les sections */
-  --gradient-1: linear-gradient(180deg, #F8F4F0 0%, #F0E8E1 100%);
-  --gradient-2: linear-gradient(180deg, #F0E8E1 0%, #E8DCCF 100%);
-  --gradient-3: linear-gradient(180deg, #E8DCCF 0%, #DBCBB9 100%);
+  /* Dégradé unique pour toute la page */
+  --main-gradient: linear-gradient(180deg, #F8F4F0 0%, #E8DCCF 100%);
 
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -22,7 +20,7 @@
 
 body {
   font-family: var(--font-body);
-  background-color: var(--background-light);
+  background-image: var(--main-gradient); /* Applique le dégradé à tout le corps */
   color: var(--text-dark);
   line-height: 1.6;
 }
@@ -45,18 +43,11 @@ section {
   text-align: center;
 }
 
-/* Styles pour les sections avec dégradé */
-.section-gradient-1 {
-    background-image: var(--gradient-1);
+/* Suppression des anciennes classes de dégradé pour uniformiser le fond */
+.hero, .section-gradient-1, .section-gradient-2, .section-gradient-3 {
+  background-image: none;
 }
 
-.section-gradient-2 {
-    background-image: var(--gradient-2);
-}
-
-.section-gradient-3 {
-    background-image: var(--gradient-3);
-}
 
 /* Titres */
 h1, h2, h3 {
@@ -87,7 +78,22 @@ h3 {
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  background-color: var(--background-light);
+  background-color: transparent;
+  box-shadow: none;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.main-header.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* En-tête qui devient blanc au défilement */
+.main-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
   box-shadow: var(--shadow-subtle);
 }
 

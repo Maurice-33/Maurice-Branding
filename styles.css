@@ -11,6 +11,10 @@
   --text-light: #F8F4F0;
   --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
 
+  /* Nouveaux dégradés de couleurs pour les sections */
+  --gradient-bg-1: linear-gradient(to bottom, #F8F4F0, #F0E8E1);
+  --gradient-bg-2: linear-gradient(to bottom, #F0E8E1, #E8DCCF);
+
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
 }
@@ -40,19 +44,13 @@ section {
   text-align: center;
 }
 
-/* Nouvelles classes pour les sections */
-.section-light {
-    background-color: var(--background-light);
-    color: var(--text-dark);
+/* Styles pour les sections avec dégradé */
+.section-gradient {
+    background-image: var(--gradient-bg-1);
 }
 
-.section-dark {
-    background-color: var(--background-dark);
-    color: var(--text-light);
-}
-
-.section-dark h2, .section-dark h3, .section-dark p {
-    color: var(--text-light);
+.hero {
+  background-image: var(--gradient-bg-2);
 }
 
 /* Titres */
@@ -142,21 +140,33 @@ h3 {
   transform: translateY(-2px);
 }
 
-/* Section Hero */
-.hero {
-  text-align: center;
-  padding: 150px 20px;
+/* Séparateur en forme d'arche */
+.section-separator {
+    height: 100px; /* Hauteur de la zone d'arche */
+    width: 100%;
+    position: relative;
+    z-index: 10;
 }
 
-.hero-content {
-  max-width: 800px;
-  margin: auto;
+.section-separator::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: var(--background-light);
 }
 
-.hero-content p {
-  font-size: 1.4rem;
-  margin-bottom: 30px;
-  color: var(--secondary-color);
+.section-separator-top::before {
+    border-bottom-left-radius: 50% 100px;
+    border-bottom-right-radius: 50% 100px;
+    top: -50px;
+}
+
+.section-separator-bottom::before {
+    border-top-left-radius: 50% 100px;
+    border-top-right-radius: 50% 100px;
+    bottom: -50px;
 }
 
 /* Cartes de services et de portfolio */

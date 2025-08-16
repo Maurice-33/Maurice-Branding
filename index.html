@@ -1,113 +1,109 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Branding Service</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branding Service</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Ancre en haut -->
-  <div id="top"></div>
+    <a id="top" href="#top"></a>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Votre Branding By Momo</h1>
-      <p>Logo • Identité visuelle • Supports de communication</p>
-      
-      <div class="btn-group">
-        <a href="#apropos" class="btn-primary">A Propos</a>
-        <a href="#services" class="btn-secondary">Mes Services</a>      
-        <a href="portfolio.html" class="btn-primary">Portfolio</a>      
-        <a href="#tarifs" class="btn-secondary">Tarifs</a>
-        <a href="#contact" class="btn-primary">Me contacter</a>
-      </div>
-    </div>
-  </header>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Votre Branding By Momo</h1>
+            <p>Logo • Identité visuelle • Supports de communication</p>
+            
+            <nav class="btn-group">
+                <a href="#apropos" class="btn-primary">A Propos</a>
+                <a href="#services" class="btn-secondary">Mes Services</a>
+                <a href="portfolio.html" class="btn-primary">Portfolio</a>
+                <a href="#tarifs" class="btn-secondary">Tarifs</a>
+                <a href="#contact" class="btn-primary">Me contacter</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section id="apropos">
+            <h2>A Propos</h2>
+            <p>Présentation de votre entreprise ou services.</p>
+        </section>
 
-  <!-- A PROPOS -->
-  <section id="apropos">
-    <h2>A Propos</h2>
-    <p>Présentation de votre entreprise ou services.</p>
-  </section>
+        <section id="services">
+            <h2>Mes Services</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Logo & Identité</h3>
+                    <p>Création de logos uniques et d’une identité visuelle cohérente.</p>
+                </div>
+                <div class="card">
+                    <h3>Charte Graphique</h3>
+                    <p>Définition de couleurs, typographies et éléments graphiques.</p>
+                </div>
+                <div class="card">
+                    <h3>Supports Marketing</h3>
+                    <p>Flyers, bannières et réseaux sociaux pour un branding complet.</p>
+                </div>
+            </div>
+        </section>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <h2>Mes Services</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Logo & Identité</h3>
-        <p>Création de logos uniques et d’une identité visuelle cohérente.</p>
-      </div>
-      <div class="card">
-        <h3>Charte Graphique</h3>
-        <p>Définition de couleurs, typographies et éléments graphiques.</p>
-      </div>
-      <div class="card">
-        <h3>Supports Marketing</h3>
-        <p>Flyers, bannières et réseaux sociaux pour un branding complet.</p>
-      </div>
-    </div>
-  </section>
+        <section id="tarifs">
+            <h2>Tarifs</h2>
+            <p>Présentation des tarifs ou forfaits.</p>
+        </section>
 
-  <!-- TARIFS -->
-  <section id="tarifs">
-    <h2>Tarifs</h2>
-    <p>Présentation des tarifs ou forfaits.</p>
-  </section>
+        <section id="contact">
+            <h2>Contactez-moi</h2>
+            <form action="#" method="post">
+                <div>
+                    <label for="name">Votre nom :</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                </div>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contactez-moi</h2>
-    <form action="#" method="post">
-      <!-- Nom -->
-      <label for="name">Votre nom :</label>
-      <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                <div>
+                    <label for="email">Votre email :</label>
+                    <input type="email" id="email" name="email" placeholder="Votre email" required>
+                </div>
 
-      <!-- Email -->
-      <label for="email">Votre email :</label>
-      <input type="email" id="email" name="email" placeholder="Votre email" required>
+                <div>
+                    <label for="service">Type de demande :</label>
+                    <select id="service" name="service" required>
+                        <option value="" disabled selected>Choisissez une option</option>
+                        <option value="branding">Branding</option>
+                        <option value="logo">Création de logo</option>
+                        <option value="web">Site web</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
 
-      <!-- Type de demande -->
-      <label for="service">Type de demande :</label>
-      <select id="service" name="service" required>
-        <option value="" disabled selected>Choisissez une option</option>
-        <option value="branding">Branding</option>
-        <option value="logo">Création de logo</option>
-        <option value="web">Site web</option>
-        <option value="autre">Autre</option>
-      </select>
+                <div>
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+                </div>
 
-      <!-- Message -->
-      <label for="message">Message :</label>
-      <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+                <button type="submit" class="btn-primary">Envoyer</button>
+            </form>
+        </section>
+    </main>
 
-      <!-- Envoyer -->
-      <button type="submit" class="btn-primary">Envoyer</button>
-    </form>
-  </section>
+    <a href="#top" class="back-to-top" id="backToTop">&#8679;</a>
 
-  <!-- Bouton remonter en haut -->
-  <a href="#top" class="back-to-top" id="backToTop">&#8679;</a>
+    <footer>
+        <p>© 2025 Branding Service - Tous droits réservés</p>
+    </footer>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Branding Service - Tous droits réservés</p>
-  </footer>
-
-  <!-- JS pour afficher le back-to-top -->
-  <script>
-    const backToTopButton = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        backToTopButton.style.display = "block";
-      } else {
-        backToTopButton.style.display = "none";
-      }
-    });
-  </script>
+    <script>
+        const backToTopButton = document.getElementById("backToTop");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        });
+    </script>
 
 </body>
 </html>

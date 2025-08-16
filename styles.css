@@ -12,8 +12,9 @@
   --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
 
   /* Nouveaux dégradés de couleurs pour les sections */
-  --gradient-bg-1: linear-gradient(to bottom, #F8F4F0, #F0E8E1);
-  --gradient-bg-2: linear-gradient(to bottom, #F0E8E1, #E8DCCF);
+  --gradient-1: linear-gradient(180deg, #F8F4F0 0%, #F0E8E1 100%);
+  --gradient-2: linear-gradient(180deg, #F0E8E1 0%, #E8DCCF 100%);
+  --gradient-3: linear-gradient(180deg, #E8DCCF 0%, #DBCBB9 100%);
 
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -45,12 +46,16 @@ section {
 }
 
 /* Styles pour les sections avec dégradé */
-.section-gradient {
-    background-image: var(--gradient-bg-1);
+.section-gradient-1 {
+    background-image: var(--gradient-1);
 }
 
-.hero {
-  background-image: var(--gradient-bg-2);
+.section-gradient-2 {
+    background-image: var(--gradient-2);
+}
+
+.section-gradient-3 {
+    background-image: var(--gradient-3);
 }
 
 /* Titres */
@@ -142,31 +147,29 @@ h3 {
 
 /* Séparateur en forme d'arche */
 .section-separator {
-    height: 100px; /* Hauteur de la zone d'arche */
-    width: 100%;
+    height: 100px;
     position: relative;
-    z-index: 10;
+    overflow: hidden;
 }
 
 .section-separator::before {
     content: '';
     position: absolute;
-    left: 0;
-    right: 0;
-    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200%; /* Permet une courbe plus grande et plus lisse */
+    height: 200px;
     background-color: var(--background-light);
+    border-radius: 50% 50% 0 0;
 }
 
 .section-separator-top::before {
-    border-bottom-left-radius: 50% 100px;
-    border-bottom-right-radius: 50% 100px;
-    top: -50px;
+    top: -150px; /* Ajustement pour la position */
 }
 
 .section-separator-bottom::before {
-    border-top-left-radius: 50% 100px;
-    border-top-right-radius: 50% 100px;
-    bottom: -50px;
+    bottom: -150px;
+    transform: translateX(-50%) rotate(180deg);
 }
 
 /* Cartes de services et de portfolio */

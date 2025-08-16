@@ -23,13 +23,13 @@
     </a>
     
     <!-- Bouton Hamburger pour mobile -->
-    <div class="hamburger-menu">
+    <div class="hamburger-menu" id="menu-toggle">
         <span></span>
         <span></span>
         <span></span>
     </div>
 
-    <nav class="btn-group">
+    <nav class="btn-group" id="site-nav">
       <a href="#apropos" class="btn-secondary">A Propos</a>
       <a href="#mes-services" class="btn-secondary">Mes Services</a>
       <a href="portfolio.html" class="btn-secondary">Portfolio</a>
@@ -69,7 +69,7 @@
     <!-- CONTACT -->
     <section id="contact">
       <h2>Contactez-moi</h2>
-      <form action="#" method="post">
+      <form id="contact-form" action="#" method="post">
         <div>
           <label for="name">Votre nom :</label>
           <input type="text" id="name" name="name" placeholder="Votre nom" required>
@@ -108,6 +108,14 @@
   <footer>
     <p>© 2025 Branding Service - Tous droits réservés</p>
   </footer>
+  
+  <!-- Conteneur pour la boîte de message personnalisée -->
+  <div id="message-box" class="message-box">
+    <div class="message-content">
+      <p id="message-text"></p>
+      <button id="close-message" class="btn-primary">OK</button>
+    </div>
+  </div>
   
   <!-- Lien vers le fichier JavaScript -->
   <script src="script.js"></script>

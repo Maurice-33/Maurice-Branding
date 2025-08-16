@@ -212,3 +212,25 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #E6B8A2, #E2725B); /* dégradé beige-rose → terracotta */
+  color: white;
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  display: none; /* caché par défaut */
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px); /* petit effet de levée au hover */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}

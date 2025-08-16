@@ -1,5 +1,5 @@
 /*
-  * Variables CSS personnalisées pour un look plus professionnel et soigné.
+ * Variables CSS personnalisées pour un look plus professionnel et soigné.
 */
 :root {
   --background-light: #F8F4F0;
@@ -15,9 +15,6 @@
   --font-body: 'Inter', sans-serif;
 }
 
-/* * Ajoutez ces lignes dans la section <head> de votre HTML pour les polices :
- * <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-*/
 body {
   font-family: var(--font-body);
   background-color: var(--background-light);
@@ -68,209 +65,268 @@ h3 {
 
 /* Header et Navigation */
 .main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: var(--background-light);
-    box-shadow: var(--shadow-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: var(--background-light);
+  box-shadow: var(--shadow-subtle);
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .logo-icon {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .btn-group {
-    display: flex;
-    gap: 25px;
-    align-items: center;
+  display: flex;
+  gap: 25px;
+  align-items: center;
 }
 
 .btn-primary, .btn-secondary {
-    padding: 12px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease-in-out;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-primary {
-    background: var(--primary-color);
-    color: var(--text-light);
-    border: 2px solid var(--primary-color);
+  background: var(--primary-color);
+  color: var(--text-light);
+  border: 2px solid var(--primary-color);
 }
 
 .btn-primary:hover {
-    background: var(--tertiary-color);
-    border-color: var(--tertiary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: var(--tertiary-color);
+  border-color: var(--tertiary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .btn-secondary {
-    background: transparent;
-    color: var(--secondary-color);
-    border: 2px solid transparent;
+  background: transparent;
+  color: var(--secondary-color);
+  border: 2px solid transparent;
 }
 
 .btn-secondary:hover {
-    color: var(--primary-color);
-    transform: translateY(-2px);
+  color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
 /* Section Hero */
 .hero {
-    background: var(--background-light);
-    text-align: center;
-    padding: 150px 20px;
+  background: var(--background-light);
+  text-align: center;
+  padding: 150px 20px;
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: auto;
+  max-width: 800px;
+  margin: auto;
 }
 
 .hero-content p {
-    font-size: 1.4rem;
-    margin-bottom: 30px;
-    color: var(--secondary-color);
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  color: var(--secondary-color);
 }
 
 /* Cartes de services et de portfolio */
 .cards, .portfolio-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .card, .portfolio-item {
-    background: var(--white);
-    border-radius: 15px;
-    padding: 40px;
-    width: 300px;
-    box-shadow: var(--shadow-subtle);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: var(--white);
+  border-radius: 15px;
+  padding: 40px;
+  width: 300px;
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card:hover, .portfolio-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* Formulaire de contact */
 form {
-    max-width: 600px;
-    margin: auto;
-    text-align: left;
-    padding: 30px;
-    background: var(--white);
-    border-radius: 15px;
-    box-shadow: var(--shadow-subtle);
+  max-width: 600px;
+  margin: auto;
+  text-align: left;
+  padding: 30px;
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: var(--shadow-subtle);
 }
 
 form div {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 input, textarea, select {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: var(--font-body);
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: var(--font-body);
 }
 
 input:focus, textarea:focus, select:focus {
-    border-color: var(--primary-color);
-    outline: none;
+  border-color: var(--primary-color);
+  outline: none;
 }
 
 label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
 }
 
 /* Pied de page (Footer) */
 footer {
-    background-color: var(--background-dark);
-    color: var(--text-light);
-    text-align: center;
-    padding: 30px;
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 30px;
 }
 
 /* Bouton pour remonter en haut de la page */
 .back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--primary-color);
-    color: var(--text-light);
-    padding: 12px 16px;
-    border-radius: 50%;
-    font-size: 24px;
-    text-align: center;
-    text-decoration: none;
-    display: none;
-    z-index: 1000;
-    box-shadow: var(--shadow-subtle);
-    transition: transform 0.3s, box-shadow 0.3s;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--primary-color);
+  color: var(--text-light);
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  display: none;
+  z-index: 1000;
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .back-to-top:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 /* Scroll fluide */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
-/* Responsive design */
+/* Styles pour le menu mobile (Bouton hamburger et menu) */
+.hamburger-menu {
+    display: none; /* Caché par défaut sur les grands écrans */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Styles pour la transformation du hamburger en "X" */
+.hamburger-menu.is-active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.is-active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Media Queries pour le design responsive */
 @media screen and (max-width: 768px) {
-    .main-header {
-        flex-direction: column;
-        padding: 20px;
-    }
+  .main-header {
+    padding: 20px;
+  }
+  
+  .btn-group {
+    display: none; /* Cache les boutons par défaut sur mobile */
+  }
 
-    .btn-group {
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 20px;
-    }
+  .hamburger-menu {
+    display: flex; /* Affiche le bouton hamburger sur mobile */
+  }
+  
+  .main-header {
+    position: relative;
+  }
 
-    .hero {
-        padding: 100px 20px;
-    }
+  .btn-group.is-open {
+    display: flex; /* Affiche le menu lorsque le hamburger est actif */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-light);
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: var(--shadow-subtle);
+  }
 
-    h1 {
-        font-size: 2.5rem;
-    }
-    h2 {
-        font-size: 2rem;
-    }
+  .btn-group.is-open a {
+    padding: 15px 20px;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+  }
 
-    .cards, .portfolio-grid {
-        flex-direction: column;
-        align-items: center;
-    }
+  .btn-group.is-open a:last-child {
+    border-bottom: none;
+  }
 
-    .card, .portfolio-item {
-        width: 95%;
-        padding: 25px;
-    }
+  .hero {
+    padding: 100px 20px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+
+  .cards, .portfolio-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card, .portfolio-item {
+    width: 95%;
+    padding: 25px;
+  }
 }

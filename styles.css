@@ -118,3 +118,51 @@ footer {
   padding: 25px;
   margin-top: 50px;
 }
+
+/* Boutons côte à côte */
+.btn-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-secondary {
+  background: var(--rose);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  opacity: 0.85;
+}
+
+/* Portfolio */
+#portfolio {
+  padding: 70px 20px;
+  text-align: center;
+  background: var(--beige);
+}
+
+.portfolio-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.portfolio-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}

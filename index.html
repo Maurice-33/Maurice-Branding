@@ -92,6 +92,19 @@
     <p>© 2025 Branding Service - Tous droits réservés</p>
   </footer>
 
-<a href="#top" class="back-to-top" id="backToTop">&#8679;</a>      
+<script>
+  const backToTopButton = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) { 
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
+</script>
+      
+<a href="#top" class="back-to-top" id="backToTop">&#8679;</a>
+      
 </body>
 </html>

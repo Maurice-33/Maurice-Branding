@@ -96,7 +96,7 @@
   const backToTopButton = document.getElementById("backToTop");
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) { 
+    if (window.scrollY > 300) {
       backToTopButton.style.display = "block";
     } else {
       backToTopButton.style.display = "none";
@@ -105,6 +105,45 @@
 </script>
       
 <a href="#top" class="back-to-top" id="backToTop">&#8679;</a>
+
+ <!-- Section ancre en haut pour le bouton remonter -->
+<div id="top"></div>
+
+<!-- Boutons principaux -->
+<div class="btn-group">
+  <a href="#contact" class="btn-primary">Me contacter</a>
+  <a href="#portfolio" class="btn-secondary">Portfolio</a>
+</div>
+
+<!-- Section contact -->
+<section id="contact">
+  <h2>Contactez-moi</h2>
+  <form action="#" method="post">
+    <label for="name">Votre nom :</label>
+    <input type="text" id="name" name="name" placeholder="Votre nom" required>
+
+    <label for="email">Votre email :</label>
+    <input type="email" id="email" name="email" placeholder="Votre email" required>
+
+    <label for="service">Type de demande :</label>
+    <select id="service" name="service" required>
+      <option value="" disabled selected>Choisissez une option</option>
+      <option value="branding">Branding</option>
+      <option value="logo">Création de logo</option>
+      <option value="web">Site web</option>
+      <option value="autre">Autre</option>
+    </select>
+
+    <label for="message">Votre message :</label>
+    <textarea id="message" name="message" placeholder="Écrivez votre message ici" required></textarea>
+
+    <button type="submit" class="btn-primary">Envoyer</button>
+  </form>
+</section>
+
+<!-- Bouton remonter en haut -->
+<a href="#top" class="back-to-top" id="backToTop">&#8679;</a>
+     
       
 </body>
 </html>

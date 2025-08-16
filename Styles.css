@@ -128,3 +128,8 @@ footer {
   padding: 25px;
   margin-top: 50px;
 }
+
+.logo {
+  max-width: 120px; /* Taille du logo */
+  margin-bottom: 20px;
+}

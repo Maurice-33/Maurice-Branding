@@ -168,3 +168,42 @@ footer {
 .portfolio-item:hover {
   transform: translateY(-5px);
 }
+
+/* Petit écran : smartphones */
+@media screen and (max-width: 768px) {
+
+  /* Hero et boutons */
+  .hero-content {
+    padding: 40px 20px;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Portfolio : une colonne sur mobile */
+  .portfolio-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .portfolio-item {
+    width: 90%;
+    padding: 20px;
+  }
+
+  /* Logo plus petit */
+  .logo {
+    max-width: 80px;
+    margin-bottom: 15px;
+  }
+
+  /* Titres plus petits */
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}

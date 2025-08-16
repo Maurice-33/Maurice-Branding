@@ -6,42 +6,61 @@
   --background: #FFF7F2;
   --text: #3E3E3E;
   --text-light: #6E5A51;
+  --white: #fff;
+  --shadow: rgba(0,0,0,0.1);
 
   --gradient: linear-gradient(135deg, var(--beige), var(--rose), var(--terracotta));
-  --font: 'Arial', sans-serif;
+  /* Utilisation de 'Inter' via Google Fonts pour un look plus moderne */
+  --font-family: 'Inter', 'Arial', sans-serif;
 }
 
+/* * Inclure la police Inter
+ * Ajoutez ceci dans la balise <head> de votre HTML :
+ * <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+*/
+body {
+  font-family: var(--font-family);
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Réinitialisation de base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: var(--font);
-  background-color: var(--background);
-  color: var(--text);
-  line-height: 1.6;
+/* Conteneur principal */
+main {
+  padding-bottom: 50px; /* Ajoute un espace avant le footer */
 }
 
-.hero {
-  background: var(--gradient);
-  color: var(--text);
+/* Sections */
+section {
+  padding: 70px 20px;
   text-align: center;
-  padding: 100px 20px;
 }
 
-.hero-content h1 {
+/* Titres */
+h1 {
   font-size: 2.8rem;
   margin-bottom: 15px;
 }
 
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
-  color: var(--text-light);
+h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--text);
 }
 
+h3 {
+  color: var(--terracotta-dark);
+  margin-bottom: 15px;
+}
+
+/* Boutons - Styles originaux */
 .btn-primary {
   background: var(--terracotta-dark);
   color: #fff;
@@ -54,77 +73,6 @@ body {
 
 .btn-primary:hover {
   opacity: 0.85;
-}
-
-section {
-  padding: 70px 20px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: var(--text);
-}
-
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 30px;
-  width: 280px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
-  color: var(--terracotta-dark);
-  margin-bottom: 15px;
-}
-
-form {
-  max-width: 500px;
-  margin: auto;
-  text-align: left;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-}
-
-input:focus, textarea:focus {
-  border-color: var(--terracotta);
-  outline: none;
-}
-
-footer {
-  background: var(--terracotta);
-  color: #fff;
-  text-align: center;
-  padding: 25px;
-  margin-top: 50px;
-}
-
-/* Boutons côte à côte */
-.btn-group {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap; /* permet de passer à la ligne sur petit écran */
 }
 
 .btn-secondary {
@@ -140,86 +88,98 @@ footer {
 
 .btn-secondary:hover {
   background: var(--terracotta-dark);
-  color: #fff;
+  color: #fff;
 }
 
-/* Portfolio */
-#portfolio {
-  padding: 70px 20px;
+/* Groupe de boutons */
+.btn-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Section Héro */
+.hero {
+  background: var(--gradient);
   text-align: center;
-  background: var(--beige);
+  padding: 100px 20px;
+  color: var(--text);
 }
 
-.portfolio-grid {
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  color: var(--text-light);
+}
+
+/* Cartes de services et de portfolio */
+.cards, .portfolio-grid {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.portfolio-item {
-  background: #fff;
-  border-radius: 8px;
+.card, .portfolio-item {
+  background: var(--white);
+  border-radius: 10px;
   padding: 30px;
   width: 280px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  box-shadow: 0 5px 15px var(--shadow);
+  transition: transform 0.3s ease;
 }
 
-.portfolio-item:hover {
+.card:hover, .portfolio-item:hover {
   transform: translateY(-5px);
 }
 
-/* Petit écran : smartphones */
-@media screen and (max-width: 768px) {
-
-  /* Hero et boutons */
-  .hero-content {
-    padding: 40px 20px;
-  }
-
-  .btn-group {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  /* Portfolio : une colonne sur mobile */
-  .portfolio-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .portfolio-item {
-    width: 90%;
-    padding: 20px;
-  }
-
-  /* Logo plus petit */
-  .logo {
-    max-width: 80px;
-    margin-bottom: 15px;
-  }
-
-  /* Titres plus petits */
-  h1 {
-    font-size: 1.8rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
+/* Formulaire de contact */
+form {
+  max-width: 500px;
+  margin: auto;
+  text-align: left;
 }
 
-html {
-  scroll-behavior: smooth;
+form div {
+  margin-bottom: 15px; /* Améliore l'espacement entre les champs du formulaire */
 }
 
-/* Back to top stylé */
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: var(--font-family);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--terracotta);
+  outline: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Pied de page (Footer) */
+footer {
+  background-color: var(--terracotta);
+  color: var(--white);
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+}
+
+/* Bouton pour remonter en haut de la page */
 .back-to-top {
   position: fixed;
   bottom: 30px;
   right: 30px;
   background: linear-gradient(135deg, #E6B8A2, #E2725B);
-  color: white;
+  color: var(--white);
   padding: 12px 16px;
   border-radius: 50%;
   font-size: 24px;
@@ -241,10 +201,34 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Responsive pour boutons sur mobile */
+/* Responsive design */
 @media screen and (max-width: 768px) {
+  /* Hero et boutons */
+  .hero-content {
+    padding: 40px 20px;
+  }
+
   .btn-group {
     flex-direction: column;
-    gap: 10px;
-  }
+    gap: 10px;
+  }
+
+  /* Cartes */
+  .cards, .portfolio-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card, .portfolio-item {
+    width: 90%;
+    padding: 20px;
+  }
+
+  /* Titres */
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
 }

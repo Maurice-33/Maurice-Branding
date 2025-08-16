@@ -2,13 +2,14 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Branding Service</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- Ancre en haut -->
   <div id="top"></div>
-  <!-- le reste de ton contenu -->
 
   <!-- HERO -->
   <header class="hero">
@@ -17,19 +18,24 @@
       <p>Logo • Identité visuelle • Supports de communication</p>
       
       <div class="btn-group">
-  <a href="#A Propos" class="btn-primary">A Propos</a> 
-  <a href="#Services" class="btn-secondary">Mes Services</a>      
-  <a href="portfolio.html" class="btn-primary">Portfolio</a>      
-  <a href="#Tarifs" class="btn-secondary">Tarifs</a>
-  <a href="#contact" class="btn-primary">Me contacter</a>
-</div>
-      </header>
+        <a href="#apropos" class="btn-primary">A Propos</a>
+        <a href="#services" class="btn-secondary">Mes Services</a>      
+        <a href="portfolio.html" class="btn-primary">Portfolio</a>      
+        <a href="#tarifs" class="btn-secondary">Tarifs</a>
+        <a href="#contact" class="btn-primary">Me contacter</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- A PROPOS -->
+  <section id="apropos">
+    <h2>A Propos</h2>
+    <p>Présentation de votre entreprise ou services.</p>
+  </section>
 
   <!-- SERVICES -->
-  <section id="Services">
+  <section id="services">
     <h2>Mes Services</h2>
-     <!-- Ton formulaire ici -->
-</section>
     <div class="cards">
       <div class="card">
         <h3>Logo & Identité</h3>
@@ -46,73 +52,62 @@
     </div>
   </section>
 
-  <!--
-  <section id="portfolio">
-  <h2>Portfolio</h2>
-  <div class="portfolio-grid">
-    <div class="portfolio-item">Projet 1</div>
-    <div class="portfolio-item">Projet 2</div>
-    <div class="portfolio-item">Projet 3</div>
-  </div>
-</section>
+  <!-- TARIFS -->
+  <section id="tarifs">
+    <h2>Tarifs</h2>
+    <p>Présentation des tarifs ou forfaits.</p>
+  </section>
 
-<!-- Bouton remonter en haut -->
-<a href="#top" class="back-to-top" id="backToTop">&#8679;</a>
-  
-  <!-- CONTACT --> 
-<section id="contact">
+  <!-- CONTACT -->
+  <section id="contact">
     <h2>Contactez-moi</h2>
-    <!-- Ton formulaire ici -->
-</section>  
-    <form>
-      <form action="#" method="post">
-  <!-- Nom du client -->
-  <label for="name">Votre nom :</label>
-  <input type="text" id="name" name="name" placeholder="Votre nom" required>
+    <form action="#" method="post">
+      <!-- Nom -->
+      <label for="name">Votre nom :</label>
+      <input type="text" id="name" name="name" placeholder="Votre nom" required>
 
-  <!-- Email -->
-  <label for="email">Votre email :</label>
-  <input type="email" id="email" name="email" placeholder="Votre email" required>
+      <!-- Email -->
+      <label for="email">Votre email :</label>
+      <input type="email" id="email" name="email" placeholder="Votre email" required>
 
-  <!-- Sujet ou type de service -->
-  <label for="service">Type de demande :</label>
-  <select id="service" name="service" required>
-    <option value="" disabled selected>Choisissez une option</option>
-    <option value="branding">Branding</option>
-    <option value="logo">Création de logo</option>
-    <option value="web">Site web</option>
-    <option value="autre">Autre</option>
-  </select>
+      <!-- Type de demande -->
+      <label for="service">Type de demande :</label>
+      <select id="service" name="service" required>
+        <option value="" disabled selected>Choisissez une option</option>
+        <option value="branding">Branding</option>
+        <option value="logo">Création de logo</option>
+        <option value="web">Site web</option>
+        <option value="autre">Autre</option>
+      </select>
 
-  <!-- Message -->
-  <label for="message"> :</label>
-  <textarea rows="5" placeholder="Votre message" required></textarea>
+      <!-- Message -->
+      <label for="message">Message :</label>
+      <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
 
-  <!-- Bouton envoyer -->
-  <button type="submit" class="btn-primary">Envoyer</button>      
-</form> 
+      <!-- Envoyer -->
+      <button type="submit" class="btn-primary">Envoyer</button>
+    </form>
+  </section>
+
+  <!-- Bouton remonter en haut -->
+  <a href="#top" class="back-to-top" id="backToTop">&#8679;</a>
 
   <!-- FOOTER -->
   <footer>
     <p>© 2025 Branding Service - Tous droits réservés</p>
   </footer>
 
-<script>
-  const backToTopButton = document.getElementById("backToTop");
+  <!-- JS pour afficher le back-to-top -->
+  <script>
+    const backToTopButton = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    });
+  </script>
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      backToTopButton.style.display = "block";
-    } else {
-      backToTopButton.style.display = "none";
-    }
-  });
-</script>
-      
-<a href="#top" class="back-to-top" id="backToTop">&#8679;</a>
-
- <!-- Section ancre en haut pour le bouton remonter -->
-<div id="top"></div>
-  
-</body>  
+</body>
 </html>

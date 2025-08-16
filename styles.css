@@ -127,9 +127,10 @@ footer {
 }
 
 .btn-secondary {
-  background: var(--rose);
-  color: #fff;
+  background: transparent;
+  color: var(--terracotta-dark);
   padding: 12px 25px;
+  border: 2px solid var(--terracotta-dark);
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
@@ -137,7 +138,8 @@ footer {
 }
 
 .btn-secondary:hover {
-  opacity: 0.85;
+  background: var(--terracotta-dark);
+  color: #fff;
 }
 
 /* Portfolio */

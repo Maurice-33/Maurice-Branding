@@ -1,30 +1,58 @@
 /* Minimal JavaScript for interactions */
-const $ = (s, el=document) => el.querySelector(s);
 
-const nav = $('.site-nav');
-const toggle = $('.menu-toggle');
+// Helper function to get elements
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => el.querySelectorAll(s);
 
+// Selectors for the navigation and toggle button
+const nav = $('.btn-group');
+const toggle = $('.hamburger-menu');
+
+// Show custom message box
+const showMessage = (text) => {
+    $('#message-text').textContent = text;
+    $('#message-box').style.display = 'flex';
+};
+
+// Hide custom message box
+const hideMessage = () => {
+    $('#message-box').style.display = 'none';
+};
+
+// Add listener to close button
+$('#close-message').addEventListener('click', hideMessage);
+
+// Toggle mobile navigation menu
 toggle.addEventListener('click', () => {
-  const open = nav.style.display === 'flex';
-  nav.style.display = open ? 'none' : 'flex';
+  const open = nav.classList.contains('is-open');
+  nav.classList.toggle('is-open');
+  toggle.classList.toggle('is-active');
   toggle.setAttribute('aria-expanded', String(!open));
 });
 
 // Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(a => {
+$$('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const id = a.getAttribute('href').slice(1);
     const section = document.getElementById(id);
     if(section){
       e.preventDefault();
       section.scrollIntoView({behavior:'smooth', block:'start'});
-      if (window.innerWidth < 860){ nav.style.display='none'; toggle.setAttribute('aria-expanded','false'); }
+      // Close mobile menu on click
+      if (window.innerWidth < 768) {
+        nav.classList.remove('is-open');
+        toggle.classList.remove('is-active');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
     }
   });
 });
 
-// Update year
-$('#year').textContent = new Date().getFullYear();
+// Update year in footer (if you add an element with id="year")
+const yearElement = $('#year');
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+}
 
 // Contact form handling
 // Option A (recommandé): utiliser un endpoint de formulaire (ex: Formspree) – mettez l'URL ci-dessous.
@@ -43,21 +71,20 @@ $('#contact-form').addEventListener('submit', async (e) => {
         body: new FormData(e.target)
       });
       if(res.ok){
-        alert('Merci ! Votre message a bien été envoyé.');
+        showMessage('Merci ! Votre message a bien été envoyé.');
         e.target.reset();
       }else{
-        alert('Oups, échec de l’envoi. Vous pouvez m’écrire à contact@example.com');
+        showMessage('Oups, échec de l’envoi. Vous pouvez m’écrire à contact@example.com');
       }
     }catch(err){
-      alert('Erreur réseau. Contactez-moi à contact@example.com');
+      showMessage('Erreur réseau. Contactez-moi à contact@example.com');
     }
   } else {
     const subject = encodeURIComponent('Projet branding');
     const body = encodeURIComponent(
       `Nom: ${data.name || ''}
 Email: ${data.email || ''}
-Budget: ${data.budget || ''}
-Délais: ${data.timeline || ''}
+Type de demande: ${data.service || ''}
 
 Message:
 ${data.message || ''}`

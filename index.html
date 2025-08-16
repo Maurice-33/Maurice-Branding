@@ -12,7 +12,7 @@
   <!-- Ancre en haut -->
   <a id="top" href="#top"></a>
 
-  <!-- NOUVEAU HEADER -->
+  <!-- HEADER -->
   <header class="main-header">
     <a href="#" class="logo">
       <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -21,6 +21,14 @@
       </svg>
       Beyond.
     </a>
+    
+    <!-- Bouton Hamburger pour mobile -->
+    <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
     <nav class="btn-group">
       <a href="#apropos" class="btn-secondary">A Propos</a>
       <a href="#mes-services" class="btn-secondary">Mes Services</a>
@@ -30,7 +38,7 @@
     </nav>
   </header>
 
-  <!-- NOUVELLE SECTION HERO -->
+  <!-- SECTION HERO -->
   <section class="hero">
     <div class="hero-content">
       <h1>Révélez votre marque <br> au-delà des apparences</h1>
@@ -39,9 +47,7 @@
   </section>
 
   <main>
-    <!-- Les sections "A Propos" et "Mes Services" ont été enlevées -->
-
-    <!-- NOUVEAU CONTENU MES SERVICES -->
+    <!-- CONTENU MES SERVICES -->
     <section id="mes-services">
       <h2>Mes Services</h2>
       <div class="cards">
@@ -102,18 +108,9 @@
   <footer>
     <p>© 2025 Branding Service - Tous droits réservés</p>
   </footer>
-
-  <!-- JS pour afficher le back-to-top -->
-  <script>
-    const backToTopButton = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        backToTopButton.style.display = "block";
-      } else {
-        backToTopButton.style.display = "none";
-      }
-    });
-  </script>
+  
+  <!-- Lien vers le fichier JavaScript -->
+  <script src="script.js"></script>
 
 </body>
 </html>

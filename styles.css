@@ -40,6 +40,21 @@ section {
   text-align: center;
 }
 
+/* Nouvelles classes pour les sections */
+.section-light {
+    background-color: var(--background-light);
+    color: var(--text-dark);
+}
+
+.section-dark {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+}
+
+.section-dark h2, .section-dark h3, .section-dark p {
+    color: var(--text-light);
+}
+
 /* Titres */
 h1, h2, h3 {
   font-family: var(--font-heading);
@@ -129,7 +144,6 @@ h3 {
 
 /* Section Hero */
 .hero {
-  background: var(--background-light);
   text-align: center;
   padding: 150px 20px;
 }
@@ -154,7 +168,7 @@ h3 {
 }
 
 .card, .portfolio-item {
-  background: var(--white);
+  background: var(--text-light);
   border-radius: 15px;
   padding: 40px;
   width: 300px;
@@ -173,7 +187,7 @@ form {
   margin: auto;
   text-align: left;
   padding: 30px;
-  background: var(--white);
+  background: var(--text-light);
   border-radius: 15px;
   box-shadow: var(--shadow-subtle);
 }

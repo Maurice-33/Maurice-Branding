@@ -1,3 +1,8 @@
+/*
+  * Variables CSS personnalisées pour une gestion facile des couleurs et polices.
+  *
+  * Règle d'or : une variable pour chaque couleur, une seule pour chaque police.
+*/
 :root {
   --beige: #F5E9DF;
   --rose: #F2B8A0;

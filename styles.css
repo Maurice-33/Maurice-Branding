@@ -1,47 +1,91 @@
+/*
+ * Fichier de style principal combinant les styles de base
+ * et les styles de la page de tarifs.
+*/
+
 :root {
   --background-light: #F8F4F0;
   --background-dark: #2F2F2F;
-  --primary-color: #D97D6A;
-  --secondary-color: #6E5A51;
-  --tertiary-color: #B85C4C;
-  --text-dark: #3E3E3E;
+  --primary-color: #D97D6A; /* Terracotta */
+  --secondary-color: #6E5A51; /* Gris chaud */
+  --tertiary-color: #B85C4C; /* Terracotta foncé */
+  --text-dark: #3E3E3E; /* Mise à jour de la couleur du texte */
   --text-light: #F8F4F0;
-  --shadow-subtle: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  /* Dégradé unique pour toute la page */
+  --main-gradient: linear-gradient(180deg, #F8F4F0 0%, #E8DCCF 100%);
 
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
-  --main-gradient: linear-gradient(180deg, #F8F4F0 0%, #E8DCCF 100%);
 }
 
 body {
   font-family: var(--font-body);
-  background: var(--main-gradient);
+  background: var(--main-gradient); /* Applique le dégradé à tout le corps */
   color: var(--text-dark);
   line-height: 1.6;
-  margin: 0;
 }
 
-/* Reset */
+/* Réinitialisation de base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Header */
+/* Conteneur principal */
+main {
+  padding-bottom: 50px;
+}
+
+/* Sections */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Titres */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: var(--primary-color);
+}
+
+h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+/* Header et Navigation */
 .main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
+  background-color: transparent;
+  box-shadow: none;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
   position: fixed;
-  top: 0; left: 0; width: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
-  transition: background 0.3s, box-shadow 0.3s;
 }
 
 .main-header.scrolled {
-  background: white;
+  background-color: rgba(255, 255, 255, 0.95);
   box-shadow: var(--shadow-subtle);
 }
 
@@ -57,10 +101,10 @@ body {
 }
 
 .logo-icon {
-  width: 30px; height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
-/* Navigation */
 .btn-group {
   display: flex;
   gap: 25px;
@@ -72,188 +116,263 @@ body {
   border-radius: 50px;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-primary {
   background: var(--primary-color);
   color: var(--text-light);
+  border: 2px solid var(--primary-color);
 }
 
 .btn-primary:hover {
   background: var(--tertiary-color);
+  border-color: var(--tertiary-color);
   transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .btn-secondary {
+  background: transparent;
   color: var(--secondary-color);
+  border: 2px solid transparent;
 }
 
 .btn-secondary:hover {
   color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
-/* Hero */
-.hero {
-  padding: 150px 20px 100px;
-  text-align: center;
+/* Pricing Section */
+.pricing-section {
+    padding: 80px 20px;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  color: var(--text-dark);
+.title-pricing {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 60px;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  color: var(--secondary-color);
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-/* Section titres */
-h2 {
-  font-family: var(--font-heading);
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 40px;
+.pricing-card {
+    background-color: var(--background-light);
+    border-radius: 20px;
+    box-shadow: var(--shadow-subtle);
+    padding: 40px;
+    width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    position: relative;
+    border: 2px solid transparent; /* Pour l'effet de bordure du plan mis en avant */
 }
 
-/* Cards */
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.card {
-  background: var(--text-light);
-  border-radius: 15px;
-  padding: 40px;
-  width: 300px;
-  box-shadow: var(--shadow-subtle);
-  transition: transform 0.3s, box-shadow 0.3s;
+.featured-plan {
+    border-color: var(--primary-color);
+    transform: scale(1.05); /* Met en avant le plan populaire */
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+.featured-plan:hover {
+    transform: translateY(-10px) scale(1.05);
 }
 
-/* Formulaire */
-form {
-  max-width: 600px;
-  margin: auto;
-  background: var(--text-light);
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: var(--shadow-subtle);
-  text-align: left;
+.featured-badge {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: var(--shadow-subtle);
 }
 
-form div {
-  margin-bottom: 20px;
+.plan-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--tertiary-color);
+    margin-bottom: 10px;
 }
 
-label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 500;
+.plan-price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
 }
 
-input, textarea, select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+.plan-price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-dark);
 }
 
-input:focus, textarea:focus, select:focus {
-  border-color: var(--primary-color);
-  outline: none;
+.plan-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.plan-features li svg {
+    color: var(--primary-color);
+}
+
+.pricing-card .btn-primary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
 }
 
 /* Footer */
 footer {
-  background: var(--background-dark);
+  background-color: var(--background-dark);
   color: var(--text-light);
   text-align: center;
   padding: 30px;
 }
 
-/* Back to top */
+/* Bouton "Retour en haut" */
 .back-to-top {
   position: fixed;
   bottom: 30px;
   right: 30px;
   background: var(--primary-color);
-  color: white;
+  color: var(--text-light);
   padding: 12px 16px;
   border-radius: 50%;
   font-size: 24px;
+  text-align: center;
+  text-decoration: none;
   display: none;
-  transition: 0.3s;
+  z-index: 1000;
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .back-to-top:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* Menu hamburger */
+/* Défilement fluide */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Styles du menu mobile (bouton hamburger et menu) */
 .hamburger-menu {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
-  cursor: pointer;
+    display: none; /* Masqué par défaut sur les grands écrans */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
 }
 
 .hamburger-menu span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: var(--primary-color);
-  transition: 0.3s;
-}
-
-.hamburger-menu.is-active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px,5px);
-}
-.hamburger-menu.is-active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger-menu.is-active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px,-6px);
-}
-
-/* Responsive */
-@media(max-width:768px){
-  .btn-group {
-    display: none;
-    flex-direction: column;
-    background: white;
-    position: absolute;
-    top: 70px; left: 0;
+    display: block;
     width: 100%;
-    box-shadow: var(--shadow-subtle);
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Styles pour la transformation du hamburger en "X" */
+.hamburger-menu.is-active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.is-active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Requêtes média pour le design responsive */
+@media screen and (max-width: 768px) {
+  .main-header {
+    padding: 20px;
+  }
+  
+  .btn-group {
+    display: none; /* Masquer les boutons par défaut sur mobile */
+  }
+
+  .hamburger-menu {
+    display: flex; /* Afficher le bouton hamburger sur mobile */
+  }
+  
+  .main-header {
+    position: relative;
   }
 
   .btn-group.is-open {
-    display: flex;
+    display: flex; /* Afficher le menu lorsque le hamburger est actif */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-light);
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: var(--shadow-subtle);
   }
 
-  .btn-group a {
-    padding: 15px;
+  .btn-group.is-open a {
+    padding: 15px 20px;
+    width: 100%;
     border-bottom: 1px solid #eee;
     text-align: center;
   }
 
-  .hamburger-menu {
-    display: flex;
+  .btn-group.is-open a:last-child {
+    border-bottom: none;
   }
 
-  .hero h1 {
-    font-size: 2.2rem;
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .title-pricing {
+      font-size: 2rem;
+      margin-bottom: 30px;
+  }
+
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing-card {
+    width: 95%;
+    padding: 25px;
   }
 }

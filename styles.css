@@ -1,17 +1,17 @@
 /*
- * Variables CSS personnalisées pour un look plus professionnel et soigné.
+ * Custom CSS variables for a professional and polished look.
 */
 :root {
   --background-light: #F8F4F0;
   --background-dark: #2F2F2F;
-  --primary-color: #bc7870; /* Terracotta */
-  --secondary-color: #6E5A51; /* Gris chaud */
-  --tertiary-color: #B85C4C; /* Terracotta foncé */
-  --text-dark: #57423f;
+  --primary-color: #D97D6A; /* Terracotta */
+  --secondary-color: #6E5A51; /* Warm Gray */
+  --tertiary-color: #B85C4C; /* Darker Terracotta */
+  --text-dark: #57423f; /* Updated text color */
   --text-light: #F8F4F0;
   --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
 
-  /* Dégradé unique pour toute la page */
+  /* Unique gradient for the entire page */
   --main-gradient: linear-gradient(180deg, #F8F4F0 0%, #E8DCCF 100%);
 
   --font-heading: 'Poppins', sans-serif;
@@ -20,19 +20,19 @@
 
 body {
   font-family: var(--font-body);
-  background-image: var(--main-gradient); /* Applique le dégradé à tout le corps */
+  background-image: var(--main-gradient); /* Apply the gradient to the body */
   color: var(--text-dark);
   line-height: 1.6;
 }
 
-/* Réinitialisation de base */
+/* Base reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Conteneur principal */
+/* Main container */
 main {
   padding-bottom: 50px;
 }
@@ -43,13 +43,12 @@ section {
   text-align: center;
 }
 
-/* Suppression des anciennes classes de dégradé pour uniformiser le fond */
+/* Remove old gradient classes for uniform background */
 .hero, .section-gradient-1, .section-gradient-2, .section-gradient-3 {
   background-image: none;
 }
 
-
-/* Titres */
+/* Headings */
 h1, h2, h3 {
   font-family: var(--font-heading);
 }
@@ -57,7 +56,7 @@ h1, h2, h3 {
 h1 {
   font-size: 3.5rem;
   margin-bottom: 20px;
-  color: #57423f;
+  color: var(--primary-color);
 }
 
 h2 {
@@ -72,7 +71,7 @@ h3 {
   font-size: 1.5rem;
 }
 
-/* Header et Navigation */
+/* Header and Navigation */
 .main-header {
   display: flex;
   justify-content: space-between;
@@ -91,7 +90,7 @@ h3 {
   z-index: 1000;
 }
 
-/* En-tête qui devient blanc au défilement */
+/* Header that turns white on scroll */
 .main-header.scrolled {
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: var(--shadow-subtle);
@@ -151,90 +150,110 @@ h3 {
   transform: translateY(-2px);
 }
 
-/* Séparateur en forme d'arche */
-.section-separator {
-    height: 100px;
-    position: relative;
-    overflow: hidden;
+/* Pricing Section */
+.pricing-section {
+    padding: 80px 20px;
 }
 
-.section-separator::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200%; /* Permet une courbe plus grande et plus lisse */
-    height: 200px;
+.title-pricing {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 60px;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
     background-color: var(--background-light);
-    border-radius: 50% 50% 0 0;
+    border-radius: 20px;
+    box-shadow: var(--shadow-subtle);
+    padding: 40px;
+    width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    position: relative;
+    border: 2px solid transparent; /* For featured plan border effect */
 }
 
-.section-separator-top::before {
-    top: -150px; /* Ajustement pour la position */
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.section-separator-bottom::before {
-    bottom: -150px;
-    transform: translateX(-50%) rotate(180deg);
+.featured-plan {
+    border-color: var(--primary-color);
+    transform: scale(1.05); /* Highlight the featured plan */
 }
 
-/* Cartes de services et de portfolio */
-.cards, .portfolio-grid {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+.featured-plan:hover {
+    transform: translateY(-10px) scale(1.05);
 }
 
-.card, .portfolio-item {
-  background: var(--text-light);
-  border-radius: 15px;
-  padding: 40px;
-  width: 300px;
-  box-shadow: var(--shadow-subtle);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.featured-badge {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: var(--shadow-subtle);
 }
 
-.card:hover, .portfolio-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+.plan-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--tertiary-color);
+    margin-bottom: 10px;
 }
 
-/* Formulaire de contact */
-form {
-  max-width: 600px;
-  margin: auto;
-  text-align: left;
-  padding: 30px;
-  background: var(--text-light);
-  border-radius: 15px;
-  box-shadow: var(--shadow-subtle);
+.plan-price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
 }
 
-form div {
-  margin-bottom: 20px;
+.plan-price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-dark);
 }
 
-input, textarea, select {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-family: var(--font-body);
+.plan-features {
+    list-style: none;
+    margin-bottom: 30px;
 }
 
-input:focus, textarea:focus, select:focus {
-  border-color: var(--primary-color);
-  outline: none;
+.plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--text-dark);
 }
 
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
+.plan-features li svg {
+    color: var(--primary-color);
 }
 
-/* Pied de page (Footer) */
+.pricing-card .btn-primary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Footer */
 footer {
   background-color: var(--background-dark);
   color: var(--text-light);
@@ -242,7 +261,7 @@ footer {
   padding: 30px;
 }
 
-/* Bouton pour remonter en haut de la page */
+/* Back to Top Button */
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -265,14 +284,14 @@ footer {
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* Scroll fluide */
+/* Fluid scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* Styles pour le menu mobile (Bouton hamburger et menu) */
+/* Mobile menu styles (hamburger button and menu) */
 .hamburger-menu {
-    display: none; /* Caché par défaut sur les grands écrans */
+    display: none; /* Hidden by default on large screens */
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -288,7 +307,7 @@ html {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Styles pour la transformation du hamburger en "X" */
+/* Styles for hamburger to "X" transformation */
 .hamburger-menu.is-active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
@@ -301,18 +320,18 @@ html {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Media Queries pour le design responsive */
+/* Media Queries for responsive design */
 @media screen and (max-width: 768px) {
   .main-header {
     padding: 20px;
   }
   
   .btn-group {
-    display: none; /* Cache les boutons par défaut sur mobile */
+    display: none; /* Hide buttons by default on mobile */
   }
 
   .hamburger-menu {
-    display: flex; /* Affiche le bouton hamburger sur mobile */
+    display: flex; /* Show hamburger button on mobile */
   }
   
   .main-header {
@@ -320,7 +339,7 @@ html {
   }
 
   .btn-group.is-open {
-    display: flex; /* Affiche le menu lorsque le hamburger est actif */
+    display: flex; /* Show the menu when the hamburger is active */
     position: absolute;
     top: 100%;
     left: 0;
@@ -342,54 +361,25 @@ html {
     border-bottom: none;
   }
 
-  .hero {
-    padding: 100px 20px;
-  }
-
   h1 {
     font-size: 2.5rem;
   }
   h2 {
     font-size: 2rem;
   }
+  
+  .title-pricing {
+      font-size: 2rem;
+      margin-bottom: 30px;
+  }
 
-  .cards, .portfolio-grid {
+  .pricing-cards {
     flex-direction: column;
     align-items: center;
   }
 
-  .card, .portfolio-item {
+  .pricing-card {
     width: 95%;
     padding: 25px;
   }
-}
-
-/* Styles pour la boîte de message personnalisée */
-.message-box {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-}
-
-.message-content {
-    background-color: var(--background-light);
-    color: var(--text-dark);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: var(--shadow-subtle);
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-}
-
-.message-content p {
-    font-size: 1.1rem;
-    margin-bottom: 25px;
 }

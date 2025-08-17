@@ -1,99 +1,475 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beyond.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <style>
-    <!-- Lien vers le fichier CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <!-- Liens pour les polices Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /*
+     * Variables CSS personnalisées pour un look plus professionnel et soigné.
+    */
+    :root {
+      --background-light: #F8F4F0;
+      --background-dark: #2F2F2F;
+      --primary-color: #D97D6A; /* Terracotta */
+      --secondary-color: #6E5A51; /* Gris chaud */
+      --tertiary-color: #B85C4C; /* Terracotta foncé */
+      --text-dark: #3E3E3E;
+      --text-light: #F8F4F0;
+      --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--background-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Réinitialisation de base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Conteneur principal */
+    main {
+      padding-bottom: 50px;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    /* Titres */
+    h1, h2, h3 {
+      font-family: var(--font-heading);
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: var(--text-dark);
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: var(--primary-color);
+    }
+
+    h3 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    /* Header et Navigation */
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: var(--background-light);
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+      padding: 12px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn-primary {
+      background: var(--primary-color);
+      color: var(--text-light);
+      border: 2px solid var(--primary-color);
+    }
+
+    .btn-primary:hover {
+      background: var(--tertiary-color);
+      border-color: var(--tertiary-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--secondary-color);
+      border: 2px solid transparent;
+    }
+
+    .btn-secondary:hover {
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    /* Section Hero */
+    .hero {
+      background: var(--background-light);
+      text-align: center;
+      padding: 150px 20px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero-content p {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+      color: var(--secondary-color);
+    }
+
+    /* Cartes de services et de portfolio */
+    .cards, .portfolio-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card, .portfolio-item {
+      background: var(--white);
+      border-radius: 15px;
+      padding: 40px;
+      width: 300px;
+      box-shadow: var(--shadow-subtle);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card:hover, .portfolio-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Formulaire de contact */
+    form {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
+      padding: 30px;
+      background: var(--white);
+      border-radius: 15px;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    form div {
+      margin-bottom: 20px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: var(--font-body);
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--primary-color);
+      outline: none;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    /* Pied de page (Footer) */
+    footer {
+      background-color: var(--background-dark);
+      color: var(--text-light);
+      text-align: center;
+      padding: 30px;
+    }
+
+    /* Bouton pour remonter en haut de la page */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--primary-color);
+      color: var(--text-light);
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 24px;
+      text-align: center;
+      text-decoration: none;
+      display: none;
+      z-index: 1000;
+      box-shadow: var(--shadow-subtle);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Scroll fluide */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Styles pour le menu mobile (Bouton hamburger et menu) */
+    .hamburger-menu {
+        display: none; /* Caché par défaut sur les grands écrans */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        cursor: pointer;
+    }
+
+    .hamburger-menu span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary-color);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Styles pour la transformation du hamburger en "X" */
+    .hamburger-menu.is-active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger-menu.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.is-active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Media Queries pour le design responsive */
+    @media screen and (max-width: 768px) {
+      .main-header {
+        padding: 20px;
+      }
+      
+      .btn-group {
+        display: none; /* Cache les boutons par défaut sur mobile */
+      }
+
+      .hamburger-menu {
+        display: flex; /* Affiche le bouton hamburger sur mobile */
+      }
+      
+      .main-header {
+        position: relative;
+      }
+
+      .btn-group.is-open {
+        display: flex; /* Affiche le menu lorsque le hamburger est actif */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--background-light);
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: var(--shadow-subtle);
+      }
+
+      .btn-group.is-open a {
+        padding: 15px 20px;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        text-align: center;
+      }
+
+      .btn-group.is-open a:last-child {
+        border-bottom: none;
+      }
+
+      .hero {
+        padding: 100px 20px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+
+      .cards, .portfolio-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card, .portfolio-item {
+        width: 95%;
+        padding: 25px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="main-header" id="main-header">
-        <a href="index.html" class="logo">
-            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 17.93V14h-2v5.93a8 8 0 010-15.86V10h2V4.07a8 8 0 010 15.86z"/>
-            </svg>
-            Votre Marque
-        </a>
-        
-        <!-- Menu Desktop -->
-        <nav class="btn-group" id="site-nav">
-            <!-- La section "A Propos" a été supprimée, donc le lien est retiré -->
-            <a href="#mes-services" class="btn-secondary">Mes Services</a>
-            <a href="portfolio.html" class="btn-secondary">Portfolio</a>
-            <a href="tarifs.html" class="btn-secondary">Tarifs</a>
-            <a href="#contact" class="btn-primary">Me contacter</a>
-        </nav>
+  <!-- Ancre en haut -->
+  <a id="top" href="#top"></a>
 
-        <!-- Menu Mobile -->
-        <div class="hamburger-menu" id="hamburger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
-
-    <main>
-        <!-- La Section "A Propos" a été supprimée -->
-        
-        <!-- Section Mes Services -->
-        <section id="mes-services" class="services-section">
-            <div class="container">
-                <h2 class="section-title">Mes Services</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="service-icon lucide lucide-paintbrush"><path d="M18.3 8.3a2.12 2.12 0 1 1 2.99 2.99L7.01 22A2.12 2.12 0 0 1 5.57 22L2 18.43a2.12 2.12 0 0 1 0-2.99z"/><path d="M15 5l-8.5 8.5"/><path d="M17 12l-5.5 5.5"/><path d="M21 9l-5.5 5.5"/><path d="M17.5 3.5l3 3"/></svg>
-                        <h3 class="service-title">Identité Visuelle</h3>
-                        <p class="service-description">
-                            Création de logos, palettes de couleurs et typographies qui reflètent l'essence de votre marque.
-                        </p>
-                    </div>
-                    <div class="service-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="service-icon lucide lucide-monitor-dot"><circle cx="12" cy="12" r="1"/><path d="M19 19H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2z"/></svg>
-                        <h3 class="service-title">Web Design</h3>
-                        <p class="service-description">
-                            Conception de sites web intuitifs et esthétiques, optimisés pour tous les appareils.
-                        </p>
-                    </div>
-                    <div class="service-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="service-icon lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.4L15.6 2.4A2 2 0 0 0 15 2z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
-                        <h3 class="service-title">Illustrations</h3>
-                        <p class="service-description">
-                            Création d'illustrations personnalisées pour vos publications, sites web ou supports de communication.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Contact -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2 class="section-title">Me Contacter</h2>
-                <a href="#contact" class="btn-primary large-button">Discutons de votre projet</a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Votre Marque. Tous droits réservés.</p>
-    </footer>
-
-    <!-- Bouton "Retour en haut" -->
-    <a href="#top" class="back-to-top" id="back-to-top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-circle"><circle cx="12" cy="12" r="10"/><path d="m12 16-4-4m4 4 4-4m-4 4V8"/></svg>
+  <!-- HEADER -->
+  <header class="main-header" id="main-header">
+    <a href="index.html" class="logo">
+      <!-- Logo SVG de l'octogone -->
+      <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.875 1.767l-8.625 4.976a2 2 0 0 0-1 1.732v9.95a2 2 0 0 0 1 1.732l8.625 4.976a2 2 0 0 0 2 0l8.625-4.976a2 2 0 0 0 1-1.732v-9.95a2 2 0 0 0-1-1.732L12.875 1.767a2 2 0 0 0-2 0z"/>
+      </svg>
+      Beyond.
     </a>
+    
+    <!-- Bouton Hamburger pour mobile -->
+    <div class="hamburger-menu" id="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-    <!-- Lien vers le fichier JavaScript -->
-    <script src="script.js" defer></script>
+    <nav class="btn-group" id="site-nav">
+      <a href="#mes-services" class="btn-secondary">Mes Services</a>
+      <a href="portfolio.html" class="btn-secondary">Portfolio</a>
+      <a href="tarifs.html" class="btn-secondary">Tarifs</a>
+      <a href="#contact" class="btn-primary">Me contacter</a>
+    </nav>
+  </header>
+
+  <!-- NOUVELLE SECTION HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Révélez votre marque <br> au-delà des apparences</h1>
+      <p>Logo • Identité visuelle • Supports de communication</p>
+    </div>
+  </section>
+
+  <main>
+    <!-- Les sections "A Propos" et "Mes Services" ont été enlevées -->
+
+    <!-- NOUVEAU CONTENU MES SERVICES -->
+    <section id="mes-services">
+      <h2>Mes Services</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Logo & Identité</h3>
+          <p>Création de logos uniques et d’une identité visuelle cohérente.</p>
+        </div>
+        <div class="card">
+          <h3>Charte Graphique</h3>
+          <p>Définition de couleurs, typographies et éléments graphiques.</p>
+        </div>
+        <div class="card">
+          <h3>Supports Marketing</h3>
+          <p>Flyers, bannières et réseaux sociaux pour un branding complet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contactez-moi</h2>
+      <form action="#" method="post">
+        <div>
+          <label for="name">Votre nom :</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom" required>
+        </div>
+
+        <div>
+          <label for="email">Votre email :</label>
+          <input type="email" id="email" name="email" placeholder="Votre email" required>
+        </div>
+
+        <div>
+          <label for="service">Type de demande :</label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Choisissez une option</option>
+            <option value="branding">Branding</option>
+            <option value="logo">Création de logo</option>
+            <option value="web">Site web</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message">Message :</label>
+          <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Bouton remonter en haut -->
+  <a href="#top" class="back-to-top" id="backToTop">&#8679;</a>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Branding Service - Tous droits réservés</p>
+  </footer>
+
+  <!-- JS pour afficher le back-to-top -->
+  <script>
+    // Script pour le bouton "remonter en haut"
+    const backToTopButton = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    });
+
+    // Script pour le menu hamburger
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navMenu = document.querySelector('.btn-group');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('is-active');
+        navMenu.classList.toggle('is-open');
+    });
+
+    // Ferme le menu si un lien est cliqué
+    navMenu.addEventListener('click', () => {
+        hamburger.classList.remove('is-active');
+        navMenu.classList.remove('is-open');
+    });
+  </script>
+
 </body>
 </html>

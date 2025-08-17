@@ -1,28 +1,92 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs - Révélez Votre Marque</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Main Header -->
+    <header class="main-header" id="main-header">
+        <a href="#" class="logo">
+            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 17.93V14h-2v5.93a8 8 0 010-15.86V10h2V4.07a8 8 0 010 15.86z"/>
+            </svg>
+            Votre Marque
+        </a>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="btn-group" id="nav-buttons">
+            <a href="#" class="btn-secondary">Accueil</a>
+            <a href="#" class="btn-secondary">Services</a>
+            <a href="#" class="btn-primary">Contact</a>
+        </div>
+    </header>
 
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Mon Portfolio</h1>
-      <p>Découvrez mes projets récents</p>
-      <a href="index.html" class="btn-secondary">⬅ Retour</a>
-    </div>
-  </header>
+    <main>
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <h2 class="title-pricing">Trouvez le plan parfait pour votre entreprise</h2>
+            <div class="pricing-cards">
+                <!-- Basic Plan Card -->
+                <div class="pricing-card">
+                    <h3 class="plan-title">Plan Basique</h3>
+                    <p class="plan-price">€499<span>/projet</span></p>
+                    <ul class="plan-features">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Identité visuelle</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Palette de couleurs</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-circle"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>Stratégie de marque</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-circle"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>Guide de style complet</li>
+                    </ul>
+                    <a href="#" class="btn-primary">Choisir ce plan</a>
+                </div>
 
-  <section id="portfolio">
-    <div class="portfolio-grid">
-      <div class="portfolio-item">Projet 1</div>
-      <div class="portfolio-item">Projet 2</div>
-      <div class="portfolio-item">Projet 3</div>
-    </div>
-  </section>
+                <!-- Pro Plan Card (Featured) -->
+                <div class="pricing-card featured-plan">
+                    <div class="featured-badge">Populaire</div>
+                    <h3 class="plan-title">Plan Pro</h3>
+                    <p class="plan-price">€1299<span>/projet</span></p>
+                    <ul class="plan-features">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Tout du plan Basique</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Stratégie de marque</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Guide de style complet</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Assistance prioritaire</li>
+                    </ul>
+                    <a href="#" class="btn-primary">Choisir ce plan</a>
+                </div>
 
+                <!-- Premium Plan Card -->
+                <div class="pricing-card">
+                    <h3 class="plan-title">Plan Entreprise</h3>
+                    <p class="plan-price">Contactez-nous</p>
+                    <ul class="plan-features">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Tout du plan Pro</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Consultation personnalisée</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Design de supports print</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide luc-de-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Révisions illimitées</li>
+                    </ul>
+                    <a href="#" class="btn-primary">Contactez-nous</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Révélez Votre Marque. Tous droits réservés.</p>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <a href="#top" class="back-to-top" id="back-to-top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-circle"><circle cx="12" cy="12" r="10"/><path d="m12 16-4-4m4 4 4-4m-4 4V8"/></svg>
+        </a>
+    </main>
 </body>
 </html>

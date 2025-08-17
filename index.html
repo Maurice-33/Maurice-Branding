@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Votre Marque</title>
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Liens pour les polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header" id="main-header">
+        <a href="index.html" class="logo">
+            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 17.93V14h-2v5.93a8 8 0 010-15.86V10h2V4.07a8 8 0 010 15.86z"/>
+            </svg>
+            Votre Marque
+        </a>
+        
+        <!-- Menu Desktop -->
+        <nav class="btn-group" id="site-nav">
+            <!-- La section "A Propos" a été supprimée, donc le lien est retiré -->
+            <a href="#mes-services" class="btn-secondary">Mes Services</a>
+            <a href="portfolio.html" class="btn-secondary">Portfolio</a>
+            <a href="tarifs.html" class="btn-secondary">Tarifs</a>
+            <a href="#contact" class="btn-primary">Me contacter</a>
+        </nav>
+
+        <!-- Menu Mobile -->
+        <div class="hamburger-menu" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <!-- La Section "A Propos" a été supprimée -->
+        
+        <!-- Section Mes Services -->
+        <section id="mes-services" class="services-section">
+            <div class="container">
+                <h2 class="section-title">Mes Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="service-icon lucide lucide-paintbrush"><path d="M18.3 8.3a2.12 2.12 0 1 1 2.99 2.99L7.01 22A2.12 2.12 0 0 1 5.57 22L2 18.43a2.12 2.12 0 0 1 0-2.99z"/><path d="M15 5l-8.5 8.5"/><path d="M17 12l-5.5 5.5"/><path d="M21 9l-5.5 5.5"/><path d="M17.5 3.5l3 3"/></svg>
+                        <h3 class="service-title">Identité Visuelle</h3>
+                        <p class="service-description">
+                            Création de logos, palettes de couleurs et typographies qui reflètent l'essence de votre marque.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="service-icon lucide lucide-monitor-dot"><circle cx="12" cy="12" r="1"/><path d="M19 19H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2z"/></svg>
+                        <h3 class="service-title">Web Design</h3>
+                        <p class="service-description">
+                            Conception de sites web intuitifs et esthétiques, optimisés pour tous les appareils.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="service-icon lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.4L15.6 2.4A2 2 0 0 0 15 2z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                        <h3 class="service-title">Illustrations</h3>
+                        <p class="service-description">
+                            Création d'illustrations personnalisées pour vos publications, sites web ou supports de communication.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Me Contacter</h2>
+                <a href="#contact" class="btn-primary large-button">Discutons de votre projet</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Votre Marque. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Bouton "Retour en haut" -->
+    <a href="#top" class="back-to-top" id="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-circle"><circle cx="12" cy="12" r="10"/><path d="m12 16-4-4m4 4 4-4m-4 4V8"/></svg>
+    </a>
+
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+</html>

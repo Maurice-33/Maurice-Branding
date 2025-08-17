@@ -77,8 +77,17 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 50px;
-      background-color: var(--background-light);
-      box-shadow: var(--shadow-subtle);
+      background-color: transparent; /* Initialement transparent */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      position: sticky; /* Reste en haut de la page */
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Styles pour le header lorsqu'il défile */
+    .main-header.scrolled {
+      background-color: var(--background-light); /* Devient blanc */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
     }
 
     .logo {
@@ -363,10 +372,10 @@
     </div>
 
     <nav class="btn-group" id="site-nav">
-      <a href="#mes-services" class="btn-secondary">Mes Services</a>
+      <a href="index.html#mes-services" class="btn-secondary">Mes Services</a>
       <a href="portfolio.html" class="btn-secondary">Portfolio</a>
-      <a href="tarif.html" class="btn-secondary">Tarifs</a>
-      <a href="#contact" class="btn-primary">Me contacter</a>
+      <a href="tarifs.html" class="btn-secondary">Tarifs</a>
+      <a href="index.html#contact" class="btn-primary">Me contacter</a>
     </nav>
   </header>
 
@@ -443,14 +452,18 @@
     <p>© 2025 Branding Service - Tous droits réservés</p>
   </footer>
 
-  <!-- JS pour afficher le back-to-top -->
+  <!-- JS pour la barre de navigation et le bouton "remonter en haut" -->
   <script>
-    // Script pour le bouton "remonter en haut"
+    // Ajoute la classe 'scrolled' au header lorsque l'on défile
+    const header = document.getElementById('main-header');
     const backToTopButton = document.getElementById("backToTop");
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
+      // Si le défilement dépasse 50 pixels
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
         backToTopButton.style.display = "block";
       } else {
+        header.classList.remove('scrolled');
         backToTopButton.style.display = "none";
       }
     });

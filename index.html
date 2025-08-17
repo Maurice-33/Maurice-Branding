@@ -1,130 +1,92 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beyond.</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs - Révélez Votre Marque</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- Ancre en haut pour le bouton "Remonter en haut" -->
-  <a id="top" href="#top"></a>
-
-  <!-- HEADER fixe -->
-  <header class="main-header fixed-header">
-    <a href="#" class="logo">
-      <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 0 L100 25 L100 75 L50 100 L0 75 L0 25 Z" fill="var(--primary-color)"/>
-          <path d="M50 10 L90 30 L90 70 L50 90 L10 70 L10 30 Z" fill="var(--background-light)"/>
-      </svg>
-      Beyond.
-    </a>
-    
-    <!-- Bouton Hamburger pour mobile -->
-    <div class="hamburger-menu" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-    <nav class="btn-group" id="site-nav">
-      <a href="#apropos" class="btn-secondary">A Propos</a>
-      <a href="#mes-services" class="btn-secondary">Mes Services</a>
-      <a href="portfolio.html" class="btn-secondary">Portfolio</a>
-      <a href="tarifs.html" class="btn-secondary">Tarifs</a>
-      <a href="#contact" class="btn-primary">Me contacter</a>
-    </nav>
-  </header>
-
-  <!-- SECTION HERO -->
-  <section class="hero section-gradient-1">
-    <div class="hero-content">
-      <h1>Révélez votre marque <br> au-delà des apparences</h1>
-      <p>Logo • Identité visuelle • Supports de communication</p>
-    </div>
-  </section>
-
-  <main>
-    <!-- Séparateur en forme d'arche -->
-    <div class="section-separator section-separator-top"></div>
-
-    <!-- CONTENU MES SERVICES -->
-    <section id="mes-services">
-      <h2>Mes Services</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Logo & Identité</h3>
-          <p>Création de logos uniques et d’une identité visuelle cohérente.</p>
+    <!-- Main Header -->
+    <header class="main-header" id="main-header">
+        <a href="index.html" class="logo">
+            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 17.93V14h-2v5.93a8 8 0 010-15.86V10h2V4.07a8 8 0 010 15.86z"/>
+            </svg>
+            Votre Marque
+        </a>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <div class="card">
-          <h3>Charte Graphique</h3>
-          <p>Définition de couleurs, typographies et éléments graphiques.</p>
+        <div class="btn-group" id="nav-buttons">
+            <a href="index.html" class="btn-secondary">Accueil</a>
+            <a href="#" class="btn-secondary">Services</a>
+            <a href="#" class="btn-primary">Contact</a>
         </div>
-        <div class="card">
-          <h3>Supports Marketing</h3>
-          <p>Flyers, bannières et réseaux sociaux pour un branding complet.</p>
-        </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- Séparateur en forme d'arche inversé -->
-    <div class="section-separator section-separator-bottom"></div>
+    <main>
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <h2 class="title-pricing">Trouvez le plan parfait pour votre entreprise</h2>
+            <div class="pricing-cards">
+                <!-- Basic Plan Card -->
+                <div class="pricing-card">
+                    <h3 class="plan-title">Plan Basique</h3>
+                    <p class="plan-price">€499<span>/projet</span></p>
+                    <ul class="plan-features">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Identité visuelle</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Palette de couleurs</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-circle"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>Stratégie de marque</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-circle"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>Guide de style complet</li>
+                    </ul>
+                    <a href="#" class="btn-primary">Choisir ce plan</a>
+                </div>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contactez-moi</h2>
-      <form id="contact-form" action="#" method="post">
-        <div>
-          <label for="name">Votre nom :</label>
-          <input type="text" id="name" name="name" placeholder="Votre nom" required>
-        </div>
+                <!-- Pro Plan Card (Featured) -->
+                <div class="pricing-card featured-plan">
+                    <div class="featured-badge">Populaire</div>
+                    <h3 class="plan-title">Plan Pro</h3>
+                    <p class="plan-price">€1299<span>/projet</span></p>
+                    <ul class="plan-features">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Tout du plan Basique</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Stratégie de marque</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Guide de style complet</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Assistance prioritaire</li>
+                    </ul>
+                    <a href="#" class="btn-primary">Choisir ce plan</a>
+                </div>
 
-        <div>
-          <label for="email">Votre email :</label>
-          <input type="email" id="email" name="email" placeholder="Votre email" required>
-        </div>
+                <!-- Premium Plan Card -->
+                <div class="pricing-card">
+                    <h3 class="plan-title">Plan Entreprise</h3>
+                    <p class="plan-price">Contactez-nous</p>
+                    <ul class="plan-features">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Tout du plan Pro</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Consultation personnalisée</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Design de supports print</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Révisions illimitées</li>
+                    </ul>
+                    <a href="#" class="btn-primary">Contactez-nous</a>
+                </div>
+            </div>
+        </section>
 
-        <div>
-          <label for="service">Type de demande :</label>
-          <select id="service" name="service" required>
-            <option value="" disabled selected>Choisissez une option</option>
-            <option value="branding">Branding</option>
-            <option value="logo">Création de logo</option>
-            <option value="web">Site web</option>
-            <option value="autre">Autre</option>
-          </select>
-        </div>
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Révélez Votre Marque. Tous droits réservés.</p>
+        </footer>
 
-        <div>
-          <label for="message">Message :</label>
-          <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
-        </div>
-
-        <button type="submit" class="btn-primary">Envoyer</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- Bouton remonter en haut -->
-  <a href="#top" class="back-to-top" id="backToTop">&#8679;</a>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Branding Service - Tous droits réservés</p>
-  </footer>
-  
-  <!-- Conteneur pour la boîte de message personnalisée -->
-  <div id="message-box" class="message-box">
-    <div class="message-content">
-      <p id="message-text"></p>
-      <button id="close-message" class="btn-primary">OK</button>
-    </div>
-  </div>
-  
-  <!-- Lien vers le fichier JavaScript -->
-  <script src="script.js"></script>
-
+        <!-- Back to Top Button -->
+        <a href="#top" class="back-to-top" id="back-to-top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-circle"><circle cx="12" cy="12" r="10"/><path d="m12 16-4-4m4 4 4-4m-4 4V8"/></svg>
+        </a>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>

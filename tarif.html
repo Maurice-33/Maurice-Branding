@@ -48,6 +48,25 @@
       text-align: center;
     }
 
+    /* Header et Navigation */
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: transparent; /* Initialement transparent */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      position: sticky; /* Reste en haut de la page */
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Styles pour le header lorsqu'il défile */
+    .main-header.scrolled {
+      background-color: var(--background-light); /* Devient blanc */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
+    }
+
     /* Titres */
     h1, h2, h3 {
       font-family: var(--font-heading);

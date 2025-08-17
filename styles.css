@@ -1,5 +1,5 @@
 /*
- * Variables CSS personnalisées
+ * Variables CSS personnalisées pour un look plus professionnel et soigné.
 */
 :root {
   --background-light: #F8F4F0;
@@ -11,7 +11,7 @@
   --text-light: #F8F4F0;
   --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
 
-  /* Dégradé unique */
+  /* Dégradé unique pour toute la page */
   --main-gradient: linear-gradient(180deg, #F8F4F0 0%, #E8DCCF 100%);
 
   --font-heading: 'Poppins', sans-serif;
@@ -20,18 +20,21 @@
 
 body {
   font-family: var(--font-body);
-  background-image: var(--main-gradient);
+  background-image: var(--main-gradient); /* Applique le dégradé à tout le corps */
   color: var(--text-dark);
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
 }
 
-/* Reset */
+/* Réinitialisation de base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Conteneur principal */
+main {
+  padding-bottom: 50px;
 }
 
 /* Sections */
@@ -40,10 +43,11 @@ section {
   text-align: center;
 }
 
-/* Hero et autres sections */
+/* Suppression des anciennes classes de dégradé pour uniformiser le fond */
 .hero, .section-gradient-1, .section-gradient-2, .section-gradient-3 {
   background-image: none;
 }
+
 
 /* Titres */
 h1, h2, h3 {
@@ -68,13 +72,14 @@ h3 {
   font-size: 1.5rem;
 }
 
-/* Header et navigation */
+/* Header et Navigation */
 .main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
   background-color: transparent;
+  box-shadow: none;
   transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -86,6 +91,7 @@ h3 {
   z-index: 1000;
 }
 
+/* En-tête qui devient blanc au défilement */
 .main-header.scrolled {
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: var(--shadow-subtle);
@@ -145,34 +151,34 @@ h3 {
   transform: translateY(-2px);
 }
 
-/* Séparateur arrondi */
+/* Séparateur en forme d'arche */
 .section-separator {
-  height: 100px;
-  position: relative;
-  overflow: hidden;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
 }
 
 .section-separator::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200%;
-  height: 200px;
-  background-color: var(--background-light);
-  border-radius: 50% 50% 0 0;
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200%; /* Permet une courbe plus grande et plus lisse */
+    height: 200px;
+    background-color: var(--background-light);
+    border-radius: 50% 50% 0 0;
 }
 
 .section-separator-top::before {
-  top: -150px;
+    top: -150px; /* Ajustement pour la position */
 }
 
 .section-separator-bottom::before {
-  bottom: -150px;
-  transform: translateX(-50%) rotate(180deg);
+    bottom: -150px;
+    transform: translateX(-50%) rotate(180deg);
 }
 
-/* Cartes */
+/* Cartes de services et de portfolio */
 .cards, .portfolio-grid {
   display: flex;
   justify-content: center;
@@ -194,7 +200,7 @@ h3 {
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Formulaire */
+/* Formulaire de contact */
 form {
   max-width: 600px;
   margin: auto;
@@ -228,7 +234,7 @@ label {
   font-weight: 500;
 }
 
-/* Footer */
+/* Pied de page (Footer) */
 footer {
   background-color: var(--background-dark);
   color: var(--text-light);
@@ -236,7 +242,7 @@ footer {
   padding: 30px;
 }
 
-/* Bouton retour haut */
+/* Bouton pour remonter en haut de la page */
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -264,56 +270,57 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Menu hamburger */
+/* Styles pour le menu mobile (Bouton hamburger et menu) */
 .hamburger-menu {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  cursor: pointer;
+    display: none; /* Caché par défaut sur les grands écrans */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
 }
 
 .hamburger-menu span {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: var(--primary-color);
-  transition: transform 0.3s ease-in-out;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: transform 0.3s ease-in-out;
 }
 
+/* Styles pour la transformation du hamburger en "X" */
 .hamburger-menu.is-active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
 .hamburger-menu.is-active span:nth-child(2) {
-  opacity: 0;
+    opacity: 0;
 }
 
 .hamburger-menu.is-active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Responsive */
+/* Media Queries pour le design responsive */
 @media screen and (max-width: 768px) {
   .main-header {
     padding: 20px;
   }
-
+  
   .btn-group {
-    display: none;
+    display: none; /* Cache les boutons par défaut sur mobile */
   }
 
   .hamburger-menu {
-    display: flex;
+    display: flex; /* Affiche le bouton hamburger sur mobile */
   }
-
+  
   .main-header {
     position: relative;
   }
 
   .btn-group.is-open {
-    display: flex;
+    display: flex; /* Affiche le menu lorsque le hamburger est actif */
     position: absolute;
     top: 100%;
     left: 0;
@@ -342,7 +349,6 @@ html {
   h1 {
     font-size: 2.5rem;
   }
-
   h2 {
     font-size: 2rem;
   }
@@ -358,32 +364,32 @@ html {
   }
 }
 
-/* Message box */
+/* Styles pour la boîte de message personnalisée */
 .message-box {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
 }
 
 .message-content {
-  background-color: var(--background-light);
-  color: var(--text-dark);
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: var(--shadow-subtle);
-  text-align: center;
-  max-width: 400px;
-  width: 90%;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-subtle);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
 }
 
 .message-content p {
-  font-size: 1.1rem;
-  margin-bottom: 25px;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
 }

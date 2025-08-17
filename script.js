@@ -39,4 +39,3 @@ backToTopButton.addEventListener('click', (e) => {
         behavior: 'smooth'
     });
 });
-

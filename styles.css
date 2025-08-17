@@ -1,5 +1,5 @@
 /*
- * Variables CSS personnalisées pour un look plus professionnel et soigné.
+ * Variables CSS
 */
 :root {
   --background-light: #F8F4F0;
@@ -11,7 +11,6 @@
   --text-light: #F8F4F0;
   --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
 
-  /* Dégradé unique pour toute la page */
   --main-gradient: linear-gradient(180deg, #F8F4F0 0%, #E8DCCF 100%);
 
   --font-heading: 'Poppins', sans-serif;
@@ -20,34 +19,25 @@
 
 body {
   font-family: var(--font-body);
-  background-image: var(--main-gradient); /* Applique le dégradé à tout le corps */
+  background-image: var(--main-gradient);
   color: var(--text-dark);
   line-height: 1.6;
 }
 
-/* Réinitialisation de base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Conteneur principal */
 main {
   padding-bottom: 50px;
 }
 
-/* Sections */
 section {
   padding: 80px 20px;
   text-align: center;
 }
-
-/* Suppression des anciennes classes de dégradé pour uniformiser le fond */
-.hero, .section-gradient-1, .section-gradient-2, .section-gradient-3 {
-  background-image: none;
-}
-
 
 /* Titres */
 h1, h2, h3 {
@@ -72,7 +62,7 @@ h3 {
   font-size: 1.5rem;
 }
 
-/* Header et Navigation */
+/* Header */
 .main-header {
   display: flex;
   justify-content: space-between;
@@ -91,7 +81,6 @@ h3 {
   z-index: 1000;
 }
 
-/* En-tête qui devient blanc au défilement */
 .main-header.scrolled {
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: var(--shadow-subtle);
@@ -151,7 +140,7 @@ h3 {
   transform: translateY(-2px);
 }
 
-/* Séparateur en forme d'arche */
+/* Séparateurs */
 .section-separator {
     height: 100px;
     position: relative;
@@ -163,14 +152,14 @@ h3 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 200%; /* Permet une courbe plus grande et plus lisse */
+    width: 200%;
     height: 200px;
     background-color: var(--background-light);
     border-radius: 50% 50% 0 0;
 }
 
 .section-separator-top::before {
-    top: -150px; /* Ajustement pour la position */
+    top: -150px;
 }
 
 .section-separator-bottom::before {
@@ -178,15 +167,15 @@ h3 {
     transform: translateX(-50%) rotate(180deg);
 }
 
-/* Cartes de services et de portfolio */
-.cards, .portfolio-grid {
+/* Cartes */
+.cards {
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
 }
 
-.card, .portfolio-item {
+.card {
   background: var(--text-light);
   border-radius: 15px;
   padding: 40px;
@@ -195,12 +184,12 @@ h3 {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.card:hover, .portfolio-item:hover {
+.card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Formulaire de contact */
+/* Formulaire */
 form {
   max-width: 600px;
   margin: auto;
@@ -234,7 +223,7 @@ label {
   font-weight: 500;
 }
 
-/* Pied de page (Footer) */
+/* Footer */
 footer {
   background-color: var(--background-dark);
   color: var(--text-light);
@@ -242,7 +231,7 @@ footer {
   padding: 30px;
 }
 
-/* Bouton pour remonter en haut de la page */
+/* Bouton retour en haut */
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -265,14 +254,13 @@ footer {
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* Scroll fluide */
 html {
   scroll-behavior: smooth;
 }
 
-/* Styles pour le menu mobile (Bouton hamburger et menu) */
+/* Menu mobile */
 .hamburger-menu {
-    display: none; /* Caché par défaut sur les grands écrans */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -288,39 +276,28 @@ html {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Styles pour la transformation du hamburger en "X" */
 .hamburger-menu.is-active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
-
 .hamburger-menu.is-active span:nth-child(2) {
     opacity: 0;
 }
-
 .hamburger-menu.is-active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Media Queries pour le design responsive */
 @media screen and (max-width: 768px) {
   .main-header {
     padding: 20px;
   }
-  
   .btn-group {
-    display: none; /* Cache les boutons par défaut sur mobile */
+    display: none;
   }
-
   .hamburger-menu {
-    display: flex; /* Affiche le bouton hamburger sur mobile */
+    display: flex;
   }
-  
-  .main-header {
-    position: relative;
-  }
-
   .btn-group.is-open {
-    display: flex; /* Affiche le menu lorsque le hamburger est actif */
+    display: flex;
     position: absolute;
     top: 100%;
     left: 0;
@@ -330,41 +307,35 @@ html {
     padding: 20px 0;
     box-shadow: var(--shadow-subtle);
   }
-
   .btn-group.is-open a {
     padding: 15px 20px;
     width: 100%;
     border-bottom: 1px solid #eee;
     text-align: center;
   }
-
   .btn-group.is-open a:last-child {
     border-bottom: none;
   }
-
   .hero {
     padding: 100px 20px;
   }
-
   h1 {
     font-size: 2.5rem;
   }
   h2 {
     font-size: 2rem;
   }
-
-  .cards, .portfolio-grid {
+  .cards {
     flex-direction: column;
     align-items: center;
   }
-
-  .card, .portfolio-item {
+  .card {
     width: 95%;
     padding: 25px;
   }
 }
 
-/* Styles pour la boîte de message personnalisée */
+/* Message box */
 .message-box {
     position: fixed;
     top: 0;
@@ -377,7 +348,6 @@ html {
     align-items: center;
     z-index: 2000;
 }
-
 .message-content {
     background-color: var(--background-light);
     color: var(--text-dark);
@@ -388,7 +358,6 @@ html {
     max-width: 400px;
     width: 90%;
 }
-
 .message-content p {
     font-size: 1.1rem;
     margin-bottom: 25px;

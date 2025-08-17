@@ -9,7 +9,7 @@
   --primary-color: #D97D6A; /* Terracotta */
   --secondary-color: #6E5A51; /* Gris chaud */
   --tertiary-color: #B85C4C; /* Terracotta foncé */
-  --text-dark: #3E3E3E; /* Mise à jour de la couleur du texte */
+  --text-dark: #3E3E3E;
   --text-light: #F8F4F0;
   --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
 
@@ -22,7 +22,7 @@
 
 body {
   font-family: var(--font-body);
-  background: var(--main-gradient); /* Applique le dégradé à tout le corps */
+  background: var(--main-gradient);
   color: var(--text-dark);
   line-height: 1.6;
 }
@@ -161,7 +161,7 @@ h3 {
 /* Section "Services" */
 .services-section {
     padding: 80px 20px;
-    background-color: rgba(255, 255, 255, 0.5); /* Arrière-plan légèrement transparent */
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .services-grid {
@@ -207,9 +207,13 @@ h3 {
     text-align: center;
 }
 
+/* Correction pour le bouton "Discutons de votre projet" sur mobile */
 .large-button {
     padding: 15px 40px;
     font-size: 1.2rem;
+    max-width: 300px; /* Limite la largeur du bouton sur les petits écrans */
+    margin: 0 auto;  /* Centre le bouton */
+    white-space: nowrap; /* Empêche le texte de se couper en plusieurs lignes */
 }
 
 
@@ -240,7 +244,7 @@ h3 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
     position: relative;
-    border: 2px solid transparent; /* Pour l'effet de bordure du plan mis en avant */
+    border: 2px solid transparent;
 }
 
 .pricing-card:hover {
@@ -250,7 +254,7 @@ h3 {
 
 .featured-plan {
     border-color: var(--primary-color);
-    transform: scale(1.05); /* Met en avant le plan populaire */
+    transform: scale(1.05);
 }
 
 .featured-plan:hover {
@@ -354,7 +358,7 @@ html {
 
 /* Styles du menu mobile (bouton hamburger et menu) */
 .hamburger-menu {
-    display: none; /* Masqué par défaut sur les grands écrans */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -390,11 +394,11 @@ html {
   }
   
   .btn-group {
-    display: none; /* Masquer les boutons par défaut sur mobile */
+    display: none;
   }
 
   .hamburger-menu {
-    display: flex; /* Afficher le bouton hamburger sur mobile */
+    display: flex;
   }
   
   .main-header {
@@ -402,7 +406,7 @@ html {
   }
 
   .btn-group.is-open {
-    display: flex; /* Afficher le menu lorsque le hamburger est actif */
+    display: flex;
     position: absolute;
     top: 100%;
     left: 0;

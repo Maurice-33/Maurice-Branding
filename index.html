@@ -1,144 +1,105 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beyond.</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Votre Marque</title>
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Liens pour les polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Ancre pour bouton retour haut -->
-  <a id="top"></a>
+    <!-- HEADER -->
+    <header class="main-header" id="main-header">
+        <a href="index.html" class="logo">
+            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 17.93V14h-2v5.93a8 8 0 010-15.86V10h2V4.07a8 8 0 010 15.86z"/>
+            </svg>
+            Votre Marque
+        </a>
+        
+        <!-- Menu Desktop -->
+        <nav class="btn-group" id="site-nav">
+            <a href="#apropos" class="btn-secondary">A Propos</a>
+            <a href="#mes-services" class="btn-secondary">Mes Services</a>
+            <a href="portfolio.html" class="btn-secondary">Portfolio</a>
+            <a href="tarifs.html" class="btn-secondary">Tarifs</a>
+            <a href="#contact" class="btn-primary">Me contacter</a>
+        </nav>
 
-  <!-- HEADER -->
-  <header class="main-header fixed-header">
-    <a href="#" class="logo">
-      <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 0 L100 25 L100 75 L50 100 L0 75 L0 25 Z" fill="var(--primary-color)"/>
-          <path d="M50 10 L90 30 L90 70 L50 90 L10 70 L10 30 Z" fill="var(--background-light)"/>
-      </svg>
-      Beyond.
+        <!-- Menu Mobile -->
+        <div class="hamburger-menu" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section A Propos -->
+        <section id="apropos" class="about-section">
+            <div class="container">
+                <h2 class="section-title">A Propos de Nous</h2>
+                <p class="about-text">
+                    Bienvenue dans notre univers de design créatif. Nous sommes passionnés par l'art de donner vie aux idées, en créant des identités visuelles uniques et mémorables. Notre mission est d'aider les entreprises à se connecter avec leur public grâce à un design authentique et percutant.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section Mes Services -->
+        <section id="mes-services" class="services-section">
+            <div class="container">
+                <h2 class="section-title">Mes Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="service-icon lucide lucide-paintbrush"><path d="M18.3 8.3a2.12 2.12 0 1 1 2.99 2.99L7.01 22A2.12 2.12 0 0 1 5.57 22L2 18.43a2.12 2.12 0 0 1 0-2.99z"/><path d="M15 5l-8.5 8.5"/><path d="M17 12l-5.5 5.5"/><path d="M21 9l-5.5 5.5"/><path d="M17.5 3.5l3 3"/></svg>
+                        <h3 class="service-title">Identité Visuelle</h3>
+                        <p class="service-description">
+                            Création de logos, palettes de couleurs et typographies qui reflètent l'essence de votre marque.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="service-icon lucide lucide-monitor-dot"><circle cx="12" cy="12" r="1"/><path d="M19 19H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2z"/></svg>
+                        <h3 class="service-title">Web Design</h3>
+                        <p class="service-description">
+                            Conception de sites web intuitifs et esthétiques, optimisés pour tous les appareils.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="service-icon lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.4L15.6 2.4A2 2 0 0 0 15 2z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                        <h3 class="service-title">Illustrations</h3>
+                        <p class="service-description">
+                            Création d'illustrations personnalisées pour vos publications, sites web ou supports de communication.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Me Contacter</h2>
+                <a href="#" class="btn-primary large-button">Discutons de votre projet</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Votre Marque. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Bouton "Retour en haut" -->
+    <a href="#top" class="back-to-top" id="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-circle"><circle cx="12" cy="12" r="10"/><path d="m12 16-4-4m4 4 4-4m-4 4V8"/></svg>
     </a>
 
-    <!-- Menu hamburger -->
-    <div class="hamburger-menu" id="menu-toggle">
-      <span></span><span></span><span></span>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="btn-group" id="site-nav">
-      <a href="#apropos" class="btn-secondary">A Propos</a>
-      <a href="#mes-services" class="btn-secondary">Mes Services</a>
-      <a href="portfolio.html" class="btn-secondary">Portfolio</a>
-      <a href="tarif.html" class="btn-secondary">Tarifs</a>
-      <a href="#contact" class="btn-primary">Me contacter</a>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero section-gradient-1">
-    <div class="hero-content">
-      <h1>Révélez votre marque <br> au-delà des apparences</h1>
-      <p>Logo • Identité visuelle • Supports de communication</p>
-    </div>
-  </section>
-
-  <main>
-    <!-- Séparateur arrondi -->
-    <div class="section-separator section-separator-top"></div>
-
-    <!-- MES SERVICES -->
-    <section id="mes-services">
-      <h2>Mes Services</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Logo & Identité</h3>
-          <p>Création de logos uniques et d’une identité visuelle cohérente.</p>
-        </div>
-        <div class="card">
-          <h3>Charte Graphique</h3>
-          <p>Définition de couleurs, typographies et éléments graphiques.</p>
-        </div>
-        <div class="card">
-          <h3>Supports Marketing</h3>
-          <p>Flyers, bannières et réseaux sociaux pour un branding complet.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Séparateur arrondi inversé -->
-    <div class="section-separator section-separator-bottom"></div>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contactez-moi</h2>
-      <form id="contact-form" action="#" method="post">
-        <div>
-          <label for="name">Votre nom :</label>
-          <input type="text" id="name" name="name" placeholder="Votre nom" required>
-        </div>
-        <div>
-          <label for="email">Votre email :</label>
-          <input type="email" id="email" name="email" placeholder="Votre email" required>
-        </div>
-        <div>
-          <label for="service">Type de demande :</label>
-          <select id="service" name="service" required>
-            <option value="" disabled selected>Choisissez une option</option>
-            <option value="branding">Branding</option>
-            <option value="logo">Création de logo</option>
-            <option value="web">Site web</option>
-            <option value="autre">Autre</option>
-          </select>
-        </div>
-        <div>
-          <label for="message">Message :</label>
-          <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
-        </div>
-        <button type="submit" class="btn-primary">Envoyer</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- Bouton retour haut -->
-  <a href="#top" class="back-to-top" id="backToTop">&#8679;</a>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Branding Service - Tous droits réservés</p>
-  </footer>
-
-  <!-- SCRIPT -->
-  <script>
-    // Changement couleur header au scroll
-    const header = document.querySelector('.main-header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-
-    // Bouton retour haut
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTop.style.display = "block";
-      } else {
-        backToTop.style.display = "none";
-      }
-    });
-
-    // Menu hamburger
-    const menuToggle = document.getElementById('menu-toggle');
-    const nav = document.getElementById('site-nav');
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('is-active');
-      nav.classList.toggle('is-open');
-    });
-  </script>
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="script.js" defer></script>
 </body>
 </html>

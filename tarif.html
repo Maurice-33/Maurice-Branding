@@ -1,73 +1,103 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mes Tarifs</title>
-  <!-- Lien vers ton fichier CSS -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs - Révélez Votre Marque</title>
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Liens pour les polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="main-header" id="main-header">
-    <a href="index.html" class="logo">MonLogo</a>
+    <!-- HEADER -->
+    <header class="main-header" id="main-header">
+        <a href="index.html" class="logo">
+            <!-- SVG pour le logo, cohérent avec les autres pages -->
+            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 17.93V14h-2v5.93a8 8 0 010-15.86V10h2V4.07a8 8 0 010 15.86z"/>
+            </svg>
+            Votre Marque
+        </a>
+        
+        <!-- Menu Desktop -->
+        <nav class="btn-group" id="site-nav">
+            <a href="index.html#apropos" class="btn-secondary">A Propos</a>
+            <a href="index.html#mes-services" class="btn-secondary">Mes Services</a>
+            <a href="portfolio.html" class="btn-secondary">Portfolio</a>
+            <a href="tarifs.html" class="btn-secondary">Tarifs</a>
+            <a href="index.html#contact" class="btn-primary">Me contacter</a>
+        </nav>
 
-    <!-- Menu Desktop -->
-    <nav class="btn-group" id="site-nav">
-      <a href="index.html#apropos" class="btn-secondary">A Propos</a>
-      <a href="index.html#mes-services" class="btn-secondary">Mes Services</a>
-      <a href="portfolio.html" class="btn-secondary">Portfolio</a>
-      <a href="tarifs.html" class="btn-secondary">Tarifs</a>
-      <a href="index.html#contact" class="btn-primary">Me contacter</a>
-    </nav>
-
-    <!-- Menu Mobile -->
-    <div class="hamburger-menu" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </header>
-
-  <!-- SECTION TARIFS -->
-  <main>
-    <section class="pricing-section">
-      <h1 class="title-pricing">Nos Tarifs</h1>
-
-      <div class="pricing-cards">
-        <!-- Carte 1 -->
-        <div class="pricing-card">
-          <h3 class="plan-title">Basique</h3>
-          <p class="plan-price">99€ <span>/ mois</span></p>
-          <ul class="plan-features">
-            <li>✔️ Fonctionnalité 1</li>
-            <li>✔️ Fonctionnalité 2</li>
-            <li>✔️ Support email</li>
-          </ul>
-          <a href="index.html#contact" class="btn-primary">Choisir</a>
+        <!-- Menu Mobile -->
+        <div class="hamburger-menu" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
+    </header>
 
-        <!-- Carte 2 (Mise en avant) -->
-        <div class="pricing-card featured-plan">
-          <span class="featured-badge">Populaire</span>
-          <h3 class="plan-title">Standard</h3>
-          <p class="plan-price">199€ <span>/ mois</span></p>
-          <ul class="plan-features">
-            <li>✔️ Fonctionnalité premium</li>
-            <li>✔️ Plus de personnalisation</li>
-            <li>✔️ Support prioritaire</li>
-          </ul>
-          <a href="index.html#contact" class="btn-primary">Choisir</a>
-        </div>
+    <!-- SECTION TARIFS -->
+    <main>
+        <section class="pricing-section">
+            <!-- Utilisation de h2 pour le titre principal de la section selon le style CSS -->
+            <h2 class="title-pricing">Nos Tarifs</h2>
 
-        <!-- Carte 3 -->
-        <div class="pricing-card">
-          <h3 class="plan-title">Premium</h3>
-          <p class="plan-price">299€ <span>/ mois</span></p>
-          <ul class="plan-features">
-            <li>✔️ Toutes les fonctionnalités</li>
-            <li>✔️ Accompagnement dédié</li>
-            <li>✔️ Support 24/7</li>
-          </ul>
-          <a href="index.html#contact"
+            <div class="pricing-cards">
+                <!-- Carte 1 -->
+                <div class="pricing-card">
+                    <h3 class="plan-title">Basique</h3>
+                    <p class="plan-price">99€ <span>/ mois</span></p>
+                    <ul class="plan-features">
+                        <!-- Remplacement des icônes de texte par des SVG -->
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Fonctionnalité 1</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Fonctionnalité 2</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Support email</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Choisir</a>
+                </div>
+
+                <!-- Carte 2 (Mise en avant) -->
+                <div class="pricing-card featured-plan">
+                    <span class="featured-badge">Populaire</span>
+                    <h3 class="plan-title">Standard</h3>
+                    <p class="plan-price">199€ <span>/ mois</span></p>
+                    <ul class="plan-features">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Fonctionnalité premium</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Plus de personnalisation</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Support prioritaire</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Choisir</a>
+                </div>
+
+                <!-- Carte 3 -->
+                <div class="pricing-card">
+                    <h3 class="plan-title">Premium</h3>
+                    <p class="plan-price">299€ <span>/ mois</span></p>
+                    <ul class="plan-features">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Toutes les fonctionnalités</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Accompagnement dédié</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Support 24/7</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Choisir</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Votre Marque. Tous droits réservés.</p>
+        </footer>
+
+        <!-- Bouton "Retour en haut" -->
+        <a href="#top" class="back-to-top" id="back-to-top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-circle"><circle cx="12" cy="12" r="10"/><path d="m12 16-4-4m4 4 4-4m-4 4V8"/></svg>
+        </a>
+    </main>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

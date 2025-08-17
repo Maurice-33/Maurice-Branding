@@ -72,23 +72,23 @@
         }
 
         /* Header et Navigation */
-    .main-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      background-color: transparent; /* Initialement transparent */
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      position: sticky; /* Reste en haut de la page */
-      top: 0;
-      z-index: 1000;
-    }
+        .main-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 50px;
+          background-color: transparent; /* Initialement transparent */
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          position: sticky; /* Reste en haut de la page */
+          top: 0;
+          z-index: 1000;
+        }
 
-    /* Styles pour le header lorsqu'il défile */
-    .main-header.scrolled {
-      background-color: var(--background-light); /* Devient blanc */
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
-    }
+        /* Styles pour le header lorsqu'il défile */
+        .main-header.scrolled {
+          background-color: var(--background-light); /* Devient blanc */
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
+        }
 
         .logo {
           font-family: var(--font-heading);
@@ -118,12 +118,6 @@
           text-decoration: none;
           font-weight: 500;
           transition: all 0.3s ease-in-out;
-        }
-
-        .btn-primary {
-          background: var(--primary-color);
-          color: var(--text-light);
-          border: 2px solid var(--primary-color);
         }
 
         .btn-primary:hover {
@@ -368,7 +362,7 @@
         <!-- NOUVEAU: Section Portfolio avec carrousel -->
         <section id="portfolio-section">
             <h2>Notre Portfolio de Créations</h2>
-            <div class="carousel-container">
+            <div class="carousel-container" id="carousel-container">
                 <div class="carousel-track" id="carousel-track">
                     <!-- Slides du carrousel avec des images de remplacement -->
                     <div class="carousel-slide"><img src="https://placehold.co/900x600/6E5A51/FFFFFF?text=Logo+Design" alt="Logo Design"></div>
@@ -417,10 +411,12 @@
         });
 
         // NOUVEAU: Script pour le carrousel
+        const carouselContainer = document.getElementById('carousel-container');
         const carouselTrack = document.getElementById('carousel-track');
         const carouselDots = document.getElementById('carousel-dots');
         const slides = document.querySelectorAll('.carousel-slide');
         let currentSlideIndex = 0;
+        let startX = 0;
 
         // Fonction pour mettre à jour la position du carrousel
         function updateCarouselPosition() {
@@ -457,7 +453,29 @@
                 }
             });
         }
-        
+
+        // NOUVEAU: Gestion des événements tactiles pour le glissement
+        carouselContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        carouselContainer.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const deltaX = endX - startX;
+            // Définir un seuil de détection du glissement
+            const swipeThreshold = 50; 
+
+            if (deltaX > swipeThreshold) {
+                // Glissement vers la droite -> image précédente
+                currentSlideIndex = (currentSlideIndex > 0) ? currentSlideIndex - 1 : slides.length - 1;
+            } else if (deltaX < -swipeThreshold) {
+                // Glissement vers la gauche -> image suivante
+                currentSlideIndex = (currentSlideIndex < slides.length - 1) ? currentSlideIndex + 1 : 0;
+            }
+
+            updateCarouselPosition();
+        });
+
         // Gérer le redimensionnement de la fenêtre pour le carrousel
         window.addEventListener('resize', () => {
             updateCarouselPosition();

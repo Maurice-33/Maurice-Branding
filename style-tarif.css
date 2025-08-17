@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Tarifs</title>
+  <!-- Lien vers ton fichier CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header" id="main-header">
+    <a href="index.html" class="logo">MonLogo</a>
+
+    <!-- Menu Desktop -->
+    <nav class="btn-group" id="site-nav">
+      <a href="index.html#apropos" class="btn-secondary">A Propos</a>
+      <a href="index.html#mes-services" class="btn-secondary">Mes Services</a>
+      <a href="portfolio.html" class="btn-secondary">Portfolio</a>
+      <a href="tarifs.html" class="btn-secondary">Tarifs</a>
+      <a href="index.html#contact" class="btn-primary">Me contacter</a>
+    </nav>
+
+    <!-- Menu Mobile -->
+    <div class="hamburger-menu" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- SECTION TARIFS -->
+  <main>
+    <section class="pricing-section">
+      <h1 class="title-pricing">Nos Tarifs</h1>
+
+      <div class="pricing-cards">
+        <!-- Carte 1 -->
+        <div class="pricing-card">
+          <h3 class="plan-title">Basique</h3>
+          <p class="plan-price">99€ <span>/ mois</span></p>
+          <ul class="plan-features">
+            <li>✔️ Fonctionnalité 1</li>
+            <li>✔️ Fonctionnalité 2</li>
+            <li>✔️ Support email</li>
+          </ul>
+          <a href="index.html#contact" class="btn-primary">Choisir</a>
+        </div>
+
+        <!-- Carte 2 (Mise en avant) -->
+        <div class="pricing-card featured-plan">
+          <span class="featured-badge">Populaire</span>
+          <h3 class="plan-title">Standard</h3>
+          <p class="plan-price">199€ <span>/ mois</span></p>
+          <ul class="plan-features">
+            <li>✔️ Fonctionnalité premium</li>
+            <li>✔️ Plus de personnalisation</li>
+            <li>✔️ Support prioritaire</li>
+          </ul>
+          <a href="index.html#contact" class="btn-primary">Choisir</a>
+        </div>
+
+        <!-- Carte 3 -->
+        <div class="pricing-card">
+          <h3 class="plan-title">Premium</h3>
+          <p class="plan-price">299€ <span>/ mois</span></p>
+          <ul class="plan-features">
+            <li>✔️ Toutes les fonctionnalités</li>
+            <li>✔️ Accompagnement dédié</li>
+            <li>✔️ Support 24/7</li>
+          </ul>
+          <a href="index.html#contact"

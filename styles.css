@@ -1,98 +1,47 @@
-/*
- * Custom CSS variables for a professional and polished look.
-*/
 :root {
   --background-light: #F8F4F0;
   --background-dark: #2F2F2F;
-  --primary-color: #D97D6A; /* Terracotta */
-  --secondary-color: #6E5A51; /* Warm Gray */
-  --tertiary-color: #B85C4C; /* Darker Terracotta */
-  --text-dark: #57423f; /* Updated text color */
+  --primary-color: #D97D6A;
+  --secondary-color: #6E5A51;
+  --tertiary-color: #B85C4C;
+  --text-dark: #3E3E3E;
   --text-light: #F8F4F0;
-  --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
-
-  /* Unique gradient for the entire page */
-  --main-gradient: linear-gradient(180deg, #F8F4F0 0%, #E8DCCF 100%);
+  --shadow-subtle: 0 4px 12px rgba(0,0,0,0.08);
 
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
+  --main-gradient: linear-gradient(180deg, #F8F4F0 0%, #E8DCCF 100%);
 }
 
 body {
   font-family: var(--font-body);
-  background-image: var(--main-gradient); /* Apply the gradient to the body */
+  background: var(--main-gradient);
   color: var(--text-dark);
   line-height: 1.6;
+  margin: 0;
 }
 
-/* Base reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Main container */
-main {
-  padding-bottom: 50px;
-}
-
-/* Sections */
-section {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-/* Remove old gradient classes for uniform background */
-.hero, .section-gradient-1, .section-gradient-2, .section-gradient-3 {
-  background-image: none;
-}
-
-/* Headings */
-h1, h2, h3 {
-  font-family: var(--font-heading);
-}
-
-h1 {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-  color: var(--primary-color);
-}
-
-h2 {
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-  color: var(--primary-color);
-}
-
-h3 {
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-}
-
-/* Header and Navigation */
+/* Header */
 .main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  background-color: transparent;
-  box-shadow: none;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
-}
-
-.main-header.fixed-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 0; left: 0; width: 100%;
   z-index: 1000;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
-/* Header that turns white on scroll */
 .main-header.scrolled {
-  background-color: rgba(255, 255, 255, 0.95);
+  background: white;
   box-shadow: var(--shadow-subtle);
 }
 
@@ -108,10 +57,10 @@ h3 {
 }
 
 .logo-icon {
-  width: 30px;
-  height: 30px;
+  width: 30px; height: 30px;
 }
 
+/* Navigation */
 .btn-group {
   display: flex;
   gap: 25px;
@@ -123,263 +72,188 @@ h3 {
   border-radius: 50px;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s;
 }
 
 .btn-primary {
   background: var(--primary-color);
   color: var(--text-light);
-  border: 2px solid var(--primary-color);
 }
 
 .btn-primary:hover {
   background: var(--tertiary-color);
-  border-color: var(--tertiary-color);
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .btn-secondary {
-  background: transparent;
   color: var(--secondary-color);
-  border: 2px solid transparent;
 }
 
 .btn-secondary:hover {
   color: var(--primary-color);
-  transform: translateY(-2px);
 }
 
-/* Pricing Section */
-.pricing-section {
-    padding: 80px 20px;
+/* Hero */
+.hero {
+  padding: 150px 20px 100px;
+  text-align: center;
 }
 
-.title-pricing {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 60px;
+.hero h1 {
+  font-size: 3rem;
+  color: var(--text-dark);
 }
 
-.pricing-cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: var(--secondary-color);
 }
 
-.pricing-card {
-    background-color: var(--background-light);
-    border-radius: 20px;
-    box-shadow: var(--shadow-subtle);
-    padding: 40px;
-    width: 350px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
-    position: relative;
-    border: 2px solid transparent; /* For featured plan border effect */
+/* Section titres */
+h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 40px;
 }
 
-.pricing-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+/* Cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-.featured-plan {
-    border-color: var(--primary-color);
-    transform: scale(1.05); /* Highlight the featured plan */
+.card {
+  background: var(--text-light);
+  border-radius: 15px;
+  padding: 40px;
+  width: 300px;
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.featured-plan:hover {
-    transform: translateY(-10px) scale(1.05);
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.featured-badge {
-    position: absolute;
-    top: -15px;
-    right: -15px;
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    padding: 8px 15px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    box-shadow: var(--shadow-subtle);
+/* Formulaire */
+form {
+  max-width: 600px;
+  margin: auto;
+  background: var(--text-light);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: var(--shadow-subtle);
+  text-align: left;
 }
 
-.plan-title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--tertiary-color);
-    margin-bottom: 10px;
+form div {
+  margin-bottom: 20px;
 }
 
-.plan-price {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 30px;
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
 }
 
-.plan-price span {
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--text-dark);
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
-.plan-features {
-    list-style: none;
-    margin-bottom: 30px;
-}
-
-.plan-features li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-    color: var(--text-dark);
-}
-
-.plan-features li svg {
-    color: var(--primary-color);
-}
-
-.pricing-card .btn-primary {
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-size: 1.1rem;
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary-color);
+  outline: none;
 }
 
 /* Footer */
 footer {
-  background-color: var(--background-dark);
+  background: var(--background-dark);
   color: var(--text-light);
   text-align: center;
   padding: 30px;
 }
 
-/* Back to Top Button */
+/* Back to top */
 .back-to-top {
   position: fixed;
   bottom: 30px;
   right: 30px;
   background: var(--primary-color);
-  color: var(--text-light);
+  color: white;
   padding: 12px 16px;
   border-radius: 50%;
   font-size: 24px;
-  text-align: center;
-  text-decoration: none;
   display: none;
-  z-index: 1000;
-  box-shadow: var(--shadow-subtle);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: 0.3s;
 }
 
 .back-to-top:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* Fluid scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Mobile menu styles (hamburger button and menu) */
+/* Menu hamburger */
 .hamburger-menu {
-    display: none; /* Hidden by default on large screens */
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 22px;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
 }
 
 .hamburger-menu span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--primary-color);
-    transition: transform 0.3s ease-in-out;
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--primary-color);
+  transition: 0.3s;
 }
 
-/* Styles for hamburger to "X" transformation */
 .hamburger-menu.is-active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px,5px);
 }
-
 .hamburger-menu.is-active span:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
-
 .hamburger-menu.is-active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(6px,-6px);
 }
 
-/* Media Queries for responsive design */
-@media screen and (max-width: 768px) {
-  .main-header {
-    padding: 20px;
-  }
-  
+/* Responsive */
+@media(max-width:768px){
   .btn-group {
-    display: none; /* Hide buttons by default on mobile */
-  }
-
-  .hamburger-menu {
-    display: flex; /* Show hamburger button on mobile */
-  }
-  
-  .main-header {
-    position: relative;
-  }
-
-  .btn-group.is-open {
-    display: flex; /* Show the menu when the hamburger is active */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--background-light);
+    display: none;
     flex-direction: column;
-    padding: 20px 0;
+    background: white;
+    position: absolute;
+    top: 70px; left: 0;
+    width: 100%;
     box-shadow: var(--shadow-subtle);
   }
 
-  .btn-group.is-open a {
-    padding: 15px 20px;
-    width: 100%;
+  .btn-group.is-open {
+    display: flex;
+  }
+
+  .btn-group a {
+    padding: 15px;
     border-bottom: 1px solid #eee;
     text-align: center;
   }
 
-  .btn-group.is-open a:last-child {
-    border-bottom: none;
+  .hamburger-menu {
+    display: flex;
   }
 
-  h1 {
-    font-size: 2.5rem;
-  }
-  h2 {
-    font-size: 2rem;
-  }
-  
-  .title-pricing {
-      font-size: 2rem;
-      margin-bottom: 30px;
-  }
-
-  .pricing-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .pricing-card {
-    width: 95%;
-    padding: 25px;
+  .hero h1 {
+    font-size: 2.2rem;
   }
 }

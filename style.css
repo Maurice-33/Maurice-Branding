@@ -1,0 +1,448 @@
+/*
+ * Fichier de style principal combinant les styles de base
+ * et les styles de la page de tarifs.
+*/
+
+:root {
+  --background-light: #F8F4F0;
+  --background-dark: #2F2F2F;
+  --primary-color: #D97D6A; /* Terracotta */
+  --secondary-color: #6E5A51; /* Gris chaud */
+  --tertiary-color: #B85C4C; /* Terracotta foncé */
+  --text-dark: #3E3E3E; /* Mise à jour de la couleur du texte */
+  --text-light: #F8F4F0;
+  --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  /* Dégradé unique pour toute la page */
+  --main-gradient: linear-gradient(180deg, #F8F4F0 0%, #E8DCCF 100%);
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--main-gradient); /* Applique le dégradé à tout le corps */
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Réinitialisation de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Conteneur pour limiter la largeur du contenu */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Sections */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Titres */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+h2.section-title, h2.title-pricing {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: var(--primary-color);
+}
+
+h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+/* Header et Navigation */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: transparent;
+  box-shadow: none;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.main-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-subtle);
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: var(--text-light);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+  background: var(--tertiary-color);
+  border-color: var(--tertiary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--secondary-color);
+  border: 2px solid transparent;
+}
+
+.btn-secondary:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Section "A Propos" */
+.about-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+/* Section "Services" */
+.services-section {
+    padding: 80px 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Arrière-plan légèrement transparent */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background-color: var(--background-light);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: var(--shadow-subtle);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--tertiary-color);
+}
+
+.service-description {
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+
+/* Section "Contact" */
+.contact-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.large-button {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+}
+
+
+/* Pricing Section */
+.pricing-section {
+    padding: 80px 20px;
+}
+
+.title-pricing {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 60px;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background-color: var(--background-light);
+    border-radius: 20px;
+    box-shadow: var(--shadow-subtle);
+    padding: 40px;
+    width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    position: relative;
+    border: 2px solid transparent; /* Pour l'effet de bordure du plan mis en avant */
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.featured-plan {
+    border-color: var(--primary-color);
+    transform: scale(1.05); /* Met en avant le plan populaire */
+}
+
+.featured-plan:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.featured-badge {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: var(--shadow-subtle);
+}
+
+.plan-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--tertiary-color);
+    margin-bottom: 10px;
+}
+
+.plan-price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.plan-price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+
+.plan-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.plan-features li svg {
+    color: var(--primary-color);
+}
+
+.pricing-card .btn-primary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 30px;
+}
+
+/* Bouton "Retour en haut" */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--primary-color);
+  color: var(--text-light);
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  display: none;
+  z-index: 1000;
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Défilement fluide */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Styles du menu mobile (bouton hamburger et menu) */
+.hamburger-menu {
+    display: none; /* Masqué par défaut sur les grands écrans */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Styles pour la transformation du hamburger en "X" */
+.hamburger-menu.is-active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.is-active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Requêtes média pour le design responsive */
+@media screen and (max-width: 768px) {
+  .main-header {
+    padding: 20px;
+  }
+  
+  .btn-group {
+    display: none; /* Masquer les boutons par défaut sur mobile */
+  }
+
+  .hamburger-menu {
+    display: flex; /* Afficher le bouton hamburger sur mobile */
+  }
+  
+  .main-header {
+    position: relative;
+  }
+
+  .btn-group.is-open {
+    display: flex; /* Afficher le menu lorsque le hamburger est actif */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-light);
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .btn-group.is-open a {
+    padding: 15px 20px;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+  }
+
+  .btn-group.is-open a:last-child {
+    border-bottom: none;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .title-pricing {
+      font-size: 2rem;
+      margin-bottom: 30px;
+  }
+
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing-card {
+    width: 95%;
+    padding: 25px;
+  }
+}

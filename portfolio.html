@@ -8,7 +8,7 @@
     <style>
         /*
          * Variables CSS personnalisées pour un look plus professionnel et soigné.
-        */
+         */
         :root {
           --background-light: #F8F4F0;
           --background-dark: #2F2F2F;
@@ -340,30 +340,30 @@
     <a id="top" href="#top"></a>
 
     <!-- HEADER -->
-  <header class="main-header" id="main-header">
-    <a href="index.html" class="logo">
-      <!-- Logo SVG de l'octogone -->
-      <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M10.875 1.767l-8.625 4.976a2 2 0 0 0-1 1.732v9.95a2 2 0 0 0 1 1.732l8.625 4.976a2 2 0 0 0 2 0l8.625-4.976a2 2 0 0 0 1-1.732v-9.95a2 2 0 0 0-1-1.732L12.875 1.767a2 2 0 0 0-2 0z"/>
-      </svg>
-      Beyond.
-    </a>
-    
-    <!-- Bouton Hamburger pour mobile -->
-    <div class="hamburger-menu" id="hamburger-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <header class="main-header" id="main-header">
+      <a href="index.html" class="logo">
+        <!-- Logo SVG de l'octogone -->
+        <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.875 1.767l-8.625 4.976a2 2 0 0 0-1 1.732v9.95a2 2 0 0 0 1 1.732l8.625 4.976a2 2 0 0 0 2 0l8.625-4.976a2 2 0 0 0 1-1.732v-9.95a2 2 0 0 0-1-1.732L12.875 1.767a2 2 0 0 0-2 0z"/>
+        </svg>
+        Beyond.
+      </a>
+      
+      <!-- Bouton Hamburger pour mobile -->
+      <div class="hamburger-menu" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
 
-    <nav class="btn-group" id="site-nav">
-      <a href="index.html" class="btn-secondary">Accueil</a>
-      <a href="a propos.html" class="btn-secondary">À Propos</a>
-      <a href="tarif.html" class="btn-secondary">Mes Accompagnements</a>
-      <a href="portfolio.html" class="btn-secondary">Projets</a>
-      <a href="index.html#contact" class="btn-primary">Me contacter</a>
-    </nav>
-  </header>
+      <nav class="btn-group" id="site-nav">
+        <a href="index.html" class="btn-secondary">Accueil</a>
+        <a href="a propos.html" class="btn-secondary">À Propos</a>
+        <a href="tarif.html" class="btn-secondary">Mes Accompagnements</a>
+        <a href="portfolio.html" class="btn-secondary">Projets</a>
+        <a href="index.html#contact" class="btn-primary">Me contacter</a>
+      </nav>
+    </header>
 
     <main>
         <!-- NOUVEAU: Section Portfolio avec carrousel -->
@@ -402,6 +402,16 @@
                 backToTopButton.style.display = "block";
             } else {
                 backToTopButton.style.display = "none";
+            }
+        });
+
+        // NOUVEAU: Script pour le header qui change de couleur au scroll
+        const mainHeader = document.getElementById("main-header");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) { // On ajoute la classe 'scrolled' après un défilement de 50px
+                mainHeader.classList.add("scrolled");
+            } else { // On la retire si on remonte en haut de la page
+                mainHeader.classList.remove("scrolled");
             }
         });
 

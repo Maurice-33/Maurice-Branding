@@ -71,13 +71,14 @@
           font-size: 1.5rem;
         }
 
-         /* Header et Navigation */
+     <style>
+    /* Styles pour le header et la navigation */
     .main-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 50px;
-      background-color: transparent; /* Initialement transparent */
+      background-color: transparent; /* Rendre le header transparent */
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
       position: sticky; /* Reste en haut de la page */
       top: 0;
@@ -90,53 +91,59 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
     }
 
-        .logo {
-          font-family: var(--font-heading);
-          font-size: 1.8rem;
-          font-weight: 700;
-          color: var(--primary-color);
-          text-decoration: none;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .logo-icon {
-          width: 30px;
-          height: 30px;
-        }
+    .logo-icon {
+      width: 30px;
+      height: 30px;
+    }
 
-        .btn-group {
-          display: flex;
-          gap: 25px;
-          align-items: center;
-        }
+    .btn-group {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
 
-        .btn-primary, .btn-secondary {
-          padding: 12px 25px;
-          border-radius: 50px;
-          text-decoration: none;
-          font-weight: 500;
-          transition: all 0.3s ease-in-out;
-        }
+    .btn-primary, .btn-secondary {
+      padding: 12px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease-in-out;
+    }
 
-        .btn-primary:hover {
-          background: var(--tertiary-color);
-          border-color: var(--tertiary-color);
-          transform: translateY(-2px);
-          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+    .btn-primary {
+      background: var(--primary-color);
+      color: var(--text-light);
+      border: 2px solid var(--primary-color);
+    }
 
-        .btn-secondary {
-          background: transparent;
-          color: var(--secondary-color);
-          border: 2px solid transparent;
-        }
+    .btn-primary:hover {
+      background: var(--tertiary-color);
+      border-color: var(--tertiary-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
 
-        .btn-secondary:hover {
-          color: var(--primary-color);
-          transform: translateY(-2px);
-        }
+    .btn-secondary {
+      background: transparent;
+      color: var(--secondary-color);
+      border: 2px solid transparent;
+    }
+
+    .btn-secondary:hover {
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
         
         /* Section Hero */
         .hero {

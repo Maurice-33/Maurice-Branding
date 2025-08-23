@@ -11,22 +11,22 @@
     <!-- Font Awesome pour les icônes sociales (YouTube, Instagram) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2g2S9O+H/J511b6G8z95X8I5/P654VfF0d4y7x8f9P6O+Fh5C+B6b+P6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-    :root {
-      --background-light: #F8F4F0;
-      --background-dark: #2F2F2F;
-      --primary-color: #bc7870;
-      --secondary-color: #6E5A51;
-      --tertiary-color: #B85C4C;
-      --text-dark: #57423f;
-      --text-light: #F8F4F0;
-      --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
-      --font-heading: 'Poppins', sans-serif;
-      --font-body: 'Inter', sans-serif;
-    }
+        /* Variables CSS personnalisées pour une palette de couleurs professionnelle et soignée */
+        :root {
+            --background-light: #F8F4F0;
+            --background-dark: #2F2F2F;
+            --primary-color: #bc7870; /* Terracotta */
+            --secondary-color: #6E5A51; /* Gris chaud */
+            --tertiary-color: #B85C4C; /* Terracotta foncé */
+            --text-dark: #57423f;
+            --text-light: #F8F4F0;
+            --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
 
-    body {
+        body {
             font-family: var(--font-body);
             background-color: var(--background-light);
             color: var(--text-dark);
@@ -42,7 +42,18 @@
             box-sizing: border-box;
         }
 
-    /* Styles pour le header et la navigation */
+        /* Conteneur principal */
+        main {
+            padding-bottom: 50px;
+        }
+
+        /* Sections de contenu */
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        /* Styles pour le header et la navigation */
         .main-header {
             display: flex;
             justify-content: space-between; /* Espacement entre les groupes d'éléments */
@@ -80,6 +91,29 @@
             display: flex;
             gap: 15px;
             align-items: center;
+        }
+
+        /* Titres */
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
         }
 
         /* Header et Navigation */

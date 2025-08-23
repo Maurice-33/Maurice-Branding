@@ -309,6 +309,25 @@ html {
         display: flex;
     }
 
+    .header-socials,
+    .hamburger-menu,
+    .mobile-nav {
+        display: none;
+    }
+
+    /* Styles pour les écrans de 768px et moins */
+@media screen and (max-width: 768px) {
+    .main-nav,
+    .header-contact {
+        display: none;
+    }
+    
+    .header-socials,
+    .hamburger-menu {
+        display: flex;
+    }
+    
+}
     /* Le menu hamburger et les icônes sociales sont visibles */
     .header-socials,
     .hamburger-menu {

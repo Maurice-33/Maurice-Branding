@@ -347,24 +347,50 @@
             .main-header {
                 padding: 20px;
             }
-            /* Cache le menu de navigation sur mobile */
-            .main-nav {
-                display: none;
+            
+            .btn-group {
+                display: none; /* Cache les boutons par défaut sur mobile */
             }
-            /* Affiche le menu hamburger sur mobile */
-            .hamburger-menu {
-                display: flex;
-            }
-        }
 
-        @media screen and (min-width: 769px) {
-            /* Affiche le menu de navigation sur desktop */
-            .main-nav {
-                display: flex;
-            }
-            /* Cache le menu hamburger sur desktop */
             .hamburger-menu {
-                display: none;
+                display: flex; /* Affiche le bouton hamburger sur mobile */
+            }
+            
+            .main-header {
+                position: relative;
+            }
+
+            .btn-group.is-open {
+                display: flex; /* Affiche le menu lorsque le hamburger est actif */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--background-light);
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: var(--shadow-subtle);
+            }
+
+            .btn-group.is-open a {
+                padding: 15px 20px;
+                width: 100%;
+                border-bottom: 1px solid #eee;
+                text-align: center;
+            }
+
+            .btn-group.is-open a:last-child {
+                border-bottom: none;
+            }
+
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pricing-card {
+                width: 95%;
+                padding: 25px;
             }
         }
     </style>

@@ -33,8 +33,11 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            display: flex; /* Utilisation de flexbox pour le layout */
+            flex-direction: column;
+            min-height: 100vh; /* La page occupe au moins toute la hauteur de la vue */
         }
-
+        
         /* Réinitialisation de base */
         * {
             margin: 0;
@@ -42,8 +45,9 @@
             box-sizing: border-box;
         }
 
-        /* Conteneur principal */
+        /* Conteneur principal qui se développe pour pousser le footer vers le bas */
         main {
+            flex: 1; /* Permet à la section principale de prendre tout l'espace disponible */
             padding-bottom: 50px;
         }
 
@@ -55,7 +59,7 @@
 
         /* Styles pour le header et la navigation */
         .main-header {
-            display: flex;
+            display: flex; /* Utilise flexbox pour l'alignement */
             justify-content: space-between; /* Espacement entre les groupes d'éléments */
             align-items: center;
             padding: 20px 50px;
@@ -71,7 +75,7 @@
             background-color: var(--background-light); /* Devient blanc */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
         }
-
+        
         /* Conteneur pour le logo et les boutons de navigation (côté gauche) */
         .nav-group {
             display: flex;
@@ -229,14 +233,19 @@
             transform: rotate(-45deg) translate(5px, -5px);
         }
 
-        .main-nav, .header-socials {
+        .main-nav, .header-socials, .header-contact { /* Ajout de .header-contact pour le bouton */
             display: flex;
         }
 
+        /* Cacher la navigation principale sur mobile par défaut */
+        .main-nav {
+             display: none;
+        }
+        
         .main-nav.is-open {
             display: none;
         }
-
+        
         .mobile-nav {
             display: none;
             flex-direction: column;
@@ -292,7 +301,39 @@
             scroll-behavior: smooth;
         }
 
+        /* Styles pour le footer */
+        .main-footer {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15); /* Ombre pour le haut du footer */
+        }
+        
+        .main-footer .footer-socials {
+            margin-bottom: 20px;
+        }
+
+        .main-footer .social-icon {
+            color: var(--text-light);
+            margin: 0 10px;
+        }
+
+        .main-footer .social-icon:hover {
+            color: var(--primary-color);
+        }
+
         /* Media Queries pour le design responsive */
+        @media screen and (min-width: 769px) { /* Afficher le bouton de contact et la navigation sur les grands écrans */
+            .main-nav, .header-socials, .header-contact {
+                display: flex;
+            }
+            .hamburger-menu, .mobile-nav {
+                display: none;
+            }
+        }
+        
         @media screen and (max-width: 768px) {
             .main-header {
                 padding: 20px;
@@ -304,7 +345,7 @@
                 justify-content: space-between;
             }
 
-            .main-nav, .header-socials {
+            .main-nav, .header-socials, .header-contact {
                 display: none; /* Cache les éléments de navigation et sociaux sur mobile */
             }
 
@@ -320,6 +361,15 @@
             .pricing-card {
                 width: 95%;
                 padding: 25px;
+            }
+            
+            .header-socials {
+                /* Sur mobile, les icônes sociales sont cachées dans le menu déroulant */
+                display: none;
+            }
+
+            .header-contact {
+                display: none;
             }
         }
     </style>
@@ -348,7 +398,7 @@
             </nav>
         </div>
         
-        <!-- Icônes des réseaux sociaux -->
+        <!-- Icônes des réseaux sociaux et bouton de contact -->
         <div class="header-socials">
             <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon">
                 <i class="fab fa-youtube"></i>
@@ -356,6 +406,10 @@
             <a href="https://www.instagram.com/slow_alchimiste?igsh=dWVhb3ozYm55MnJn/" target="_blank" class="social-icon">
                 <i class="fab fa-instagram"></i>
             </a>
+        </div>
+        
+        <div class="header-contact">
+             <a href="index.html#contact" class="btn-primary">Me contacter</a>
         </div>
         
         <!-- Bouton hamburger pour mobile -->
@@ -373,7 +427,6 @@
             <a href="portfolio.html" class="btn-secondary">Projets</a>
             <a href="index.html#contact" class="btn-primary">Me contacter</a>
         </nav>
-        <a href="index.html#contact" class="btn-primary" style="display: none;">Me contacter</a>
     </header>
 
     <main>
@@ -398,7 +451,15 @@
     <a href="#top" class="back-to-top" id="backToTop">&#8679;</a>
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="main-footer">
+        <div class="footer-socials">
+            <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/slow_alchimiste?igsh=dWVhb3ozYm55MnJn/" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
         <p>© 2025 Branding Service - Tous droits réservés</p>
     </footer>
 
@@ -417,9 +478,6 @@
         // Script pour le menu hamburger
         const hamburger = document.querySelector('.hamburger-menu');
         const navMenu = document.querySelector('.mobile-nav');
-        const desktopNav = document.querySelector('.main-nav');
-        const headerSocials = document.querySelector('.header-socials');
-        const contactBtnDesktop = document.querySelector('.btn-primary');
 
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('is-active');

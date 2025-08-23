@@ -13,69 +13,72 @@
 <body>
 
     <!-- Ancre en haut -->
-    <a id="top" href="#top"></a>
+    <a id="top" href="#top"></a>
 
-    <!-- HEADER -->
-    <header class="main-header" id="main-header">
-        <!-- Logo et navigation groupés et centrés -->
-        <div class="nav-group">
-            <a href="index.html" class="logo">
-                <!-- Logo principal de l'entreprise -->
-                <img src="beyond.png" alt="Logo Beyond" class="logo-icon">
-                Beyond.
-            </a>
-            <!-- Navigation pour PC -->
-            <nav class="main-nav">
-                <div class="btn-group">
-                    <a href="index.html" class="btn-secondary">Accueil</a>
-                    <a href="a propos.html" class="btn-secondary">À Propos</a>
-                    <a href="tarif.html" class="btn-secondary">Mes Accompagnements</a>
-                    <a href="portfolio.html" class="btn-secondary">Projets</a>
-                    <a href="index.html#contact" class="btn-primary">Me contacter</a>
-                </div>
-            </nav>
-        </div>
-        
-        <!-- Icônes des réseaux sociaux (considérés comme les "logos sur le côté") -->
-        <div class="header-socials">
-            <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon">
-                <i class="fab fa-youtube"></i>
-            </a>
-            <a href="https://www.instagram.com/slow_alchimiste?igsh=dWVhb3ozYm55MnJn/" target="_blank" class="social-icon">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div>
-    </header>
-        
-             <!-- Le menu hamburger est le bouton qui ouvrira le menu mobile -->
-            <button class="hamburger-menu" aria-label="Ouvrir le menu">
-                 <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
+    <!-- HEADER -->
+    <header class="main-header" id="main-header">
+        <!-- Groupe d'éléments à gauche pour mobile : Logo et icônes sociales -->
+        <div class="header-left">
+            <a href="index.html" class="logo">
+                <img src="beyond.png" alt="Logo Beyond" class="logo-icon">
+                Beyond.
+            </a>
+            <!-- Icônes des réseaux sociaux - visibles sur mobile, masquées sur PC -->
+            <div class="header-socials-mobile">
+                <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/slow_alchimiste?igsh=dWVhb3ozYm55MnJn/" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
 
-    <!-- Le menu mobile, caché par défaut. Il s'ouvrira grâce au JavaScript. -->
-    <div class="mobile-nav" id="mobile-menu">
-        <a href="#" class="btn-secondary">Appeler</a>
-        <a href="#">Accueil</a>
-        <a href="#">Services</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact</a>
-    </div>
-        
-        
-        
-    </header>
+        <!-- Navigation principale - visible sur PC, masquée sur mobile -->
+        <nav class="main-nav">
+            <a href="index.html" class="btn-secondary">Accueil</a>
+            <a href="a propos.html" class="btn-secondary">À Propos</a>
+            <a href="tarif.html" class="btn-secondary">Mes Accompagnements</a>
+            <a href="portfolio.html" class="btn-secondary">Projets</a>
+            <a href="index.html#contact" class="btn-primary">Me contacter</a>
+        </nav>
+        
+        <!-- Groupe d'éléments à droite pour PC : icônes sociales et menu hamburger -->
+        <div class="header-right">
+            <!-- Icônes des réseaux sociaux - visibles sur PC, masquées sur mobile -->
+            <div class="header-socials-desktop">
+                <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/slow_alchimiste?igsh=dWVhb3ozYm55MnJn/" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <!-- Le menu hamburger - visible sur mobile, masqué sur PC -->
+            <button class="hamburger-menu" aria-label="Ouvrir le menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
 
-    <!-- NOUVELLE SECTION HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Révélez votre marque <br> au-delà des apparences</h1>
-            <p>Logo • Identité visuelle • Supports de communication</p>
-        </div>
-    </section>
+    <!-- Le menu mobile, caché par défaut. Il s'ouvrira grâce au JavaScript. -->
+    <div class="mobile-nav" id="mobile-menu">
+        <a href="#" class="btn-secondary">Appeler</a>
+        <a href="#">Accueil</a>
+        <a href="#">Services</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+    </div>
+        
+    <!-- NOUVELLE SECTION HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Révélez votre marque <br> au-delà des apparences</h1>
+            <p>Logo • Identité visuelle • Supports de communication</p>
+        </div>
+    </section>
 
-    <main>
+    <main>
         <!-- Les sections "A Propos" et "Mes Services" ont été enlevées -->
 
         <!-- NOUVEAU CONTENU MES SERVICES -->
@@ -150,9 +153,26 @@
                 } else {
                     mainHeader.classList.remove("scrolled");
                 }
+            });
+
+            // Fonctionnalité pour le menu mobile
+            const hamburger = document.querySelector('.hamburger-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            hamburger.addEventListener('click', () => {
+                mobileMenu.classList.toggle('is-open');
             });
-        });
-    </script>
+            
+            // Ferme le menu mobile si on clique en dehors
+            document.addEventListener('click', (event) => {
+                const isClickInsideMenu = mobileMenu.contains(event.target) || hamburger.contains(event.target);
+                if (!isClickInsideMenu && mobileMenu.classList.contains('is-open')) {
+                    mobileMenu.classList.remove('is-open');
+                }
+            });
+
+        });
+    </script>
 
     <script src="script.js"></script>
 </body>

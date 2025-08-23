@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarifs - Beyond.</title>
+  <link rel="icon" href="beyond.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --background-light: #F8F4F0;
+      --background-dark: #2F2F2F;
+      --primary-color: #bc7870;
+      --secondary-color: #6E5A51;
+      --tertiary-color: #B85C4C;
+      --text-dark: #57423f;
+      --text-light: #F8F4F0;
+      --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--background-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    .main-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: transparent;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      text-align: center;
+    }
+    .main-header.scrolled {
+      background-color: var(--background-light);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+    }
+    .main-nav {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .main-nav a {
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease-in-out;
+    }
+    .btn-primary, .btn-secondary {
+      padding: 10px 20px;
+      border-radius: 50px;
+    }
+    .btn-primary {
+      background: var(--primary-color);
+      color: var(--text-light);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--secondary-color);
+    }
+    .header-icons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .header-icons i {
+      font-size: 22px;
+      color: var(--primary-color);
+      transition: transform 0.3s, color 0.3s;
+    }
+    .header-icons i:hover {
+      transform: scale(1.1);
+      color: var(--tertiary-color);
+    }
+
+    /* SECTION TARIFS */
+    .tarifs {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .tarifs h2 {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: var(--primary-color);
+    }
+    .tarif-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .tarif-card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-subtle);
+      transition: transform 0.3s;
+    }
+    .tarif-card:hover {
+      transform: translateY(-5px);
+    }
+    .tarif-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 10px;
+    }
+    .tarif-card p {
+      margin-bottom: 15px;
+    }
+    .tarif-card .price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--tertiary-color);
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      background: var(--background-dark);
+      color: var(--text-light);
+      text-align: center;
+    }
+    footer p { margin-bottom: 10px; }
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    footer a:hover { color: var(--tertiary-color); }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="main-header" id="main-header">
+    <a href="index.html" class="logo">
+      <img src="beyond.png" alt="Logo Beyond" class="logo-icon">
+      Beyond.
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="btn-secondary">Accueil</a>
+      <a href="a propos.html" class="btn-secondary">À Propos</a>
+      <a href="tarif.html" class="btn-secondary">Mes Accompagnements</a>
+      <a href="portfolio.html" class="btn-secondary">Projets</a>
+      <a href="index.html#contact" class="btn-primary">Me contacter</a>
+    </nav>
+    <div class="header-icons">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-leaf"></i>
+    </div>
+  </header>
+
+  <!-- SECTION TARIFS -->
+  <section class="tarifs">
+    <h2>Mes Accompagnements</h2>
+    <div class="tarif-grid">
+      <div class="tarif-card">
+        <h3>Pack Découverte</h3>
+        <p>Idéal pour débuter, comprendre vos besoins et définir vos objectifs.</p>
+        <p class="price">49€</p>
+      </div>
+      <div class="tarif-card">
+        <h3>Pack Avancé</h3>
+        <p>Un suivi plus complet pour développer votre projet avec régularité.</p>
+        <p class="price">149€</p>
+      </div>
+      <div class="tarif-card">
+        <h3>Pack Premium</h3>
+        <p>Un accompagnement personnalisé et intensif, avec suivi privilégié.</p>
+        <p class="price">299€</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 Beyond. Tous droits réservés.</p>
+    <p>
+      <a href="index.html">Accueil</a> |
+      <a href="a propos.html">À Propos</a> |
+      <a href="tarif.html">Tarifs</a> |
+      <a href="portfolio.html">Portfolio</a>
+    </p>
+  </footer>
+
+  <script>
+    // Effet scroll header
+    const header = document.getElementById("main-header");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+  </script>
+</body>
+</html>

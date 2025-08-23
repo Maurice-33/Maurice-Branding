@@ -77,17 +77,21 @@
             font-size: 1.5rem;
         }
 
-        /* Styles pour le header et la navigation */
-        .main-header {
+        /* Header et Navigation */
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            background-color: transparent; /* Rendre le header transparent */
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            position: sticky; /* Reste en haut de la page */
-            top: 0;
-            z-index: 1000;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 30px;
+            height: 30px;
         }
 
         /* Styles pour le header lorsqu'il défile */

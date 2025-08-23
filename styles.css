@@ -286,3 +286,365 @@ html {
     }
 }
 /* Les styles pour le menu hamburger et le menu mobile ont été supprimés */
+
+/* Variables CSS personnalisées pour une palette de couleurs professionnelle et soignée */
+:root {
+    --background-light: #F8F4F0;
+    --background-dark: #2F2F2F;
+    --primary-color: #bc7870; /* Terracotta */
+    --secondary-color: #6E5A51; /* Gris chaud */
+    --tertiary-color: #B85C4C; /* Terracotta foncé */
+    --text-dark: #57423f;
+    --text-light: #F8F4F0;
+    --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Utilisation de flexbox pour le layout */
+    flex-direction: column;
+    min-height: 100vh; /* La page occupe au moins toute la hauteur de la vue */
+}
+ 
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Conteneur principal qui se développe pour pousser le footer vers le bas */
+main {
+    flex: 1; /* Permet à la section principale de prendre tout l'espace disponible */
+    padding-bottom: 50px;
+}
+
+/* Sections de contenu */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* Styles pour le header et la navigation */
+.main-header {
+    display: flex; /* Utilise flexbox pour l'alignement */
+    justify-content: space-between; /* Espacement entre les groupes d'éléments */
+    align-items: center;
+    padding: 20px 50px;
+    background-color: transparent; /* Rendre le header transparent */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: sticky; /* Reste en haut de la page */
+    top: 0;
+    z-index: 1000;
+}
+
+/* Styles pour le header lorsqu'il défile */
+.main-header.scrolled {
+    background-color: var(--background-light); /* Devient blanc */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
+}
+ 
+/* Conteneur pour le logo et les boutons de navigation (côté gauche) */
+.nav-group {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Espace entre le logo et les boutons */
+}
+ 
+/* Conteneur pour les boutons de navigation */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Conteneur pour les icônes sociales (côté droit) */
+.header-socials {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Titres */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+}
+
+h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Header et Navigation */
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+}
+ 
+/* Liens sociaux (les icônes de Font Awesome) */
+.social-icon {
+    display: inline-block;
+    color: var(--primary-color);
+    font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    color: var(--tertiary-color);
+}
+ 
+/* Styles des boutons */
+.btn-primary, .btn-secondary {
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--text-light);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background: var(--tertiary-color);
+    border-color: var(--tertiary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--secondary-color);
+    border: 2px solid transparent;
+}
+
+.btn-secondary:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Section Hero */
+.hero {
+    background: var(--background-light);
+    text-align: center;
+    padding: 150px 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+}
+ 
+/* Styles pour le menu mobile (Bouton hamburger et menu) */
+.hamburger-menu {
+    display: none; /* Caché par défaut sur les grands écrans */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1001; /* Pour qu'il soit au-dessus du menu ouvert */
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Styles pour la transformation du hamburger en "X" */
+.hamburger-menu.is-active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.is-active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.main-nav, .header-socials, .header-contact { /* Ajout de .header-contact pour le bouton */
+    display: flex;
+}
+
+/* Cacher la navigation principale sur mobile par défaut */
+.main-nav {
+     display: none;
+}
+ 
+.main-nav.is-open {
+    display: none;
+}
+ 
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-light);
+    padding: 20px 0;
+    box-shadow: var(--shadow-subtle);
+}
+
+.mobile-nav.is-open {
+    display: flex;
+}
+
+.mobile-nav a {
+    padding: 15px 20px;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.mobile-nav a:last-child {
+    border-bottom: none;
+}
+ 
+/* Bouton pour remonter en haut de la page */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 12px 16px;
+    border-radius: 50%;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: none;
+    display: none;
+    z-index: 1000;
+    box-shadow: var(--shadow-subtle);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Scroll fluide */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Styles pour le footer */
+.main-footer {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15); /* Ombre pour le haut du footer */
+}
+ 
+.main-footer .footer-socials {
+    margin-bottom: 20px;
+}
+
+.main-footer .social-icon {
+    color: var(--text-light);
+    margin: 0 10px;
+}
+
+.main-footer .social-icon:hover {
+    color: var(--primary-color);
+}
+
+/* Media Queries pour le design responsive */
+@media screen and (min-width: 769px) { /* Afficher le bouton de contact et la navigation sur les grands écrans */
+    .main-nav, .header-socials, .header-contact {
+        display: flex;
+    }
+    .hamburger-menu, .mobile-nav {
+        display: none;
+    }
+}
+ 
+@media screen and (max-width: 768px) {
+    .main-header {
+        padding: 20px;
+        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
+    }
+
+    .nav-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .main-nav, .header-socials, .header-contact {
+        display: none; /* Cache les éléments de navigation et sociaux sur mobile */
+    }
+
+    .hamburger-menu {
+        display: flex; /* Affiche le bouton hamburger sur mobile */
+    }
+    
+    .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-card {
+        width: 95%;
+        padding: 25px;
+    }
+    
+    .header-socials {
+        /* Sur mobile, les icônes sociales sont cachées dans le menu déroulant */
+        display: none;
+    }
+
+    .header-contact {
+        display: none;
+    }
+}

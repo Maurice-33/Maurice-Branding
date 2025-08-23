@@ -33,6 +33,8 @@
             background-color: var(--background-light);
             color: var(--text-dark);
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
 
         /* Réinitialisation de base */
@@ -56,7 +58,7 @@
         /* Styles pour le header et la navigation */
         .main-header {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Espacement entre les groupes d'éléments */
             align-items: center;
             padding: 20px 50px;
             background-color: transparent; /* Rendre le header transparent */
@@ -70,6 +72,27 @@
         .main-header.scrolled {
             background-color: var(--background-light); /* Devient blanc */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
+        }
+
+        /* Conteneur pour le logo et la navigation, pour les centrer */
+        .nav-group {
+            display: flex;
+            align-items: center;
+            gap: 25px; /* Espace entre le logo et les boutons */
+        }
+        
+        /* Conteneur pour les boutons de navigation */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* Conteneur pour les icônes sociales */
+        .header-socials {
+            display: flex;
+            gap: 15px;
+            align-items: center;
         }
 
         /* Titres */
@@ -112,22 +135,9 @@
             height: 30px;
         }
         
-        /* Conteneur pour le menu de navigation et les icônes sociales */
-        .btn-group {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
         /* Liens sociaux (inclus dans la nav pour la version desktop) */
-        .header-socials {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        
         .social-icon {
-            display: none; /* Cache par défaut les icônes sociales */
+            display: inline-block; /* Affiche les icônes sociales */
         }
 
         /* Utilisation de Font Awesome pour les icônes */
@@ -358,8 +368,12 @@
                 padding: 20px;
             }
             
-            .btn-group {
+            .nav-group {
                 display: none; /* Cache les boutons par défaut sur mobile */
+            }
+
+            .header-socials {
+                display: none; /* Cache les icônes sociales par défaut sur mobile */
             }
 
             .hamburger-menu {
@@ -370,7 +384,7 @@
                 position: relative;
             }
 
-            .btn-group.is-open {
+            .nav-group.is-open, .header-socials.is-open {
                 display: flex; /* Affiche le menu lorsque le hamburger est actif */
                 position: absolute;
                 top: 100%;
@@ -381,15 +395,15 @@
                 padding: 20px 0;
                 box-shadow: var(--shadow-subtle);
             }
-
-            .btn-group.is-open a {
+            
+            .nav-group.is-open a, .header-socials.is-open a {
                 padding: 15px 20px;
                 width: 100%;
                 border-bottom: 1px solid #eee;
                 text-align: center;
             }
 
-            .btn-group.is-open a:last-child {
+            .nav-group.is-open a:last-child, .header-socials.is-open a:last-child {
                 border-bottom: none;
             }
 
@@ -412,24 +426,25 @@
 
     <!-- HEADER -->
     <header class="main-header" id="main-header">
-        <a href="index.html" class="logo">
-            <img src="beyond.png" alt="Logo Beyond" class="logo-icon">
-            Beyond.
-        </a>
-        
-        <!-- Conteneur pour le menu de navigation et les icônes sociales -->
-        <div class="right-menu-container">
+        <!-- Logo et navigation groupés et centrés -->
+        <div class="nav-group">
+            <a href="index.html" class="logo">
+                <img src="beyond.png" alt="Logo Beyond" class="logo-icon">
+                Beyond.
+            </a>
             <!-- Navigation pour PC -->
             <nav class="main-nav">
-                <ul>
+                <div class="btn-group">
                     <a href="index.html" class="btn-secondary">Accueil</a>
-            <a href="a propos.html" class="btn-secondary">À Propos</a>
-            <a href="tarif.html" class="btn-secondary">Mes Accompagnements</a>
-            <a href="portfolio.html" class="btn-secondary">Projets</a>
-            <a href="index.html#contact" class="btn-primary">Me contacter</a>
-        </nav>
-
-        <!-- Liens vers les réseaux sociaux (déplacés) -->
+                    <a href="a propos.html" class="btn-secondary">À Propos</a>
+                    <a href="tarif.html" class="btn-secondary">Mes Accompagnements</a>
+                    <a href="portfolio.html" class="btn-secondary">Projets</a>
+                    <a href="index.html#contact" class="btn-primary">Me contacter</a>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Liens vers les réseaux sociaux -->
         <div class="header-socials">
             <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon youtube">
                 <i class="fab fa-youtube"></i>
@@ -516,20 +531,27 @@
         });
 
         // Script pour le menu hamburger
-        const hamburger = document.querySelector('.hamburger-menu');
-        const navMenu = document.querySelector('.btn-group');
+        const hamburger = document.getElementById('hamburger-menu');
+        const navGroup = document.querySelector('.nav-group');
+        const socialGroup = document.querySelector('.header-socials');
 
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('is-active');
-            navMenu.classList.toggle('is-open');
+            navGroup.classList.toggle('is-open');
+            socialGroup.classList.toggle('is-open');
         });
 
         // Ferme le menu si un lien est cliqué
-        navMenu.addEventListener('click', () => {
-            hamburger.classList.remove('is-active');
-            navMenu.classList.remove('is-open');
+        const navLinks = document.querySelectorAll('.nav-group a, .header-socials a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navGroup.classList.contains('is-open')) {
+                    hamburger.classList.remove('is-active');
+                    navGroup.classList.remove('is-open');
+                    socialGroup.classList.remove('is-open');
+                }
+            });
         });
     </script>
-
 </body>
 </html>

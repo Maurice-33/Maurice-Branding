@@ -136,74 +136,44 @@
             transform: scale(1.1);
             color: var(--tertiary-color);
         }
+        
+        .btn-group {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
 
-        /* Menu de navigation mobile */
-        .mobile-nav {
-            display: none;
-            flex-direction: column;
-            position: fixed; /* Reste visible */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: rgba(248, 244, 240, 0.95); /* Fond semi-transparent */
-            z-index: 999;
-            padding-top: 80px;
-            transition: transform 0.5s ease-in-out;
-            transform: translateY(-100%);
-            overflow-y: auto;
-        }
+    .btn-primary, .btn-secondary {
+      padding: 12px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease-in-out;
+    }
 
-        .mobile-nav.is-open {
-            transform: translateY(0);
-        }
+    .btn-primary {
+      background: var(--primary-color);
+      color: var(--text-light);
+      border: 2px solid var(--primary-color);
+    }
 
-        .mobile-nav a {
-            padding: 20px;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 1.5rem;
-            font-weight: 500;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            transition: background-color 0.3s ease;
-        }
+    .btn-primary:hover {
+      background: var(--tertiary-color);
+      border-color: var(--tertiary-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
 
-        .mobile-nav a:hover {
-            background-color: rgba(0, 0, 0, 0.05);
-        }
+    .btn-secondary {
+      background: transparent;
+      color: var(--secondary-color);
+      border: 2px solid transparent;
+    }
 
-        /* Menu hamburger pour mobile */
-        .hamburger-menu {
-            display: none; /* Caché par défaut sur les grands écrans */
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 22px;
-            cursor: pointer;
-            z-index: 1000;
-        }
-
-        .hamburger-menu span {
-            display: block;
-            width: 100%;
-            height: 3px;
-            background-color: var(--primary-color);
-            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        }
-
-        /* Styles pour la transformation du hamburger en "X" */
-        .hamburger-menu.is-active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .hamburger-menu.is-active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger-menu.is-active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
+    .btn-secondary:hover {
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
 
         /* Styles pour le carrousel */
         .carousel-container {
@@ -289,6 +259,37 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Styles pour le menu mobile (Bouton hamburger et menu) */
+    .hamburger-menu {
+        display: none; /* Caché par défaut sur les grands écrans */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        cursor: pointer;
+    }
+
+    .hamburger-menu span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary-color);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Styles pour la transformation du hamburger en "X" */
+    .hamburger-menu.is-active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger-menu.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.is-active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
 
         /* Media Queries pour le design responsive */
         @media screen and (max-width: 768px) {

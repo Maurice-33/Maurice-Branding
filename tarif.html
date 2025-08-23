@@ -6,7 +6,9 @@
   <title>Tarifs - Beyond.</title>
   <link rel="icon" href="beyond.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-  <style>
+  <!-- Font Awesome pour les icônes sociales (YouTube, Instagram) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2g2S9O+H/J511b6G8z95X8I5/P654VfF0d4y7x8f9P6O+Fh5C+B6b+P6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
     /*
      * Variables CSS personnalisées pour un look plus professionnel et soigné.
     */
@@ -107,6 +109,32 @@
       width: 30px;
       height: 30px;
     }
+
+    /* Conteneur pour les icônes sociales et le menu déroulant */
+        .right-menu-container {
+            display: flex;
+            align-items: center;
+            gap: 30px; /* Espace entre les icônes et le menu déroulant */
+        }
+
+        /* Liens sociaux */
+        .header-socials {
+            display: flex; /* Toujours visible */
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* Utilisation de Font Awesome pour les icônes */
+        .social-icon i {
+            color: var(--primary-color);
+            font-size: 24px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icon:hover i {
+            transform: scale(1.1);
+            color: var(--tertiary-color);
+        }
 
     .btn-group {
       display: flex;
@@ -388,6 +416,18 @@
       <img src="beyond.png" alt="Logo Beyond" class="logo-icon">
       Beyond.
     </a>
+
+    <!-- Conteneur pour le menu de navigation et les icônes sociales -->
+        <div class="right-menu-container">
+            <!-- Liens vers les réseaux sociaux -->
+            <div class="header-socials">
+                <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon youtube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/slow_alchimiste?igsh=dWVhb3ozYm55MnJn/" target="_blank" class="social-icon instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
     
     <!-- Bouton Hamburger pour mobile -->
     <div class="hamburger-menu" id="hamburger-menu">

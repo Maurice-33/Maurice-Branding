@@ -33,7 +33,6 @@
             background-color: var(--background-light);
             color: var(--text-dark);
             line-height: 1.6;
-            overflow-x: hidden; /* Empêche le défilement horizontal */
         }
 
         /* Réinitialisation de base */
@@ -53,6 +52,25 @@
             padding: 80px 20px;
             text-align: center;
         }
+
+        /* Styles pour le header et la navigation */
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: transparent; /* Rendre le header transparent */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      position: sticky; /* Reste en haut de la page */
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Styles pour le header lorsqu'il défile */
+    .main-header.scrolled {
+      background-color: var(--background-light); /* Devient blanc */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
+    }
 
         /* Titres */
         h1, h2, h3 {
@@ -77,40 +95,22 @@
             font-size: 1.5rem;
         }
 
-        /* Styles pour le header et la navigation */
-    .main-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      background-color: transparent; /* Rendre le header transparent */
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      position: sticky; /* Reste en haut de la page */
-      top: 0;
-      z-index: 1000;
-    }
+        /* Header et Navigation */
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    /* Styles pour le header lorsqu'il défile */
-    .main-header.scrolled {
-      background-color: var(--background-light); /* Devient blanc */
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
-    }
-
-    .logo {
-      font-family: var(--font-heading);
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-icon {
-      width: 30px;
-      height: 30px;
-    }
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+        }
 
     .btn-group {
       display: flex;

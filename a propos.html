@@ -4,145 +4,179 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À Propos - Beyond.</title>
+    <!-- Favicon de l'entreprise Beyond -->
     <link rel="icon" href="beyond.png" type="image/png">
+    <!-- Polices de caractères Inter et Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome pour les icônes sociales (YouTube, Instagram) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2g2S9O+H/J511b6G8z95X8I5/P654VfF0d4y7x8f9P6O+Fh5C+B6b+P6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /*
-         * Variables CSS personnalisées pour un look plus professionnel et soigné.
-        */
+        /* Variables CSS personnalisées pour une palette de couleurs professionnelle et soignée */
         :root {
-          --background-light: #F8F4F0;
-          --background-dark: #2F2F2F;
-          --primary-color: #bc7870; /* Terracotta */
-          --secondary-color: #6E5A51; /* Gris chaud */
-          --tertiary-color: #B85C4C; /* Terracotta foncé */
-          --text-dark: #57423f;
-          --text-light: #F8F4F0;
-          --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --background-light: #F8F4F0;
+            --background-dark: #2F2F2F;
+            --primary-color: #bc7870; /* Terracotta */
+            --secondary-color: #6E5A51; /* Gris chaud */
+            --tertiary-color: #B85C4C; /* Terracotta foncé */
+            --text-dark: #57423f;
+            --text-light: #F8F4F0;
+            --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
 
-          --font-heading: 'Poppins', sans-serif;
-          --font-body: 'Inter', sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
         }
 
         body {
-          font-family: var(--font-body);
-          background-color: var(--background-light);
-          color: var(--text-dark);
-          line-height: 1.6;
+            font-family: var(--font-body);
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
 
         /* Réinitialisation de base */
         * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         /* Conteneur principal */
         main {
-          padding-bottom: 50px;
+            padding-bottom: 50px;
         }
 
-        /* Sections */
+        /* Sections de contenu */
         section {
-          padding: 80px 20px;
-          text-align: center;
+            padding: 80px 20px;
+            text-align: center;
         }
 
-        /* Titres */
-        h1, h2, h3 {
-          font-family: var(--font-heading);
-        }
-
-        h1 {
-          font-size: 3.5rem;
-          margin-bottom: 20px;
-          color: var(--text-dark);
-        }
-
-        h2 {
-          font-size: 2.5rem;
-          margin-bottom: 50px;
-          color: var(--primary-color);
-        }
-
-        h3 {
-          color: var(--primary-color);
-          margin-bottom: 15px;
-          font-size: 1.5rem;
-        }
-
-        /* Header et Navigation */
+        /* Styles pour le header et la navigation */
         .main-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 20px 50px;
-          background-color: transparent; /* Initialement transparent */
-          transition: background-color 0.3s ease, box-shadow 0.3s ease;
-          position: sticky; /* Reste en haut de la page */
-          top: 0;
-          z-index: 1000;
+            display: flex;
+            justify-content: space-between; /* Espacement entre les groupes d'éléments */
+            align-items: center;
+            padding: 20px 50px;
+            background-color: transparent; /* Rendre le header transparent */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            position: sticky; /* Reste en haut de la page */
+            top: 0;
+            z-index: 1000;
         }
 
         /* Styles pour le header lorsqu'il défile */
         .main-header.scrolled {
-          background-color: var(--background-light); /* Devient blanc */
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
+            background-color: var(--background-light); /* Devient blanc */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
         }
 
+        /* Conteneur pour le logo et les boutons de navigation (côté gauche) */
+        .nav-group {
+            display: flex;
+            align-items: center;
+            gap: 25px; /* Espace entre le logo et les boutons */
+        }
+        
+        /* Conteneur pour les boutons de navigation */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* Conteneur pour les icônes sociales (côté droit) */
+        .header-socials {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* Titres */
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Header et Navigation */
         .logo {
-          font-family: var(--font-heading);
-          font-size: 1.8rem;
-          font-weight: 700;
-          color: var(--primary-color);
-          text-decoration: none;
-          display: flex;
-          align-items: center;
-          gap: 10px;
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .logo-icon {
-          width: 30px;
-          height: 30px;
+            width: 30px;
+            height: 30px;
+        }
+        
+        /* Liens sociaux (les icônes de Font Awesome) */
+        .social-icon {
+            display: inline-block;
+            color: var(--primary-color);
+            font-size: 24px;
+            transition: transform 0.3s ease, color 0.3s ease;
         }
 
-        .btn-group {
-          display: flex;
-          gap: 25px;
-          align-items: center;
+        .social-icon:hover {
+            transform: scale(1.1);
+            color: var(--tertiary-color);
         }
-
+        
+        /* Styles des boutons */
         .btn-primary, .btn-secondary {
-          padding: 12px 25px;
-          border-radius: 50px;
-          text-decoration: none;
-          font-weight: 500;
-          transition: all 0.3s ease-in-out;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease-in-out;
         }
 
         .btn-primary {
-          background: var(--primary-color);
-          color: var(--text-light);
-          border: 2px solid var(--primary-color);
+            background: var(--primary-color);
+            color: var(--text-light);
+            border: 2px solid var(--primary-color);
         }
 
         .btn-primary:hover {
-          background: var(--tertiary-color);
-          border-color: var(--tertiary-color);
-          transform: translateY(-2px);
-          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background: var(--tertiary-color);
+            border-color: var(--tertiary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .btn-secondary {
-          background: transparent;
-          color: var(--secondary-color);
-          border: 2px solid transparent;
+            background: transparent;
+            color: var(--secondary-color);
+            border: 2px solid transparent;
         }
 
         .btn-secondary:hover {
-          color: var(--primary-color);
-          transform: translateY(-2px);
+            color: var(--primary-color);
+            transform: translateY(-2px);
         }
         
         /* Styles de la section "À Propos" */

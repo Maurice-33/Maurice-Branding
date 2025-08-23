@@ -3,11 +3,417 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beyond.</title>
+    <title>Tarifs - Beyond.</title>
+    <!-- Favicon de l'entreprise Beyond -->
     <link rel="icon" href="beyond.png" type="image/png">
+    <!-- Polices de caractères Inter et Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome pour les icônes sociales (YouTube, Instagram) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2g2S9O+H/J511b6G8z95X8I5/P654VfF0d4y7x8f9P6O+Fh5C+B6b+P6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Variables CSS personnalisées pour une palette de couleurs professionnelle et soignée */
+        :root {
+            --background-light: #F8F4F0;
+            --background-dark: #2F2F2F;
+            --primary-color: #bc7870; /* Terracotta */
+            --secondary-color: #6E5A51; /* Gris chaud */
+            --tertiary-color: #B85C4C; /* Terracotta foncé */
+            --text-dark: #57423f;
+            --text-light: #F8F4F0;
+            --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Réinitialisation de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Conteneur principal */
+        main {
+            padding-bottom: 50px;
+        }
+
+        /* Sections de contenu */
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        /* Styles pour le header et la navigation */
+        .main-header {
+            display: flex;
+            justify-content: space-between; /* Espacement entre les groupes d'éléments */
+            align-items: center;
+            padding: 20px 50px;
+            background-color: transparent; /* Rendre le header transparent */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            position: sticky; /* Reste en haut de la page */
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Styles pour le header lorsqu'il défile */
+        .main-header.scrolled {
+            background-color: var(--background-light); /* Devient blanc */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
+        }
+
+        /* Conteneur pour le logo et les boutons de navigation (côté gauche) */
+        .nav-group {
+            display: flex;
+            align-items: center;
+            gap: 25px; /* Espace entre le logo et les boutons */
+        }
+        
+        /* Conteneur pour les boutons de navigation */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* Conteneur pour les icônes sociales (côté droit) */
+        .header-socials {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* Titres */
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Header et Navigation */
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+        }
+        
+        /* Liens sociaux (les icônes de Font Awesome) */
+        .social-icon {
+            display: inline-block;
+            color: var(--primary-color);
+            font-size: 24px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+            color: var(--tertiary-color);
+        }
+        
+        /* Styles des boutons */
+        .btn-primary, .btn-secondary {
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--text-light);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background: var(--tertiary-color);
+            border-color: var(--tertiary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--secondary-color);
+            border: 2px solid transparent;
+        }
+
+        .btn-secondary:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        /* Styles de la section tarifs */
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            width: 320px;
+            box-shadow: var(--shadow-subtle);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .plan-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+
+        .plan-price span {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--secondary-color);
+        }
+
+        .plan-features {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .plan-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .plan-features li svg {
+            margin-right: 10px;
+            color: #28a745;
+        }
+
+        .btn-pricing {
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .featured-plan {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            position: relative;
+            transform: scale(1.05);
+            z-index: 1;
+        }
+
+        .featured-plan .plan-title,
+        .featured-plan .plan-price,
+        .featured-plan .plan-price span,
+        .featured-plan .plan-features li {
+            color: var(--text-light);
+        }
+
+        .featured-plan .btn-primary {
+            background-color: #fff;
+            color: var(--primary-color);
+            border-color: #fff;
+        }
+
+        .featured-plan .btn-primary:hover {
+            background-color: var(--background-light);
+            border-color: var(--background-light);
+            color: var(--primary-color);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        /* Pied de page (Footer) */
+        footer {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 30px;
+        }
+
+        /* Bouton pour remonter en haut de la page */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: 12px 16px;
+            border-radius: 50%;
+            font-size: 24px;
+            text-align: center;
+            text-decoration: none;
+            display: none;
+            z-index: 1000;
+            box-shadow: var(--shadow-subtle);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Scroll fluide */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Styles pour le menu mobile (Bouton hamburger et menu) */
+        .hamburger-menu {
+            display: none; /* Caché par défaut sur les grands écrans */
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            cursor: pointer;
+            z-index: 1001; /* Pour qu'il soit au-dessus du menu ouvert */
+        }
+
+        .hamburger-menu span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Styles pour la transformation du hamburger en "X" */
+        .hamburger-menu.is-active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger-menu.is-active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.is-active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Media Queries pour le design responsive */
+        @media screen and (max-width: 768px) {
+            .main-header {
+                padding: 20px;
+                /* Sur mobile, on a besoin du z-index pour le menu déroulant */
+                position: relative;
+            }
+            
+            .nav-group {
+                display: none; /* Cache les boutons par défaut sur mobile */
+            }
+
+            .header-socials {
+                display: none; /* Cache les icônes sociales par défaut sur mobile */
+            }
+
+            .hamburger-menu {
+                display: flex; /* Affiche le bouton hamburger sur mobile */
+            }
+            
+            /* Styles pour le menu mobile ouvert */
+            .nav-group.is-open, .header-socials.is-open {
+                display: flex; /* Affiche le menu lorsque le hamburger est actif */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--background-light);
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: var(--shadow-subtle);
+            }
+            
+            .nav-group.is-open a, .header-socials.is-open a {
+                padding: 15px 20px;
+                width: 100%;
+                border-bottom: 1px solid #eee;
+                text-align: center;
+            }
+
+            .nav-group.is-open a:last-child, .header-socials.is-open a:last-child {
+                border-bottom: none;
+            }
+
+            /* Réorganisation des cartes de tarifs sur mobile */
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pricing-card {
+                width: 95%;
+                padding: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -16,123 +422,88 @@
 
     <!-- HEADER -->
     <header class="main-header" id="main-header">
-        <!-- Groupe à gauche (logo + réseaux sociaux sur mobile) -->
-        <div class="header-left">
+        <!-- Logo et navigation groupés et centrés -->
+        <div class="nav-group">
             <a href="index.html" class="logo">
+                <!-- Logo principal de l'entreprise -->
                 <img src="beyond.png" alt="Logo Beyond" class="logo-icon">
                 Beyond.
             </a>
-            <!-- Icônes sociales (mobile uniquement) -->
-            <div class="header-socials-mobile">
-                <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="https://www.instagram.com/slow_alchimiste?igsh=dWVhb3ozYm55MnJn/" target="_blank" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
+            <!-- Navigation pour PC -->
+            <nav class="main-nav">
+                <div class="btn-group">
+                    <a href="index.html" class="btn-secondary">Accueil</a>
+                    <a href="a propos.html" class="btn-secondary">À Propos</a>
+                    <a href="tarif.html" class="btn-secondary">Mes Accompagnements</a>
+                    <a href="portfolio.html" class="btn-secondary">Projets</a>
+                    <a href="index.html#contact" class="btn-primary">Me contacter</a>
+                </div>
+            </nav>
         </div>
-
-        <!-- Navigation (desktop uniquement) -->
-        <nav class="main-nav">
-            <a href="index.html" class="btn-secondary">Accueil</a>
-            <a href="a propos.html" class="btn-secondary">À Propos</a>
-            <a href="tarif.html" class="btn-secondary">Mes Accompagnements</a>
-            <a href="portfolio.html" class="btn-secondary">Projets</a>
-            <a href="index.html#contact" class="btn-primary">Me contacter</a>
-        </nav>
         
-        <!-- À droite (desktop : icônes sociales / mobile : burger) -->
-        <div class="header-right">
-            <div class="header-socials-desktop">
-                <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="https://www.instagram.com/slow_alchimiste?igsh=dWVhb3ozYm55MnJn/" target="_blank" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-            <!-- Burger menu -->
-            <button class="hamburger-menu" aria-label="Ouvrir le menu">
-                <i class="fas fa-bars"></i>
-            </button>
+        <!-- Icônes des réseaux sociaux (considérés comme les "logos sur le côté") -->
+        <div class="header-socials">
+            <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/slow_alchimiste?igsh=dWVhb3ozYm55MnJn/" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        
+        <!-- Bouton Hamburger pour mobile -->
+        <div class="hamburger-menu" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </header>
 
-    <!-- Menu mobile -->
-    <div class="mobile-nav" id="mobile-menu">
-        <a href="index.html">Accueil</a>
-        <a href="a propos.html">À Propos</a>
-        <a href="tarif.html">Mes Accompagnements</a>
-        <a href="portfolio.html">Projets</a>
-        <a href="#contact">Contact</a>
-    </div>
-        
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Révélez votre marque <br> au-delà des apparences</h1>
-            <p>Logo • Identité visuelle • Supports de communication</p>
-        </div>
-    </section>
-
-    <!-- MAIN -->
     <main>
-        <!-- SERVICES -->
-        <section id="mes-services">
-            <h2>Mes Services</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>Logo & Identité</h3>
-                    <p>Création de logos uniques et d’une identité visuelle cohérente.</p>
+        <section>
+            <h2>Trouvez le plan parfait pour votre entreprise</h2>
+            <div class="pricing-cards">
+                <!-- Carte 1 -->
+                <div class="pricing-card">
+                    <h3 class="plan-title">Basique</h3>
+                    <p class="plan-price">99€ <span>/ mois</span></p>
+                    <ul class="plan-features">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Fonctionnalité 1</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Fonctionnalité 2</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Support email</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Choisir</a>
                 </div>
-                <div class="card">
-                    <h3>Charte Graphique</h3>
-                    <p>Définition de couleurs, typographies et éléments graphiques.</p>
+
+                <!-- Carte 2 (Mise en avant) -->
+                <div class="pricing-card featured-plan">
+                    <span class="featured-badge">Populaire</span>
+                    <h3 class="plan-title">Standard</h3>
+                    <p class="plan-price">199€ <span>/ mois</span></p>
+                    <ul class="plan-features">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Fonctionnalité premium</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Plus de personnalisation</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Support prioritaire</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Choisir</a>
                 </div>
-                <div class="card">
-                    <h3>Supports Marketing</h3>
-                    <p>Flyers, bannières et réseaux sociaux pour un branding complet.</p>
+
+                <!-- Carte 3 -->
+                <div class="pricing-card">
+                    <h3 class="plan-title">Premium</h3>
+                    <p class="plan-price">299€ <span>/ mois</span></p>
+                    <ul class="plan-features">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Toutes les fonctionnalités</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Accompagnement dédié</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"/><path d="m11.62 13 2.19 2.19a2 2 0 0 0 2.82 0L22 8"/></svg>Support 24/7</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn-primary">Choisir</a>
                 </div>
             </div>
         </section>
-
-        <!-- CONTACT -->
-        <section id="contact">
-            <h2>Contactez-moi</h2>
-            <form action="#" method="post">
-                <div>
-                    <label for="name">Votre nom :</label>
-                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
-                </div>
-
-                <div>
-                    <label for="email">Votre email :</label>
-                    <input type="email" id="email" name="email" placeholder="Votre email" required>
-                </div>
-
-                <div>
-                    <label for="service">Type de demande :</label>
-                    <select id="service" name="service" required>
-                        <option value="" disabled selected>Choisissez une option</option>
-                        <option value="branding">Branding</option>
-                        <option value="logo">Création de logo</option>
-                        <option value="web">Site web</option>
-                        <option value="autre">Autre</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label for="message">Message :</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
-                </div>
-
-                <button type="submit" class="btn-primary">Envoyer</button>
-            </form>
-        </section>
     </main>
 
-    <!-- Bouton retour haut -->
+    <!-- Bouton remonter en haut -->
     <a href="#top" class="back-to-top" id="backToTop">&#8679;</a>
 
     <!-- FOOTER -->
@@ -140,7 +511,46 @@
         <p>© 2025 Branding Service - Tous droits réservés</p>
     </footer>
 
-    <!-- Script -->
-    <script src="script.js"></script>
+    <!-- JS pour le défilement et le menu hamburger -->
+    <script>
+        const mainHeader = document.getElementById("main-header");
+        const backToTopButton = document.getElementById("backToTop");
+        
+        // Script pour le header qui change de couleur et le bouton "back to top"
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                mainHeader.classList.add("scrolled");
+                backToTopButton.style.display = "block";
+            } else {
+                mainHeader.classList.remove("scrolled");
+                backToTopButton.style.display = "none";
+            }
+        });
+
+        // Script pour le menu hamburger
+        const hamburger = document.getElementById('hamburger-menu');
+        const navGroup = document.querySelector('.nav-group');
+        const socialGroup = document.querySelector('.header-socials');
+
+        hamburger.addEventListener('click', () => {
+            // Active/désactive la transformation du hamburger en "X"
+            hamburger.classList.toggle('is-active');
+            // Affiche/cache les groupes de navigation et sociaux pour le mobile
+            navGroup.classList.toggle('is-open');
+            socialGroup.classList.toggle('is-open');
+        });
+
+        // Ferme le menu si un lien est cliqué
+        const navLinks = document.querySelectorAll('.nav-group a, .header-socials a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navGroup.classList.contains('is-open')) {
+                    hamburger.classList.remove('is-active');
+                    navGroup.classList.remove('is-open');
+                    socialGroup.classList.remove('is-open');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

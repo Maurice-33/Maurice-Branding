@@ -8,18 +8,16 @@ window.addEventListener("scroll", () => {
     }
 });
 
-// Script pour le menu hamburger
-const hamburger = document.querySelector('.hamburger-menu');
-const navMenu = document.querySelector('.mobile-nav');
+// 2. Gérer l'ouverture et la fermeture du menu hamburger
+    // On sélectionne le bouton hamburger et le menu mobile
+    const hamburgerBtn = document.querySelector(".hamburger-menu");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('is-active');
-    navMenu.classList.toggle('is-open');
-});
-
-navMenu.addEventListener('click', () => {
-    hamburger.classList.remove('is-active');
-    navMenu.classList.remove('is-open');
+    // On ajoute un écouteur d'événement pour le clic sur le bouton
+    hamburgerBtn.addEventListener("click", () => {
+        // On bascule la classe 'is-open' sur le menu mobile pour l'afficher ou le cacher
+        mobileMenu.classList.toggle("is-open");
+    });
 });
 
 // NOUVEAU: Script pour ajouter la classe 'scrolled' au header lors du défilement

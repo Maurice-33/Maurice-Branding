@@ -240,6 +240,7 @@
             width: 30px;
             height: 22px;
             cursor: pointer;
+            z-index: 1001; /* Pour qu'il soit au-dessus du menu ouvert */
         }
 
         .hamburger-menu span {
@@ -267,6 +268,8 @@
         @media screen and (max-width: 768px) {
           .main-header {
             padding: 20px;
+            /* Sur mobile, on a besoin du z-index pour le menu déroulant */
+            position: relative; 
           }
 
           .btn-group {
@@ -323,10 +326,22 @@
 
     <!-- HEADER -->
     <header class="main-header" id="main-header">
-    <a href="index.html" class="logo">
-      <img src="beyond.png" alt="Logo Beyond" class="logo-icon">
-      Beyond.
-    </a>
+        <!-- Logo et navigation groupés et centrés -->
+        <div class="nav-group">
+            <a href="index.html" class="logo">
+                <!-- Logo principal de l'entreprise -->
+                <img src="beyond.png" alt="Logo Beyond" class="logo-icon">
+                Beyond.
+            </a>
+            <!-- Navigation pour PC -->
+            <nav class="main-nav">
+                <div class="btn-group">
+                    <a href="index.html" class="btn-secondary">Accueil</a>
+                    <a href="a propos.html" class="btn-secondary">À Propos</a>
+                    <a href="tarif.html" class="btn-secondary">Mes Accompagnements</a>
+                    <a href="portfolio.html" class="btn-secondary">Projets</a>
+                    <a href="index.html#contact" class="btn-primary">Me contacter</a>
+                </div>
 
         <!-- Bouton Hamburger pour mobile -->
         <div class="hamburger-menu" id="hamburger-menu">

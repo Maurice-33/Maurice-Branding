@@ -215,6 +215,55 @@
             .header-socials {
                 display: flex !important;
             }
+
+        /* Styles pour le carrousel */
+        .carousel-container {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            display: block;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            display: block;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: var(--primary-color);
+        }
         }
     </style>
 </head>
@@ -253,24 +302,34 @@
                 <i class="fab fa-instagram"></i>
             </a>
         </div>
-        
-    </header>
+    </nav>
+    <main>
+        <!-- NOUVEAU: Section Portfolio avec carrousel -->
+        <section id="portfolio-section">
+            <h2>Notre Portfolio de Créations</h2>
+            <div class="carousel-container" id="carousel-container">
+                <div class="carousel-track" id="carousel-track">
+                    <!-- Slides du carrousel avec des images de remplacement -->
+                    <div class="carousel-slide"><img src="https://placehold.co/900x600/6E5A51/FFFFFF?text=Logo+Design" alt="Logo Design"></div>
+                    <div class="carousel-slide"><img src="https://placehold.co/900x600/bc7870/FFFFFF?text=Website+Branding" alt="Website Branding"></div>
+                    <div class="carousel-slide"><img src="https://placehold.co/900x600/B85C4C/FFFFFF?text=Identity+Branding" alt="Identity Branding"></div>
+                    <div class="carousel-slide"><img src="https://placehold.co/900x600/F8F4F0/3E3E3E?text=Social+Media+Branding" alt="Social Media Branding"></div>
+                    <div class="carousel-slide"><img src="https://placehold.co/900x600/2F2F2F/F8F4F0?text=Branding+Strategy" alt="Branding Strategy"></div>
+                </div>
+                <div class="carousel-dots" id="carousel-dots">
+                    <!-- Les points seront générés par le JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <!-- TON CONTENU PORTFOLIO (inchangé) -->
-  <main>
-    <section class="portfolio">
-      <h1>Mes Projets</h1>
-      <p>Présentation de quelques projets réalisés.</p>
-      <!-- Exemple de galerie -->
-      <div class="gallery">
-        <div class="project">Projet 1</div>
-        <div class="project">Projet 2</div>
-        <div class="project">Projet 3</div>
-      </div>
-    </section>
-  </main>
+  <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Branding Service - Tous droits réservés</p>
+    </footer>
 
-  <script>
+    <!-- JS pour le carrousel, le back-to-top et le menu hamburger -->
+    <script>
     // Effet scroll header
     const header = document.getElementById("main-header");
     window.addEventListener("scroll", () => {
@@ -300,6 +359,86 @@
                 backToTopButton.style.display = "none";
             }
         });
+
+        // Script pour le carrousel
+        const carouselContainer = document.getElementById('carousel-container');
+        const carouselTrack = document.getElementById('carousel-track');
+        const carouselDots = document.getElementById('carousel-dots');
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlideIndex = 0;
+        let startX = 0;
+
+        // Fonction pour mettre à jour la position du carrousel
+        function updateCarouselPosition() {
+            if (slides.length > 0) {
+                const slideWidth = slides[0].offsetWidth;
+                carouselTrack.style.transform = 'translateX(' + (-slideWidth * currentSlideIndex) + 'px)';
+                updateDots();
+            }
+        }
+
+        // Fonction pour créer et mettre à jour les points de navigation
+        function createDots() {
+            carouselDots.innerHTML = '';
+            slides.forEach((slide, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (index === currentSlideIndex) {
+                    dot.classList.add('active');
+                }
+                dot.addEventListener('click', () => {
+                    currentSlideIndex = index;
+                    updateCarouselPosition();
+                });
+                carouselDots.appendChild(dot);
+            });
+        }
+
+        // Fonction pour mettre à jour l'état des points
+        function updateDots() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                if (index === currentSlideIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // Gestion des événements tactiles pour le glissement
+        carouselContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        carouselContainer.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const deltaX = endX - startX;
+            // Définir un seuil de détection du glissement
+            const swipeThreshold = 50;
+
+            if (deltaX > swipeThreshold) {
+                // Glissement vers la droite -> image précédente
+                currentSlideIndex = (currentSlideIndex > 0) ? currentSlideIndex - 1 : slides.length - 1;
+            } else if (deltaX < -swipeThreshold) {
+                // Glissement vers la gauche -> image suivante
+                currentSlideIndex = (currentSlideIndex < slides.length - 1) ? currentSlideIndex + 1 : 0;
+            }
+
+            updateCarouselPosition();
+        });
+
+        // Gérer le redimensionnement de la fenêtre pour le carrousel
+        window.addEventListener('resize', () => {
+            updateCarouselPosition();
+        });
+
+        // Initialisation au chargement de la page
+        window.onload = function() {
+            createDots();
+            updateCarouselPosition();
+        };
+
     </script>
 </body>
 </html>

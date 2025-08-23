@@ -34,8 +34,6 @@ body {
     background-color: var(--background-light);
     color: var(--text-dark);
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
     display: flex; /* Utilisation de flexbox pour le layout */
     flex-direction: column;
     min-height: 100vh; /* La page occupe au moins toute la hauteur de la vue */
@@ -92,14 +90,16 @@ h3 {
 
 /* Style du header lorsque la page défile */
 .main-header.scrolled {
-      background-color: var(--background-light); /* Devient blanc */
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
-  }
+    background-color: var(--background-light); /* Devient blanc */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
+}
 
 /* Groupes d'éléments dans le header */
 .nav-group,
 .btn-group,
-.header-socials {
+.header-socials,
+.header-left,
+.header-right {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -262,13 +262,13 @@ label {
     font-weight: 500;
 }
 
-        /* Pied de page (Footer) */
-        footer {
-            background-color: var(--background-dark);
-            color: var(--text-light);
-            text-align: center;
-            padding: 30px;
-        }
+/* Pied de page (Footer) */
+footer {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 30px;
+}
 
 /* Bouton pour remonter en haut de la page */
 .back-to-top {
@@ -303,27 +303,12 @@ html {
 /* ============================ */
 /* Styles pour les écrans de plus de 769px (PC) */
 @media screen and (min-width: 769px) {
-    .main-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .header-left, .header-right {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-    .main-nav {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
     /* Cache les éléments de la version mobile */
-    .header-socials-mobile,
-    .hamburger-menu,
+    .header-socials-mobile,
+    .hamburger-menu,
     .mobile-nav {
-        display: none;
-    }
+        display: none;
+    }
     /* Affiche les éléments de la version PC */
     .header-socials-desktop {
         display: flex;
@@ -334,16 +319,8 @@ html {
 
 /* Styles pour les écrans de 768px et moins (Mobile) */
 @media screen and (max-width: 768px) {
-    .main-header {
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .header-left, .header-right {
-        display: flex;
-        align-items: center;
-        gap: 20px;
+    .main-header {
+        padding: 20px;
     }
     /* Cache les éléments de la version PC */
     .main-nav,
@@ -382,40 +359,40 @@ html {
 
 /* Styles pour le menu mobile */
 .mobile-nav {
-    display: none; /* Masqué par défaut */
-    flex-direction: column;
-    position: fixed;
-    top: 75px;
-    left: 0;
-    width: 100%;
-    background-color: var(--background-light);
-    padding: 20px 0;
-    box-shadow: var(--shadow-subtle);
-    transform: translateY(-100%);
-    transition: transform 0.4s ease-in-out;
+    display: none; /* Masqué par défaut */
+    flex-direction: column;
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-light);
+    padding: 20px 0;
+    box-shadow: var(--shadow-subtle);
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
 }
 
 .mobile-nav.is-open {
-    display: flex;
-    transform: translateY(0);
+    display: flex;
+    transform: translateY(0);
 }
 
 .mobile-nav a {
-    padding: 15px 20px;
-    width: 100%;
-    border-bottom: 1px solid #eee;
-    text-align: center;
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
-    transition: background-color 0.2s ease;
+    padding: 15px 20px;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: background-color 0.2s ease;
 }
 
 .mobile-nav a:hover {
-    background-color: var(--background-dark);
-    color: var(--text-light);
+    background-color: var(--background-dark);
+    color: var(--text-light);
 }
 
 .mobile-nav a:last-child {
-    border-bottom: none;
+    border-bottom: none;
 }

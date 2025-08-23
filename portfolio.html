@@ -76,24 +76,24 @@
             font-size: 1.5rem;
         }
 
-        /* Header et Navigation */
-        .main-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: transparent;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        /* Styles pour le header et la navigation */
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: transparent; /* Rendre le header transparent */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      position: sticky; /* Reste en haut de la page */
+      top: 0;
+      z-index: 1000;
+    }
 
-        /* Styles pour le header lorsqu'il défile */
-        .main-header.scrolled {
-            background-color: var(--background-light);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
+    /* Styles pour le header lorsqu'il défile */
+    .main-header.scrolled {
+      background-color: var(--background-light); /* Devient blanc */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
+    }
 
         .logo {
             font-family: var(--font-heading);
@@ -135,81 +135,6 @@
         .social-icon:hover i {
             transform: scale(1.1);
             color: var(--tertiary-color);
-        }
-
-        /* Menu déroulant pour PC */
-        .dropdown-container {
-            position: relative;
-            display: flex; /* Toujours visible sur PC */
-            align-items: center;
-        }
-
-        .dropdown-button {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 12px 25px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 500;
-            font-family: var(--font-body);
-            transition: all 0.3s ease-in-out;
-            border: none;
-        }
-
-        .dropdown-button:hover {
-            background-color: var(--tertiary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        /* Style amélioré du menu déroulant */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 120%;
-            right: 0;
-            background-color: var(--background-light);
-            min-width: 250px;
-            box-shadow: var(--shadow-subtle);
-            border-radius: 10px;
-            flex-direction: column;
-            z-index: 1;
-            overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            animation: fadeInScale 0.3s ease-out;
-            transform-origin: top right;
-        }
-
-        .dropdown-content a {
-            color: var(--text-dark);
-            padding: 15px 20px;
-            text-align: left;
-            text-decoration: none;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .dropdown-content a:hover {
-            background-color: rgba(0, 0, 0, 0.05);
-            color: var(--tertiary-color);
-        }
-        
-        /* Ajout d'une petite animation pour l'apparition du menu */
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .dropdown-container:hover .dropdown-content {
-            display: flex;
         }
 
         /* Menu de navigation mobile */
@@ -419,21 +344,7 @@
                 </a>
             </div>
 
-            <!-- Menu déroulant pour PC -->
-            <div class="dropdown-container">
-                <button class="dropdown-button" id="dropdown-button">
-                    Menu
-                </button>
-                <nav class="dropdown-content" id="site-nav">
-                    <a href="index.html" class="btn-secondary">Accueil</a>
-                    <a href="a propos.html" class="btn-secondary">À Propos</a>
-                    <a href="tarif.html" class="btn-secondary">Mes Accompagnements</a>
-                    <a href="portfolio.html" class="btn-secondary">Projets</a>
-                    <a href="index.html#contact" class="btn-primary">Me contacter</a>
-                </nav>
-            </div>
-        </div>
-        
+            
         <!-- Bouton Hamburger pour mobile -->
         <div class="hamburger-menu" id="hamburger-menu">
             <span></span>

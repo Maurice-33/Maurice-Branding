@@ -309,34 +309,29 @@ html {
         display: flex;
     }
 
-    .hamburger-menu,
-    .mobile-nav {
-        display: none;
-    }
-}
-
-/* Styles pour les écrans de 768px et moins */
-@media screen and (max-width: 768px) {
-    .main-header {
-        padding: 20px;
-        flex-wrap: wrap;
-    }
-
-    .nav-group {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .main-nav,
+    /* Le menu hamburger et les icônes sociales sont visibles */
     .header-socials,
-    .header-contact {
-        display: none;
-    }
-
     .hamburger-menu {
         display: flex;
     }
-
+    
+    .hamburger-menu {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 24px;
+        color: var(--primary-color);
+        padding: 0;
+        transition: transform 0.3s ease;
+    }
+    
+    .hamburger-menu:hover {
+        transform: scale(1.1);
+    }
+    
+    /* La grille de cartes s'adapte à la colonne */
+    .cards,
+    .portfolio-grid,
     .pricing-cards {
         flex-direction: column;
         align-items: center;
@@ -350,28 +345,40 @@ html {
 
 /* Styles pour le menu mobile */
 .mobile-nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--background-light);
-    padding: 20px 0;
-    box-shadow: var(--shadow-subtle);
+    display: none; /* Masqué par défaut */
+    flex-direction: column;
+    position: fixed; /* Reste en place lors du défilement */
+    top: 75px; /* Décalé de la hauteur du header */
+    left: 0;
+    width: 100%;
+    background-color: var(--background-light);
+    padding: 20px 0;
+    box-shadow: var(--shadow-subtle);
+    transform: translateY(-100%); /* Position de départ hors de l'écran */
+    transition: transform 0.4s ease-in-out; /* Animation de la transition */
 }
 
 .mobile-nav.is-open {
-    display: flex;
+    display: flex; /* Affiché lorsque la classe est active */
+    transform: translateY(0); /* Ramené à sa position normale */
 }
 
 .mobile-nav a {
-    padding: 15px 20px;
-    width: 100%;
-    border-bottom: 1px solid #eee;
-    text-align: center;
+    padding: 15px 20px;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.mobile-nav a:hover {
+    background-color: var(--background-dark);
+    color: var(--text-light);
 }
 
 .mobile-nav a:last-child {
-    border-bottom: none;
+    border-bottom: none;
 }

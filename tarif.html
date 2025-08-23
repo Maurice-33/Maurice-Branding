@@ -11,9 +11,7 @@
     <!-- Font Awesome pour les icônes sociales (YouTube, Instagram) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2g2S9O+H/J511b6G8z95X8I5/P654VfF0d4y7x8f9P6O+Fh5C+B6b+P6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /*
-         * Variables CSS personnalisées pour un look plus professionnel et soigné.
-         */
+        /* Variables CSS personnalisées pour une palette de couleurs professionnelle et soignée */
         :root {
             --background-light: #F8F4F0;
             --background-dark: #2F2F2F;
@@ -49,7 +47,7 @@
             padding-bottom: 50px;
         }
 
-        /* Sections */
+        /* Sections de contenu */
         section {
             padding: 80px 20px;
             text-align: center;
@@ -74,7 +72,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
         }
 
-        /* Conteneur pour le logo et la navigation, pour les centrer */
+        /* Conteneur pour le logo et les boutons de navigation (côté gauche) */
         .nav-group {
             display: flex;
             align-items: center;
@@ -88,7 +86,7 @@
             align-items: center;
         }
 
-        /* Conteneur pour les icônes sociales */
+        /* Conteneur pour les icônes sociales (côté droit) */
         .header-socials {
             display: flex;
             gap: 15px;
@@ -135,23 +133,20 @@
             height: 30px;
         }
         
-        /* Liens sociaux (inclus dans la nav pour la version desktop) */
+        /* Liens sociaux (les icônes de Font Awesome) */
         .social-icon {
-            display: inline-block; /* Affiche les icônes sociales */
-        }
-
-        /* Utilisation de Font Awesome pour les icônes */
-        .social-icon i {
+            display: inline-block;
             color: var(--primary-color);
             font-size: 24px;
             transition: transform 0.3s ease, color 0.3s ease;
         }
 
-        .social-icon:hover i {
+        .social-icon:hover {
             transform: scale(1.1);
             color: var(--tertiary-color);
         }
         
+        /* Styles des boutons */
         .btn-primary, .btn-secondary {
             padding: 12px 25px;
             border-radius: 50px;
@@ -339,6 +334,7 @@
             width: 30px;
             height: 22px;
             cursor: pointer;
+            z-index: 1001; /* Pour qu'il soit au-dessus du menu ouvert */
         }
 
         .hamburger-menu span {
@@ -366,6 +362,8 @@
         @media screen and (max-width: 768px) {
             .main-header {
                 padding: 20px;
+                /* Sur mobile, on a besoin du z-index pour le menu déroulant */
+                position: relative;
             }
             
             .nav-group {
@@ -380,10 +378,7 @@
                 display: flex; /* Affiche le bouton hamburger sur mobile */
             }
             
-            .main-header {
-                position: relative;
-            }
-
+            /* Styles pour le menu mobile ouvert */
             .nav-group.is-open, .header-socials.is-open {
                 display: flex; /* Affiche le menu lorsque le hamburger est actif */
                 position: absolute;
@@ -407,6 +402,7 @@
                 border-bottom: none;
             }
 
+            /* Réorganisation des cartes de tarifs sur mobile */
             .pricing-cards {
                 flex-direction: column;
                 align-items: center;
@@ -429,6 +425,7 @@
         <!-- Logo et navigation groupés et centrés -->
         <div class="nav-group">
             <a href="index.html" class="logo">
+                <!-- Logo principal de l'entreprise -->
                 <img src="beyond.png" alt="Logo Beyond" class="logo-icon">
                 Beyond.
             </a>
@@ -444,12 +441,12 @@
             </nav>
         </div>
         
-        <!-- Liens vers les réseaux sociaux -->
+        <!-- Icônes des réseaux sociaux (considérés comme les "logos sur le côté") -->
         <div class="header-socials">
-            <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon youtube">
+            <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon">
                 <i class="fab fa-youtube"></i>
             </a>
-            <a href="https://www.instagram.com/slow_alchimiste?igsh=dWVhb3ozYm55MnJn/" target="_blank" class="social-icon instagram">
+            <a href="https://www.instagram.com/slow_alchimiste?igsh=dWVhb3ozYm55MnJn/" target="_blank" class="social-icon">
                 <i class="fab fa-instagram"></i>
             </a>
         </div>
@@ -519,7 +516,7 @@
         const mainHeader = document.getElementById("main-header");
         const backToTopButton = document.getElementById("backToTop");
         
-        // Script pour le header qui change de couleur
+        // Script pour le header qui change de couleur et le bouton "back to top"
         window.addEventListener("scroll", () => {
             if (window.scrollY > 50) {
                 mainHeader.classList.add("scrolled");
@@ -536,7 +533,9 @@
         const socialGroup = document.querySelector('.header-socials');
 
         hamburger.addEventListener('click', () => {
+            // Active/désactive la transformation du hamburger en "X"
             hamburger.classList.toggle('is-active');
+            // Affiche/cache les groupes de navigation et sociaux pour le mobile
             navGroup.classList.toggle('is-open');
             socialGroup.classList.toggle('is-open');
         });

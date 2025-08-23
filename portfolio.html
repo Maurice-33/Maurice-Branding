@@ -340,28 +340,44 @@
     <!-- Ancre en haut -->
     <a id="top" href="#top"></a>
 
-    <!-- HEADER -->
-    <header class="main-header" id="main-header">
+   <!-- HEADER -->
+<header class="main-header" id="main-header">
     <a href="index.html" class="logo">
-      <img src="beyond.png" alt="Logo Beyond" class="logo-icon">
-      Beyond.
+        <img src="beyond.png" alt="Logo Beyond" class="logo-icon">
+        Beyond.
     </a>
-      
-      <!-- Bouton Hamburger pour mobile -->
-      <div class="hamburger-menu" id="hamburger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-      </div>
+    
+    <!-- Liens vers les réseaux sociaux -->
+    <div class="header-socials">
+        <a href="https://www.youtube.com/" target="_blank" class="social-icon youtube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2A42.94 42.94 0 0 0 12 4c-5.91 0-11.8 0-14.73 0a2.78 2.78 0 0 0-1.94 2A42.94 42.94 0 0 0 0 12c0 1.95 0 3.89 0 5.84a2.78 2.78 0 0 0 1.94 2A42.94 42.94 0 0 0 12 20c5.91 0 11.8 0 14.73 0a2.78 2.78 0 0 0 1.94-2A42.94 42.94 0 0 0 24 12c0-1.95 0-3.89 0-5.84z"></path><path d="M9.5 15.5L15.5 12L9.5 8.5z"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" class="social-icon instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg>
+        </a>
+    </div>
 
-      <nav class="btn-group" id="site-nav">
-        <a href="index.html" class="btn-secondary">Accueil</a>
-        <a href="a propos.html" class="btn-secondary">À Propos</a>
-        <a href="tarif.html" class="btn-secondary">Mes Accompagnements</a>
-        <a href="portfolio.html" class="btn-secondary">Projets</a>
-        <a href="index.html#contact" class="btn-primary">Me contacter</a>
-      </nav>
-    </header>
+    <!-- Menu déroulant pour PC et menu hamburger pour mobile -->
+    <div class="dropdown-container">
+        <div class="dropdown-button" id="dropdown-button">
+            Menu
+        </div>
+        <nav class="btn-group dropdown-content" id="site-nav">
+            <a href="index.html" class="btn-secondary">Accueil</a>
+            <a href="a propos.html" class="btn-secondary">À Propos</a>
+            <a href="tarif.html" class="btn-secondary">Mes Accompagnements</a>
+            <a href="portfolio.html" class="btn-secondary">Projets</a>
+            <a href="index.html#contact" class="btn-primary">Me contacter</a>
+        </nav>
+    </div>
+    
+    <!-- Bouton Hamburger pour mobile (conservé pour le mobile) -->
+    <div class="hamburger-menu" id="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
 
     <main>
         <!-- NOUVEAU: Section Portfolio avec carrousel -->

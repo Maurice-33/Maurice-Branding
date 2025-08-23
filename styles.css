@@ -92,9 +92,9 @@ h3 {
 
 /* Style du header lorsque la page défile */
 .main-header.scrolled {
-    background-color: var(--background-light);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
+      background-color: var(--background-light); /* Devient blanc */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre plus foncée */
+  }
 
 /* Groupes d'éléments dans le header */
 .nav-group,

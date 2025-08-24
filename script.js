@@ -90,7 +90,7 @@ ${message}`);
 
     // Construction du lien mailto: avec les données encodées
     // REMPLACEZ 'votre.adresse@email.com' par votre adresse email de destination
-    const mailtoLink = `mailto:dada.33248@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:morgane.berge@gmail.com?subject=${subject}&body=${body}`;
 
     // Ouverture de la fenêtre de messagerie
     window.location.href = mailtoLink;

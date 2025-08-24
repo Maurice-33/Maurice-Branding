@@ -394,13 +394,13 @@ footer {
     justify-content: center;
     gap: 25px;
     flex-wrap: nowrap; /* force les 3 cartes côte à côte sur desktop */
+    align-items: stretch; /* 🔥 aligne toutes les cartes à la même hauteur */
 }
 
 .pricing-card {
     flex: 1;
     min-width: 260px;
     max-width: 320px;
-    height: 300px; /* exemple : ajuste la valeur selon ton besoin */
     background: linear-gradient(145deg, #ffffff, #f8f4f0);
     border: 1px solid #e6e0dc;
     border-radius: 18px;
@@ -410,6 +410,10 @@ footer {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
+
+    display: flex;               /* 🔥 rend chaque carte flexible */
+    flex-direction: column;      /* contenu du haut en bas */
+    justify-content: space-between; /* garde un équilibre */
 }
 
 .pricing-card:hover {

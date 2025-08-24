@@ -56,6 +56,45 @@ function updateCarouselPosition() {
     }
 }
 
+/**
+     * @fileoverview Ce script gère la logique de la page de contact.
+     * La fonction sendEmail() récupère les données du formulaire et crée un lien mailto: pour ouvrir le client de messagerie de l'utilisateur.
+     * Note : Cette méthode ne fonctionne que si le client de messagerie est configuré.
+     */
+
+    function sendEmail() {
+        // Récupération des éléments du formulaire
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const service = document.getElementById('service').value;
+        const message = document.getElementById('message').value;
+
+        // Validation simple pour s'assurer que les champs requis ne sont pas vides
+        if (!name || !email || !service || !message) {
+            alert('Veuillez remplir tous les champs du formulaire.');
+            return;
+        }
+
+        // Encodage des données pour les inclure dans l'URL mailto:
+        const subject = encodeURIComponent(`Demande de contact - ${service}`);
+        const body = encodeURIComponent(`Bonjour,
+
+Voici les informations de contact :
+Nom : ${name}
+Email : ${email}
+Demande : ${service}
+
+Message :
+${message}`);
+
+        // Construction du lien mailto: avec les données encodées
+        // REMPLACEZ 'votre.adresse@email.com' par votre adresse email de destination
+        const mailtoLink = `mailto:dada.33248@gmail.com?subject=${subject}&body=${body}`;
+
+        // Ouverture de la fenêtre de messagerie
+        window.location.href = mailtoLink;
+    }
+
 // Fonction pour créer les points de navigation
 function createDots() {
     carouselDots.innerHTML = '';

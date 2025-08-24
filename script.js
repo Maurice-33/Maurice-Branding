@@ -27,41 +27,18 @@ if (hamburgerBtn && mobileMenu) {
 const header = document.getElementById("main-header");
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) { 
+    if (window.scrollY > 50) {
         header.classList.add("scrolled");
     } else {
         header.classList.remove("scrolled");
     }
 });
 
-// ===============================
-// Carrousel Portfolio
-// ===============================
-const carouselContainer = document.getElementById('carousel-container');
-const carouselTrack = document.getElementById('carousel-track');
-const carouselDots = document.getElementById('carousel-dots');
-const slides = document.querySelectorAll('.carousel-slide');
-const prevButton = document.getElementById('prev-btn');
-const nextButton = document.getElementById('next-btn');
-
-let currentSlideIndex = 0;
-let startX = 0;
-
-// Fonction pour mettre à jour la position du carrousel
-function updateCarouselPosition() {
-    if (slides.length > 0) {
-        const slideWidth = slides[0].offsetWidth;
-        carouselTrack.style.transform = 'translateX(' + (-slideWidth * currentSlideIndex) + 'px)';
-        updateDots();
-    }
-}
-
 /**
  * @fileoverview Ce script gère la logique de la page de contact.
  * La fonction sendEmail() récupère les données du formulaire et crée un lien mailto: pour ouvrir le client de messagerie de l'utilisateur.
  * Note : Cette méthode ne fonctionne que si le client de messagerie est configuré.
  */
-
 function sendEmail() {
     // Récupération des éléments du formulaire
     const name = document.getElementById('name').value;
@@ -71,7 +48,6 @@ function sendEmail() {
 
     // Validation simple pour s'assurer que les champs requis ne sont pas vides
     if (!name || !email || !service || !message) {
-        // CORRECTION : Remplacement de alert() par console.error() pour éviter de bloquer l'interface
         console.error('Erreur: Veuillez remplir tous les champs du formulaire.');
         return;
     }
@@ -89,77 +65,122 @@ Message :
 ${message}`);
 
     // Construction du lien mailto: avec les données encodées
-    // REMPLACEZ 'votre.adresse@email.com' par votre adresse email de destination
     const mailtoLink = `mailto:morgane.berge@gmail.com?subject=${subject}&body=${body}`;
 
     // Ouverture de la fenêtre de messagerie
     window.location.href = mailtoLink;
 }
 
-// Fonction pour créer les points de navigation
-function createDots() {
-    carouselDots.innerHTML = '';
-    slides.forEach((slide, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (index === currentSlideIndex) {
-            dot.classList.add('active');
+
+// ===============================
+// Carrousel Portfolio
+// ===============================
+// On attend que le DOM (Document Object Model) soit entièrement chargé
+// avant d'exécuter le script pour s'assurer que tous les éléments HTML existent.
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Sélection des éléments HTML nécessaires
+    const carouselTrack = document.getElementById("carousel-track");
+    // Utilisation de Array.from pour s'assurer que 'slides' est un tableau
+    const slides = Array.from(document.querySelectorAll(".carousel-slide"));
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const dotsContainer = document.getElementById("carousel-dots");
+
+    // Variables pour gérer l'état du carrousel
+    let currentIndex = 0; // Index de la diapositive actuellement affichée
+    let startX = 0; // Position de départ pour la navigation tactile
+
+    // 2. Fonction pour mettre à jour la position du carrousel
+    // en fonction de l'index actuel.
+    const updateCarousel = () => {
+        // Vérifie si le carrousel a des diapositives
+        if (slides.length > 0) {
+            const slideWidth = slides[0].clientWidth; // Largeur d'une diapositive
+            // Calcule le décalage horizontal (en pixels)
+            // pour positionner la bonne diapositive.
+            const newTransformValue = -currentIndex * slideWidth;
+            // Applique la transformation CSS pour déplacer le carrousel.
+            carouselTrack.style.transform = `translateX(${newTransformValue}px)`;
+
+            // Met à jour les points de navigation pour indiquer la diapositive active.
+            updateDots();
         }
-        dot.addEventListener('click', () => {
-            currentSlideIndex = index;
-            updateCarouselPosition();
+    };
+
+    // 3. Fonction pour créer les points de navigation
+    const createDots = () => {
+        dotsContainer.innerHTML = ''; // Nettoie les points existants pour éviter les doublons
+        slides.forEach((_, index) => {
+            // Crée un élément bouton pour chaque diapositive.
+            const dot = document.createElement("button");
+            dot.classList.add("dot");
+            // Ajoute un écouteur d'événement pour naviguer vers la diapositive correspondante.
+            dot.addEventListener("click", () => {
+                currentIndex = index;
+                updateCarousel();
+            });
+            // Ajoute le point au conteneur des points.
+            dotsContainer.appendChild(dot);
         });
-        carouselDots.appendChild(dot);
-    });
-}
+    };
 
-// Fonction pour mettre à jour les points actifs
-function updateDots() {
-    const dots = document.querySelectorAll('.dot');
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlideIndex);
-    });
-}
+    // 4. Fonction pour mettre à jour l'état "actif" des points de navigation
+    const updateDots = () => {
+        // Sélectionne tous les points.
+        const dots = document.querySelectorAll(".dot");
+        dots.forEach((dot, index) => {
+            // Retire la classe 'active' de tous les points.
+            dot.classList.remove("active");
+            // Ajoute la classe 'active' au point correspondant à l'index actuel.
+            if (index === currentIndex) {
+                dot.classList.add("active");
+            }
+        });
+    };
 
-// Navigation flèches
-function prevSlide() {
-    currentSlideIndex = (currentSlideIndex > 0) ? currentSlideIndex - 1 : slides.length - 1;
-    updateCarouselPosition();
-}
+    // 5. Gestion des événements de clic sur les boutons de navigation
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        });
+    }
 
-function nextSlide() {
-    currentSlideIndex = (currentSlideIndex < slides.length - 1) ? currentSlideIndex + 1 : 0;
-    updateCarouselPosition();
-}
+    if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+            updateCarousel();
+        });
+    }
 
-// Navigation tactile
-if (carouselContainer) {
-    carouselContainer.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-    });
+    // 6. Gestion de la navigation tactile
+    const carouselContainer = document.getElementById('carousel-container');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
 
-    carouselContainer.addEventListener('touchend', (e) => {
-        const endX = e.changedTouches[0].clientX;
-        const deltaX = endX - startX;
-        const swipeThreshold = 50;
+        carouselContainer.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const deltaX = endX - startX;
+            const swipeThreshold = 50;
 
-        if (deltaX > swipeThreshold) {
-            prevSlide();
-        } else if (deltaX < -swipeThreshold) {
-            nextSlide();
-        }
-    });
-}
+            if (deltaX > swipeThreshold) {
+                // Balayage vers la droite (précédent)
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+            } else if (deltaX < -swipeThreshold) {
+                // Balayage vers la gauche (suivant)
+                currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+            }
+            updateCarousel();
+        });
+    }
 
-// Resize → recalcul largeur
-window.addEventListener('resize', updateCarouselPosition);
+    // 7. Gestion du redimensionnement de la fenêtre
+    // Recalcule la largeur de la diapositive pour s'adapter à la nouvelle taille de l'écran.
+    window.addEventListener('resize', updateCarousel);
 
-// Events sur flèches
-if (prevButton) prevButton.addEventListener('click', prevSlide);
-if (nextButton) nextButton.addEventListener('click', nextSlide);
-
-// Initialisation
-window.addEventListener('load', () => {
-    createDots();
-    updateCarouselPosition();
+    // Initialisation du carrousel au chargement
+    createDots(); // Crée les points au démarrage
+    updateCarousel(); // Affiche la première diapositive
 });

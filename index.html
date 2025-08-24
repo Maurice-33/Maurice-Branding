@@ -127,9 +127,10 @@
           <label for="message">Message :</label>
           <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
         </div>
-        <button type="submit" class="btn-primary">Envoyer</button>
-      </form>
-    </section>
+        <!-- Le bouton a maintenant un type "button" et un écouteur d'événement JavaScript -->
+        <button type="button" class="btn-primary" onclick="sendEmail()">Envoyer</button>
+    </form>
+</section>
   </main>
 
   <!-- Bouton remonter -->

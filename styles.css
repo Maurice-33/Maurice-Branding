@@ -400,6 +400,7 @@ footer {
     flex: 1;
     min-width: 260px;
     max-width: 320px;
+    height: 300px; /* exemple : ajuste la valeur selon ton besoin */
     background: linear-gradient(145deg, #ffffff, #f8f4f0);
     border: 1px solid #e6e0dc;
     border-radius: 18px;

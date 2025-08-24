@@ -401,3 +401,58 @@ html {
 .mobile-nav a:last-child {
     border-bottom: none;
 }
+
+/* Nouveaux styles pour la section À Propos avec deux photos */
+#about-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about-grid h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.about-grid p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: var(--shadow-subtle);
+}
+
+.about-intro {
+    max-width: 800px;
+    margin: 60px auto 0;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--secondary-color);
+}
+
+/* Responsive pour les écrans plus petits */
+@media screen and (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .about-text-right, .about-text-left {
+        padding: 0 20px;
+    }
+}

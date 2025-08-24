@@ -214,6 +214,7 @@ html {
 #portfolio-section {
     padding: 4rem 1rem;
     text-align: center;
+    
 }
 
 #portfolio-section h2 {
@@ -238,14 +239,16 @@ html {
 }
 
 .carousel-slide {
-    flex: 0 0 100%;
+    flex-shrink: 0; /* Empêche la diapositive de se comprimer */
+    width: 100%; /* S'assure que chaque diapositive prend toute la largeur du conteneur */
 }
 
 .carousel-slide img {
-    width: 100%;
+    width: 100%; /* L'image s'adapte à la largeur de sa diapositive */
     display: block;
+    height: auto; /* S'assure que l'image conserve ses proportions */
     border-radius: 1rem;
-    height: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .carousel-nav {
@@ -417,8 +420,8 @@ footer {
     position: relative;
     overflow: hidden;
 
-    display: flex;               /* 🔥 rend chaque carte flexible */
-    flex-direction: column;      /* contenu du haut en bas */
+    display: flex; /* 🔥 rend chaque carte flexible */
+    flex-direction: column; /* contenu du haut en bas */
     justify-content: space-between; /* garde un équilibre */
 }
 

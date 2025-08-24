@@ -187,34 +187,91 @@ h3 {
 }
 
 /* ============================ */
-/* CARTES & PORTFOLIO */
-/* ============================ */
-.cards,
-.portfolio-grid,
-.pricing-cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
+/* Styles pour le carrousel */
+        #portfolio-section {
+            padding: 4rem 1rem;
+            text-align: center;
+        }
 
-.card,
-.portfolio-item,
-.pricing-card {
-    background: var(--background-light);
-    border-radius: 15px;
-    padding: 40px;
-    width: 300px;
-    box-shadow: var(--shadow-subtle);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
+        #portfolio-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Poppins', sans-serif;
+            color: #3E3E3E;
+        }
 
-.card:hover,
-.portfolio-item:hover,
-.pricing-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
+        .carousel-container {
+            position: relative;
+            max-width: 900px; /* Limite la largeur du carrousel */
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            flex: 0 0 100%; /* S'assure que chaque slide prend 100% de la largeur du conteneur */
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            display: block;
+            border-radius: 1rem;
+            height: auto;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 10;
+            pointer-events: none; /* Permet de cliquer à travers les flèches */
+        }
+
+        .carousel-arrow {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 1rem;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            margin: 0 1rem;
+            transition: background 0.3s ease;
+            pointer-events: all; /* Active le clic sur les flèches */
+        }
+
+        .carousel-arrow:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            gap: 0.5rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #3E3E3E;
+        }
 
 /* ============================ */
 /* FORMULAIRE */

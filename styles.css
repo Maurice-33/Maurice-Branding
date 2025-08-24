@@ -456,7 +456,7 @@ html {
 }
     
 .btn-primary:hover {
-    background-color: #5d4aaf;
+    background-color: linear-gradient(90deg, #bc7870, #7b68ee);
 }
     
 @media (max-width: 768px) {

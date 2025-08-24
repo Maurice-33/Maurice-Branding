@@ -300,6 +300,110 @@ html {
 }
 
 /* ============================ */
+/* Nouveaux styles pour la section PRIX & TARIFS */
+/* ============================ */
+.pricing-section {
+    background: var(--background-light);
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    width: 320px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-subtle);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pricing-card.featured {
+    background: var(--primary-color);
+    color: var(--text-light);
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-card.featured .pricing-title,
+.pricing-card.featured .pricing-price {
+    color: var(--text-light);
+}
+
+.pricing-header {
+    margin-bottom: 25px;
+}
+
+.pricing-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.pricing-price {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.pricing-price span {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    flex-grow: 1;
+    text-align: left;
+    width: 100%;
+}
+
+.pricing-features li {
+    font-size: 1rem;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pricing-features li:last-child {
+    border-bottom: none;
+}
+
+.pricing-card.featured .pricing-features li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pricing-features li::before {
+    content: "✓";
+    color: var(--tertiary-color);
+    font-weight: bold;
+}
+
+.pricing-card.featured .pricing-features li::before {
+    color: var(--text-light);
+}
+
+.pricing-card .btn-primary {
+    margin-top: auto;
+    width: 100%;
+}
+
+/* ============================ */
 /* RESPONSIVE DESIGN */
 /* ============================ */
 

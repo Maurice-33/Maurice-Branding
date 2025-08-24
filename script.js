@@ -1,5 +1,5 @@
 // ===============================
-// Script principal Apex Motorsports
+// Script principal Branding
 // ===============================
 
 // 1. Bouton "remonter en haut"

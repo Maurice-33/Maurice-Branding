@@ -101,22 +101,33 @@
         <p>© 2025 Branding Service - Tous droits réservés</p>
     </footer>
 
-    <!-- C'est ce script qui "écoute" le défilement et ajoute la classe "scrolled" -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const mainHeader = document.getElementById("main-header");
-            window.addEventListener("scroll", () => {
-                if (window.scrollY > 50) {
-                    mainHeader.classList.add("scrolled");
-                } else {
-                    mainHeader.classList.remove("scrolled");
-                }
-            });
-        });
-    </script>
+  <!-- JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const mainHeader = document.getElementById("main-header");
+      const backToTopBtn = document.getElementById("backToTop");
+      const hamburger = document.querySelector('.hamburger-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
 
-    <!-- Lien vers le script externe -->
-    <script src="script.js"></script>
+      // Scroll header
+      window.addEventListener("scroll", () => {
+        mainHeader.classList.toggle("scrolled", window.scrollY > 50);
+        backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+      });
 
+      // Menu mobile toggle
+      hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('is-open');
+      });
+
+      // Fermer menu si clic extérieur
+      document.addEventListener('click', (event) => {
+        if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
+          mobileMenu.classList.remove('is-open');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
+

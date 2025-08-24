@@ -447,7 +447,7 @@ html {
 .btn-primary {
     display: inline-block;
     padding: 12px 30px;
-    background-color: #bc7870;
+    background-color: linear-gradient(90deg, #bc7870, #B2D1B5);
     color: #fff;
     text-decoration: none;
     border-radius: 50px;

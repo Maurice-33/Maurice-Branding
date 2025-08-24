@@ -109,32 +109,4 @@
        <p>© 2025 Branding Service - Tous droits réservés</p>
    </footer>
 
-  <!-- JS -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const mainHeader = document.getElementById("main-header");
-      const backToTopBtn = document.getElementById("backToTop");
-      const hamburger = document.querySelector('.hamburger-menu');
-      const mobileMenu = document.getElementById('mobile-menu');
-
-      // Scroll header
-      window.addEventListener("scroll", () => {
-        mainHeader.classList.toggle("scrolled", window.scrollY > 50);
-        backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
-      });
-
-      // Menu mobile toggle
-      hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('is-open');
-      });
-
-      // Fermer menu si clic extérieur
-      document.addEventListener('click', (event) => {
-        if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
-          mobileMenu.classList.remove('is-open');
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+    <script src="script.js"></script>

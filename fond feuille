@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fond Zen Feuilles Terracotta</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #f5ebe0, #e3c9a8); /* Dégradé terracotta doux */
+    }
+
+    canvas {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+
+    /* Petit texte de test au centre */
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-family: "Segoe UI", sans-serif;
+      font-size: 2rem;
+      color: #4b2e2e;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="leaves"></canvas>
+  <div class="content">🌿 Ambiance Zen Terracotta 🌿</div>
+
+  <script>
+    const canvas = document.getElementById('leaves');
+    const ctx = canvas.getContext('2d');
+    let w, h, leaves = [];
+    const colors = [
+      "#d77a61", // terracotta
+      "#f5ebe0", // beige clair
+      "#c89f9c", // rosé doux
+      "#8c5e58"  // brun terre
+    ];
+
+    function rand(a,b){ return Math.random()*(b-a)+a }
+
+    function resize() {
+      w = canvas.width = innerWidth;
+      h = canvas.height = innerHeight;
+      leaves = Array.from({length:40}, () => newLeaf());
+    }
+
+    function newLeaf() {
+      return {
+        x: rand(0, w),
+        y: rand(-h, 0),
+        size: rand(12, 28),
+        speed: rand(0.3, 1),
+        drift: rand(0.5, 1.5),
+        angle: rand(0, Math.PI*2),
+        color: colors[Math.floor(Math.random()*colors.length)],
+      };
+    }
+
+    function drawLeaf(leaf) {
+      ctx.save();
+      ctx.translate(leaf.x, leaf.y);
+      ctx.rotate(Math.sin(leaf.angle) * 0.5);
+      ctx.beginPath();
+      ctx.ellipse(0, 0, leaf.size * 0.6, leaf.size, 0, 0, Math.PI*2);
+      ctx.fillStyle = leaf.color;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function animate() {
+      ctx.clearRect(0,0,w,h);
+      for (let leaf of leaves) {
+        drawLeaf(leaf);
+        leaf.y += leaf.speed;
+        leaf.x += Math.sin(leaf.angle) * leaf.drift;
+        leaf.angle += 0.01;
+        if (leaf.y > h + leaf.size) {
+          Object.assign(leaf, newLeaf(), {y: -leaf.size});
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+
+    addEventListener('resize', resize);
+    resize();
+    animate();
+  </script>
+</body>
+</html>

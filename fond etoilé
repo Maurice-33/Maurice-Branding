@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Fond dynamique</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #0f172a; /* couleur de fond fallback */
+    }
+
+    /* Dégradés lumineux */
+    .bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(1200px 500px at 20% -20%, rgba(14,165,233,.25), transparent 60%),
+        radial-gradient(900px 400px at 80% 0%, rgba(139,92,246,.22), transparent 60%);
+    }
+
+    /* Canvas étoiles */
+    #stars {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Fond fixe dégradé -->
+  <div class="bg"></div>
+  <!-- Fond animé étoiles -->
+  <canvas id="stars"></canvas>
+
+  <script>
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    let w, h, stars = [];
+    const rand = (a,b)=>Math.random()*(b-a)+a;
+
+    function resize() {
+      w = canvas.width = innerWidth;
+      h = canvas.height = innerHeight;
+      stars = Array.from({length:140}, () => ({
+        x: rand(0,w),
+        y: rand(0,h),
+        r: rand(.4,1.6),
+        s: rand(.2,.8)
+      }));
+      draw();
+    }
+
+    function draw() {
+      ctx.clearRect(0,0,w,h);
+      for(const s of stars){
+        ctx.beginPath();
+        ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+        ctx.fillStyle = `rgba(255,255,255,${s.s})`;
+        ctx.fill();
+        s.x -= s.s * .2;
+        if(s.x < 0) s.x = w;
+      }
+      requestAnimationFrame(draw);
+    }
+
+    addEventListener('resize', resize, {passive:true});
+    resize();
+  </script>
+</body>
+</html>

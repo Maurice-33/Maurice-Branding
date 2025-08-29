@@ -789,6 +789,7 @@ footer {
     .hamburger-menu,
     .mobile-nav {
         display: none;
+        gap: 15px;
     }
 
     .header-socials-desktop {

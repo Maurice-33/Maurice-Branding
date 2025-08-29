@@ -294,6 +294,41 @@ html {
     z-index: 0;
 }
 
+/* ============================ */
+/* RESPONSIVE HERO SECTION */
+/* ============================ */
+@media (max-width: 768px) {
+    .hero-content h5 {
+        font-size: 4rem; /* Réduit la taille pour les tablettes */
+    }
+
+    .hero-content h6 {
+        font-size: 1.5rem; /* Réduit la taille pour les tablettes */
+    }
+
+    .hero-content p {
+        font-size: 1.2rem; /* Réduit la taille pour les tablettes */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h5 {
+        font-size: 2.5rem; /* Taille idéale pour les petits smartphones */
+    }
+
+    .hero-content h6 {
+        font-size: 1.2rem; /* Taille idéale pour les petits smartphones */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Taille idéale pour les petits smartphones */
+        padding: 0 15px; /* Ajoute un peu de marge sur les côtés */
+    }
+}
+
+/* ============================ */
+/* Section mes-services */
+/* ============================ */
 #mes-services h5 {
     background: linear-gradient(to right, #bc7870 20%, #ffd1c7);
     -webkit-background-clip: text;

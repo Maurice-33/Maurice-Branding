@@ -815,6 +815,7 @@ footer {
     .header-socials-mobile,
     .hamburger-menu {
         display: flex;
+        gap: 15px;
     }
 
     .hamburger-menu {

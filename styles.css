@@ -344,6 +344,7 @@ html {
     color: var(--black);
     font-family: var(--font-heading);
     font-size: 1rem;
+    padding-top: 2%;
 }
 
 .services-grid {
@@ -389,7 +390,8 @@ html {
     }
 
     #mes-services p {
-        font-size: 1.2rem; /* Réduit la taille pour les tablettes */
+        font-size: 1.2rem;
+        padding-top: 2%;/* Réduit la taille pour les tablettes */
     }
     
     .services-grid {
@@ -409,7 +411,7 @@ html {
 
     #mes-services p {
         font-size: 1rem; /* Taille idéale pour les petits smartphones */
-        padding: 0 15px; /* Ajoute un peu de marge sur les côtés */
+        padding: 2% 15px;/* Ajoute un peu de marge sur les côtés */
     }
     
     .services-grid {

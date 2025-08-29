@@ -333,7 +333,7 @@ html {
     background: linear-gradient(to right, #bc7870 20%, #ffd1c7);
     -webkit-background-clip: text;
     background-clip: text;
-    font-size: 3.5rem;
+    font-size: 1.5rem;
     color: transparent;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
@@ -385,7 +385,7 @@ html {
 /* ============================ */
 @media (max-width: 768px) {
     #mes-services h5 {
-        font-size: 4rem; /* Réduit la taille pour les tablettes */
+        font-size: 2rem; /* Réduit la taille pour les tablettes */
     }
 
     #mes-services p {
@@ -404,7 +404,7 @@ html {
 
 @media (max-width: 480px) {
     #mes-services h5 {
-        font-size: 2.5rem; /* Taille idéale pour les petits smartphones */
+        font-size: 1.5rem; /* Taille idéale pour les petits smartphones */
     }
 
     #mes-services p {

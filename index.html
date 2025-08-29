@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beyond.</title>
-  <link rel="icon" href="beyond.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="./logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-
-  <!-- Ancre en haut -->
-  <a id="top" href="#top"></a>
-
-  <!-- HEADER -->
   <header class="main-header" id="main-header">
-    <!-- Zone gauche (logo + réseaux pour mobile uniquement) -->
     <div class="header-left">
       <a href="index.html" class="logo">
-        <img src="beyond.png" alt="Logo Beyond" class="logo-icon">
+        <img src="./logo.png" alt="Logo Beyond" class="logo-icon">
         Beyond.
       </a>
       <div class="header-socials-mobile">
-        <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon">
+        <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon" aria-label="YouTube">
           <i class="fab fa-youtube"></i>
         </a>
-        <a href="https://www.instagram.com/slow_alchimiste?igsh=dWVhb3ozYm55MnJn/" target="_blank" class="social-icon">
+        <a href="https://www.instagram.com/slow_alchimiste?igsh=dWVhb3ozYm55MnJn/" target="_blank" class="social-icon"
+          aria-label="Instagram">
           <i class="fab fa-instagram"></i>
-        </a>  
-        <a href="https://fr.linkedin.com/in/morganeberge/" target="_blank" class="social-icon">
-          <i class="fab fa-linkedin"></i>  
+        </a>
+        <a href="https://fr.linkedin.com/in/morganeberge/" target="_blank" class="social-icon" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
         </a>
       </div>
     </div>
 
-    <!-- Navigation principale (visible desktop uniquement) -->
     <nav class="main-nav">
       <a href="index.html" class="btn-secondary">Accueil</a>
       <a href="a propos.html" class="btn-secondary">À Propos</a>
@@ -43,17 +41,17 @@
       <a href="portfolio.html" class="btn-secondary">Projets</a>
       <a href="index.html#contact" class="btn-primary">Me contacter</a>
     </nav>
-    
-    <!-- Zone droite (icônes desktop + burger mobile) -->
+
     <div class="header-right">
       <div class="header-socials-desktop">
-        <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon">
+        <a href="https://www.youtube.com/@slow_alchimiste/" target="_blank" class="social-icon" aria-label="YouTube">
           <i class="fab fa-youtube"></i>
         </a>
-        <a href="https://www.instagram.com/slow_alchimiste?igsh=dWVhb3ozYm55MnJn/" target="_blank" class="social-icon">
+        <a href="https://www.instagram.com/slow_alchimiste?igsh=dWVhb3ozYm55MnJn/" target="_blank" class="social-icon"
+          aria-label="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://fr.linkedin.com/in/morganeberge/" target="_blank" class="social-icon">
+        <a href="https://fr.linkedin.com/in/morganeberge/" target="_blank" class="social-icon" aria-label="LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </div>
@@ -63,49 +61,58 @@
     </div>
   </header>
 
-  <!-- Menu mobile -->
   <div class="mobile-nav" id="mobile-menu">
-    <a href="tel:+33000000000" class="btn-secondary">Appeler</a>
     <a href="index.html">Accueil</a>
     <a href="a propos.html">À Propos</a>
     <a href="tarif.html">Mes Accompagnements</a>
     <a href="portfolio.html">Projets</a>
     <a href="index.html#contact">Contact</a>
   </div>
-  
-  <!-- SECTION HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Révélez votre marque <br> au-delà des apparences</h1>
-      <p>Logo • Identité visuelle • Supports de communication</p>
-    </div>
-  </section>
 
   <main>
-    <!-- MES SERVICES -->
+    <section class="hero">
+      <div class="hero-video">
+        <video autoplay muted loop playsinline>
+          <source src="./video.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="hero-content">
+        <h5>Beyond.</h5>
+        <h6>Révélez votre marque au-delà des apparences</h6>
+        <p>Logo • Identité visuelle • Supports de communication</p>
+      </div>
+    </section>
+
     <section id="mes-services">
-      <h2>Mes Services</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Un branding puissant</h3>
+      <h1>Mes Services</h1>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-image">
+            <img src="bouquet1.jpg" alt="Custom Bouquets">
+          </div>
+          <h5>Un branding puissant</h5>
           <p>Clarifier l’essence de votre marque : son ADN, ses valeurs et son positionnement.</p>
         </div>
-        
-        <br:>
-        
-        <div class="card">
-          <h3>Charte Graphique</h3>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img src="bouquet2.jpg" alt="Occasion Flowers">
+          </div>
+          <h5>Charte Graphique</h5>
           <p>Définition de couleurs, typographies et éléments graphiques.</p>
         </div>
-        
-        <div class="card">
-          <h3>Prestation en Community Management</h3>
+
+        <div class="service-card">
+          <div class="service-image">
+            <img src="bouquet3.jpg" alt="Premade Bouquets">
+          </div>
+          <h5>Prestation en Community Management</h5>
           <p>Création/optimisation des comptes sociaux.</p>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
       <h2>Contactez-moi</h2>
       <form action="#" method="post">
@@ -123,7 +130,7 @@
             <option value="" disabled selected>Choisissez une option</option>
             <option value="branding">Branding</option>
             <option value="Formules">Formule abonnement</option>
-            <option value="Statégie digitale">stratégie digitale</option>
+            <option value="strategie digitale">Stratégie digitale</option>
             <option value="autre">Autre</option>
           </select>
         </div>
@@ -131,23 +138,18 @@
           <label for="message">Message :</label>
           <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
         </div>
-        <!-- Le bouton a maintenant un type "button" et un écouteur d'événement JavaScript -->
-        <button type="button" class="btn-primary" onclick="sendEmail()">Envoyer</button>
-    </form>
-</section>
+        <button type="submit" class="btn-primary" id="submitBtn">Envoyer</button>
+      </form>
+    </section>
   </main>
 
-  <!-- Bouton remonter -->
-  <a href="#top" class="back-to-top" id="backToTop">&#8679;</a>
+  <a href="#top" class="back-to-top" id="backToTop" aria-label="Retour en haut de la page">&#8679;</a>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2025 Branding Service - Tous droits réservés</p>
   </footer>
 
-    <script src="script.js"></script>
-
-  <!-- JS -->
+  <script src="script.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const mainHeader = document.getElementById("main-header");
@@ -173,6 +175,11 @@
         }
       });
     });
+
+    function sendEmail() {
+      alert("Le formulaire a été envoyé (cette fonction est à implémenter)");
+    }
   </script>
 </body>
+
 </html>

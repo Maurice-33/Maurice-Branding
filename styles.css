@@ -333,6 +333,7 @@ html {
     background: linear-gradient(to right, #bc7870 20%, #ffd1c7);
     -webkit-background-clip: text;
     background-clip: text;
+    font-size: 7rem;
     color: transparent;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;

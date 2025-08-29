@@ -21,6 +21,7 @@
 
     --text-dark: #57423f;
     --text-light: #F8F4F0;
+    --black: #000000; /* Added the missing variable */
 
     --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
 
@@ -61,7 +62,7 @@ section {
 h1,
 h2,
 h3,
-h4 h5 h6 {
+h4, h5, h6 { /* Corrected by adding commas */
     font-family: var(--font-heading);
 }
 

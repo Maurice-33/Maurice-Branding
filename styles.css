@@ -12,9 +12,12 @@
     --background-light: #F8F4F0;
     --background-dark: #2F2F2F;
 
-    --primary-color: #bc7870; /* Terracotta */
-    --secondary-color: #6E5A51; /* Gris chaud */
-    --tertiary-color: #B85C4C; /* Terracotta foncé */
+    --primary-color: #bc7870;
+    /* Terracotta */
+    --secondary-color: #ffffff;
+    /* Gris chaud */
+    --tertiary-color: #ffd1c7;
+    /* Terracotta foncé */
 
     --text-dark: #57423f;
     --text-light: #F8F4F0;
@@ -36,8 +39,8 @@
 /* ============================ */
 
 body {
-    font-family: var(--font-body);
-    background-color: var(--background-light);
+    font-family: url(./font.ttf);
+    background: url(./video.mp4) center/cover;
     color: var(--text-dark);
     line-height: 1.6;
     display: flex;
@@ -55,14 +58,17 @@ section {
     text-align: center;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 h5 h6 {
     font-family: var(--font-heading);
 }
 
 h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
-    color: var(--text-dark);
+    color: var(--primary-color);
 }
 
 h2 {
@@ -83,6 +89,18 @@ h4 {
     color: var(--black);
 }
 
+h5 {
+    font-size: 2.5rem;
+    margin-bottom: -10px;
+    color: var(--black);
+}
+
+h6 {
+    font-size: 0.8rem;
+    margin-bottom: 35px;
+    color: var(--black);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -98,14 +116,31 @@ html {
     padding: 20px 50px;
     background-color: transparent;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
 }
 
 .main-header.scrolled {
     background-color: var(--background-light);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.main-header.scrolled .btn-secondary {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.main-header.scrolled .btn-secondary:hover {
+    color: var(--tertiary-color);
+    transform: translateY(2px);
+}
+
+.main-header.scrolled .social-icon:hover {
+    transform: scale(1.1);
+    color: var(--tertiary-color);
 }
 
 .nav-group,
@@ -138,6 +173,11 @@ html {
     height: 30px;
 }
 
+.logo-icon:hover {
+    color: var(--tertiary-color);
+    transform: translateY(-2px);
+}
+
 .social-icon {
     display: inline-block;
     color: var(--primary-color);
@@ -147,7 +187,7 @@ html {
 
 .social-icon:hover {
     transform: scale(1.1);
-    color: var(--tertiary-color);
+    color: var(--secondary-color);
 }
 
 /* ============================ */
@@ -164,13 +204,12 @@ html {
 }
 
 .btn-primary {
-    background: linear-gradient(90deg, #bc7870, #B85C4C);
+    background: radial-gradient(circle at center, #bc7870 0%, #ffd1c7 100%);
     color: var(--text-light);
-    border: 0;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(90deg, #B85C4C, #bc7870);
+    background: radial-gradient(circle at center, #bc7870 0%, #ffd1c7 100%);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -186,25 +225,162 @@ html {
     transform: translateY(-2px);
 }
 
+
 /* ============================ */
 /* HERO */
 /* ============================ */
 
+.hero .hero-content h5 {
+    color: #FFFFFF;
+    /* Exemple : couleur blanche pour le texte */
+    font-family: var(--font-heading);
+    font-size: 7rem;
+    /* Exemple : taille de police plus grande */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Exemple : ombre portée pour la lisibilité */
+}
+
+.hero .hero-content h6 {
+    color: #FFFFFF;
+    /* Exemple : couleur blanche pour le texte */
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    /* Exemple : taille de police plus grande */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Exemple : ombre portée pour la lisibilité */
+    display: block;
+}
+
 .hero {
-    background: var(--background-light);
+    position: relative;
+    height: 100vh;
+    /* plein écran, ajuste si besoin */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     text-align: center;
-    padding: 150px 20px;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* la vidéo reste derrière */
+    overflow: hidden;
+}
+
+.hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* couvre tout le bloc hero */
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: auto;
+    position: relative;
+    z-index: 1;
+    /* contenu visible au-dessus de la vidéo */
+    color: var(--text-light);
+    /* assure la lisibilité */
 }
 
 .hero-content p {
     font-size: 1.4rem;
     margin-bottom: 30px;
     color: var(--secondary-color);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* assombrit la vidéo */
+    z-index: 0;
+}
+
+#mes-services h5 {
+    background: linear-gradient(to right, #bc7870 20%, #ffd1c7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    padding-top: 2%;
+}
+
+#mes-services p {
+    color: var(--black);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    width: 300px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 150px 150px 0 0;
+    /* 🔥 arrondi haut façon arche */
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/*background section mes services*/
+
+/*#mes-services,
+#contacte {
+    position: relative;
+    /* pour tester */
+background: radial-gradient(ellipse at 50% 100%,
+    rgba(188, 120, 112, 0.4) 0%,
+    /* couleur plus visible */
+    rgba(255, 255, 255, 0) 60%);
+background-repeat: no-repeat;
+background-size: 100% 200px;
+/* tu peux jouer avec la hauteur */
+background-position: center bottom;
+}
+
+/*#contact {
+    background: radial-gradient(ellipse at 50% 0,
+            rgba(188, 120, 112, 0.4) 0%,
+            rgba(255, 255, 255, 0) 60%);
+    background-repeat: no-repeat;
+    background-size: 100% 200px;
+    background-position: center top;
+    /* 🔥 en haut cette fois */
 }
 
 /* ============================ */
@@ -214,7 +390,7 @@ html {
 #portfolio-section {
     padding: 4rem 1rem;
     text-align: center;
-    
+
 }
 
 #portfolio-section h2 {
@@ -230,7 +406,7 @@ html {
     margin: 0 auto;
     overflow: hidden;
     border-radius: 1rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-track {
@@ -239,16 +415,20 @@ html {
 }
 
 .carousel-slide {
-    flex-shrink: 0; /* Empêche la diapositive de se comprimer */
-    width: 100%; /* S'assure que chaque diapositive prend toute la largeur du conteneur */
+    flex-shrink: 0;
+    /* Empêche la diapositive de se comprimer */
+    width: 100%;
+    /* S'assure que chaque diapositive prend toute la largeur du conteneur */
 }
 
 .carousel-slide img {
-    width: 100%; /* L'image s'adapte à la largeur de sa diapositive */
+    width: 100%;
+    /* L'image s'adapte à la largeur de sa diapositive */
     display: block;
-    height: auto; /* S'assure que l'image conserve ses proportions */
+    height: auto;
+    /* S'assure que l'image conserve ses proportions */
     border-radius: 1rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-nav {
@@ -402,8 +582,10 @@ footer {
     display: flex;
     justify-content: center;
     gap: 25px;
-    flex-wrap: nowrap; /* force les 3 cartes côte à côte sur desktop */
-    align-items: stretch; /* 🔥 aligne toutes les cartes à la même hauteur */
+    flex-wrap: nowrap;
+    /* force les 3 cartes côte à côte sur desktop */
+    align-items: stretch;
+    /* 🔥 aligne toutes les cartes à la même hauteur */
 }
 
 .pricing-card {
@@ -420,9 +602,12 @@ footer {
     position: relative;
     overflow: hidden;
 
-    display: flex; /* 🔥 rend chaque carte flexible */
-    flex-direction: column; /* contenu du haut en bas */
-    justify-content: space-between; /* garde un équilibre */
+    display: flex;
+    /* 🔥 rend chaque carte flexible */
+    flex-direction: column;
+    /* contenu du haut en bas */
+    justify-content: space-between;
+    /* garde un équilibre */
 }
 
 .pricing-card:hover {
@@ -554,6 +739,7 @@ footer {
     .pricing-cards {
         flex-wrap: wrap;
     }
+
     .pricing-card {
         flex: 1 1 100%;
         max-width: 95%;
@@ -612,6 +798,7 @@ footer {
 /* ============================ */
 
 @media screen and (min-width: 769px) {
+
     .header-socials-mobile,
     .hamburger-menu,
     .mobile-nav {
@@ -675,7 +862,8 @@ footer {
         gap: 40px;
     }
 
-    .about-text-right, .about-text-left {
+    .about-text-right,
+    .about-text-left {
         padding: 0 20px;
     }
 }
@@ -690,19 +878,24 @@ footer {
     position: fixed;
     top: 0;
     right: 0;
-    width: 300px; /* Largeur du menu, ajustez selon vos besoins */
-    max-width: 80%; /* Pour les écrans plus petits */
+    width: 300px;
+    /* Largeur du menu, ajustez selon vos besoins */
+    max-width: 80%;
+    /* Pour les écrans plus petits */
     height: 100vh;
-    background-color: var(--background-dark); /* Utilisation de la couleur sombre du thème */
+    background-color: var(--background-dark);
+    /* Utilisation de la couleur sombre du thème */
     backdrop-filter: blur(5px);
     padding-top: 100px;
-    transform: translateX(100%); /* Caché par défaut à droite */
+    transform: translateX(100%);
+    /* Caché par défaut à droite */
     transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
     z-index: 2000;
 }
 
 .mobile-nav.is-open {
-    transform: translateX(0); /* Fait glisser le menu pour le rendre visible */
+    transform: translateX(0);
+    /* Fait glisser le menu pour le rendre visible */
 }
 
 .mobile-nav a {
@@ -725,6 +918,7 @@ footer {
 .mobile-nav a:last-child {
     border-bottom: none;
 }
+
 .mobile-nav a:last-child {
     border-bottom: none;
 }

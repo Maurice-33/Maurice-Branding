@@ -380,6 +380,31 @@ html {
 }
 
 /* ============================ */
+/* RESPONSIVE SECTION mes-services */
+/* ============================ */
+@media (max-width: 768px) {
+    #mes-services h5 {
+        font-size: 4rem; /* Réduit la taille pour les tablettes */
+    }
+
+    #mes-services p {
+        font-size: 1.2rem; /* Réduit la taille pour les tablettes */
+    }
+}
+
+@media (max-width: 480px) {
+    #mes-services h5 {
+        font-size: 2.5rem; /* Taille idéale pour les petits smartphones */
+    }
+
+    #mes-services p {
+        font-size: 1rem; /* Taille idéale pour les petits smartphones */
+        padding: 0 15px; /* Ajoute un peu de marge sur les côtés */
+    }
+}
+
+
+/* ============================ */
 /* PORTFOLIO - CARROUSEL */
 /* ============================ */
 

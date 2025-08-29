@@ -390,6 +390,15 @@ html {
     #mes-services p {
         font-size: 1.2rem; /* Réduit la taille pour les tablettes */
     }
+    
+    .services-grid {
+        gap: 20px; /* Réduit l'espace entre les cartes sur les tablettes */
+    }
+
+    .service-card {
+        width: 45%; /* Donne une largeur flexible aux cartes pour en afficher deux par ligne si l'espace le permet */
+        max-width: 300px; /* Conserve une taille maximale pour éviter qu'elles ne soient trop grandes */
+    }
 }
 
 @media (max-width: 480px) {
@@ -400,6 +409,16 @@ html {
     #mes-services p {
         font-size: 1rem; /* Taille idéale pour les petits smartphones */
         padding: 0 15px; /* Ajoute un peu de marge sur les côtés */
+    }
+    
+    .services-grid {
+        flex-direction: column; /* Empile les cartes sur une seule colonne */
+        align-items: center; /* Centre les cartes */
+        gap: 25px; /* Ajuste l'espacement vertical entre les cartes */
+    }
+
+    .service-card {
+        width: 90%; /* Prend 90% de la largeur de l'écran pour une meilleure adaptation */
     }
 }
 

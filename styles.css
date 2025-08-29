@@ -344,28 +344,6 @@ html {
     display: block;
 }
 
-/*background section mes services*/
-
-/*#mes-services,
-#contacte {
-    position: relative;
-background: radial-gradient(ellipse at 50% 100%,
-    rgba(188, 120, 112, 0.4) 0%,
-    rgba(255, 255, 255, 0) 60%);
-background-repeat: no-repeat;
-background-size: 100% 200px;
-background-position: center bottom;
-}
-
-/*#contact {
-    background: radial-gradient(ellipse at 50% 0,
-            rgba(188, 120, 112, 0.4) 0%,
-            rgba(255, 255, 255, 0) 60%);
-    background-repeat: no-repeat;
-    background-size: 100% 200px;
-    background-position: center top;
-}
-
 /* ============================ */
 /* PORTFOLIO - CARROUSEL */
 /* ============================ */
